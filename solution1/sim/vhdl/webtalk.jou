@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jun 14 19:27:49 2019
+# Process ID: 9039
+# Current directory: /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl
+# Command line: wbtcv -mode batch -source /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl/xsim.dir/LR_top/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl/webtalk.log
+# Journal file: /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl/webtalk.jou
+#-----------------------------------------------------------
+source /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl/xsim.dir/LR_top/webtalk/xsim_webtalk.tcl -notrace

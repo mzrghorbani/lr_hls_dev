@@ -1,0 +1,2098 @@
+
+
+================================================================
+== Vivado HLS Report for 'calcHelix'
+================================================================
+* Date:           Fri Jun 14 19:06:30 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     2.655|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1  |    ?|    ?|  37 ~ 41 |          -|          -|     ?|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|     290|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |        -|      7|      961|     694|    -|
+|Memory               |        -|      -|        -|       -|    -|
+|Multiplexer          |        -|      -|        -|     314|    -|
+|Register             |        -|      -|      426|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |        0|      7|     1387|    1298|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     2160|   2760|   663360|  331680|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |        0|   ~0  |    ~0   |   ~0   |  100|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     4320|   5520|  1326720|  663360|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        0|   ~0  |    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+    |                   Instance                   |                 Module                 | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+    |LR_top_fcmp_32ns_32ns_1_3_1_U1137             |LR_top_fcmp_32ns_32ns_1_3_1             |        0|      0|   66|   72|    0|
+    |LR_top_fmul_32ns_32ns_32_6_max_dsp_1_U1136    |LR_top_fmul_32ns_32ns_32_6_max_dsp_1    |        0|      3|  165|  146|    0|
+    |LR_top_fsub_32ns_32ns_32_10_full_dsp_1_U1134  |LR_top_fsub_32ns_32ns_32_10_full_dsp_1  |        0|      2|  365|  238|    0|
+    |LR_top_fsub_32ns_32ns_32_10_full_dsp_1_U1135  |LR_top_fsub_32ns_32ns_32_10_full_dsp_1  |        0|      2|  365|  238|    0|
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+    |Total                                         |                                        |        0|      7|  961|  694|    0|
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |add_ln106_fu_182_p2    |     +    |      0|  0|  39|           1|          32|
+    |add_ln111_fu_214_p2    |     +    |      0|  0|  39|           1|          32|
+    |empty_20_fu_198_p2     |     +    |      0|  0|  17|          10|          10|
+    |and_ln32_fu_256_p2     |    and   |      0|  0|   2|           1|           1|
+    |and_ln40_fu_312_p2     |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln106_fu_177_p2   |   icmp   |      0|  0|  20|          32|          32|
+    |icmp_ln111_fu_209_p2   |   icmp   |      0|  0|  20|          32|          32|
+    |icmp_ln162_fu_188_p2   |   icmp   |      0|  0|  20|          32|           1|
+    |icmp_ln32_8_fu_244_p2  |   icmp   |      0|  0|  20|          23|           1|
+    |icmp_ln32_fu_238_p2    |   icmp   |      0|  0|  11|           8|           2|
+    |icmp_ln40_3_fu_302_p2  |   icmp   |      0|  0|  20|          23|           1|
+    |icmp_ln40_fu_296_p2    |   icmp   |      0|  0|  11|           8|           2|
+    |or_ln32_fu_250_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln40_fu_308_p2      |    or    |      0|  0|   2|           1|           1|
+    |select_ln32_fu_271_p3  |  select  |      0|  0|  32|           1|          32|
+    |xor_ln33_fu_261_p2     |    xor   |      0|  0|  33|          32|          33|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 290|         207|         214|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+-----+-----------+-----+-----------+
+    |          Name          | LUT | Input Size| Bits| Total Bits|
+    +------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm               |  197|         45|    1|         45|
+    |grp_fu_135_p0           |   15|          3|   32|         96|
+    |grp_fu_135_p1           |   15|          3|   32|         96|
+    |grp_fu_143_p1           |   15|          3|   32|         96|
+    |grp_fu_148_opcode       |   15|          3|    5|         15|
+    |grp_fu_148_p0           |   15|          3|   32|         96|
+    |grp_fu_148_p1           |   15|          3|   32|         96|
+    |guard_variable_for_f_o  |    9|          2|    1|          2|
+    |p_begin2_0_rec_reg_124  |    9|          2|   32|         64|
+    |p_begin_0_rec_reg_113   |    9|          2|   32|         64|
+    +------------------------+-----+-----------+-----+-----------+
+    |Total                   |  314|         69|  231|        670|
+    +------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------+----+----+-----+-----------+
+    |              Name              | FF | LUT| Bits| Const Bits|
+    +--------------------------------+----+----+-----+-----------+
+    |LRHLS_stubMap_data_57_reg_372   |  32|   0|   32|          0|
+    |LRHLS_stubMap_data_58_reg_381   |   9|   0|    9|          0|
+    |LRHLS_stubMap_data_59_reg_386   |   9|   0|    9|          0|
+    |LRHLS_stubMap_data_60_reg_399   |  32|   0|   32|          0|
+    |LRHLS_stubMap_data_61_reg_404   |  32|   0|   32|          0|
+    |add_ln106_reg_362               |  32|   0|   32|          0|
+    |add_ln111_reg_394               |  32|   0|   32|          0|
+    |and_ln40_reg_440                |   1|   0|    1|          0|
+    |ap_CS_fsm                       |  44|   0|   44|          0|
+    |guard_variable_for_f_3_reg_444  |   1|   0|    1|          0|
+    |icmp_ln162_reg_377              |   1|   0|    1|          0|
+    |icmp_ln40_3_reg_435             |   1|   0|    1|          0|
+    |icmp_ln40_reg_430               |   1|   0|    1|          0|
+    |p_begin2_0_rec_reg_124          |  32|   0|   32|          0|
+    |p_begin_0_rec_reg_113           |  32|   0|   32|          0|
+    |p_cast3_reg_354                 |   6|   0|   10|          4|
+    |reg_154                         |  32|   0|   32|          0|
+    |select_ln32_reg_424             |  32|   0|   32|          0|
+    |tmp_14_reg_414                  |  32|   0|   32|          0|
+    |tmp_19_reg_419                  |   1|   0|    1|          0|
+    |tmp_s_reg_409                   |  32|   0|   32|          0|
+    +--------------------------------+----+----+-----+-----------+
+    |Total                           | 426|   0|  430|          4|
+    +--------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------+-----+-----+------------+--------------------------------------+--------------+
+|                   RTL Ports                   | Dir | Bits|  Protocol  |             Source Object            |    C Type    |
++-----------------------------------------------+-----+-----+------------+--------------------------------------+--------------+
+|ap_clk                                         |  in |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_rst                                         |  in |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_start                                       |  in |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_done                                        | out |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_idle                                        | out |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_ready                                       | out |    1| ap_ctrl_hs |               calcHelix              | return value |
+|LRHLS_settings_chosenRofPhi_read               |  in |   32|   ap_none  |   LRHLS_settings_chosenRofPhi_read   |    scalar    |
+|LRHLS_HTParameter_qOverPt_read                 |  in |   32|   ap_none  |    LRHLS_HTParameter_qOverPt_read    |    scalar    |
+|LRHLS_HTParameter_phiT_read                    |  in |   32|   ap_none  |      LRHLS_HTParameter_phiT_read     |    scalar    |
+|LRHLS_stubMap_size_read                        |  in |   32|   ap_none  |        LRHLS_stubMap_size_read       |    scalar    |
+|LRHLS_stubMap_data_second_size_s_address0      | out |    5|  ap_memory |   LRHLS_stubMap_data_second_size_s   |     array    |
+|LRHLS_stubMap_data_second_size_s_ce0           | out |    1|  ap_memory |   LRHLS_stubMap_data_second_size_s   |     array    |
+|LRHLS_stubMap_data_second_size_s_q0            |  in |   32|  ap_memory |   LRHLS_stubMap_data_second_size_s   |     array    |
+|LRHLS_stubMap_data_second_data_r_s_address0    | out |    9|  ap_memory |  LRHLS_stubMap_data_second_data_r_s  |     array    |
+|LRHLS_stubMap_data_second_data_r_s_ce0         | out |    1|  ap_memory |  LRHLS_stubMap_data_second_data_r_s  |     array    |
+|LRHLS_stubMap_data_second_data_r_s_q0          |  in |   32|  ap_memory |  LRHLS_stubMap_data_second_data_r_s  |     array    |
+|LRHLS_stubMap_data_second_data_phi_s_address0  | out |    9|  ap_memory | LRHLS_stubMap_data_second_data_phi_s |     array    |
+|LRHLS_stubMap_data_second_data_phi_s_ce0       | out |    1|  ap_memory | LRHLS_stubMap_data_second_data_phi_s |     array    |
+|LRHLS_stubMap_data_second_data_phi_s_q0        |  in |   32|  ap_memory | LRHLS_stubMap_data_second_data_phi_s |     array    |
+|guard_variable_for_f_i                         |  in |    1|   ap_ovld  |         guard_variable_for_f         |    pointer   |
+|guard_variable_for_f_o                         | out |    1|   ap_ovld  |         guard_variable_for_f         |    pointer   |
+|guard_variable_for_f_o_ap_vld                  | out |    1|   ap_ovld  |         guard_variable_for_f         |    pointer   |
+|n                                              | out |   32|   ap_vld   |                   n                  |    pointer   |
+|n_ap_vld                                       | out |    1|   ap_vld   |                   n                  |    pointer   |
++-----------------------------------------------+-----+-----+------------+--------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 44
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 2 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 44 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 4 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.83>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_size_s = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_stubMap_size_read)" [HLS_LR/.settings/LRHLS.cc:103]   --->   Operation 45 'read' 'LRHLS_stubMap_size_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%LRHLS_HTParameter_p = call float @_ssdm_op_Read.ap_auto.float(float %LRHLS_HTParameter_phiT_read)" [HLS_LR/.settings/LRHLS.cc:103]   --->   Operation 46 'read' 'LRHLS_HTParameter_p' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%LRHLS_HTParameter_q = call float @_ssdm_op_Read.ap_auto.float(float %LRHLS_HTParameter_qOverPt_read)" [HLS_LR/.settings/LRHLS.cc:103]   --->   Operation 47 'read' 'LRHLS_HTParameter_q' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%LRHLS_settings_chos = call float @_ssdm_op_Read.ap_auto.float(float %LRHLS_settings_chosenRofPhi_read)" [HLS_LR/.settings/LRHLS.cc:103]   --->   Operation 48 'read' 'LRHLS_settings_chos' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.83ns)   --->   "br label %1" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 49 'br' <Predicate = true> <Delay = 0.83>
+
+State 2 <SV = 1> <Delay = 1.48>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%p_begin_0_rec = phi i32 [ 0, %0 ], [ %add_ln106, %._crit_edge ]" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 50 'phi' 'p_begin_0_rec' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln106 = zext i32 %p_begin_0_rec to i64" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 51 'zext' 'zext_ln106' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%trunc_ln106 = trunc i32 %p_begin_0_rec to i6" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 52 'trunc' 'trunc_ln106' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%p_cast3 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %trunc_ln106, i4 0)" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 53 'bitconcatenate' 'p_cast3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (1.14ns)   --->   "%icmp_ln106 = icmp eq i32 %p_begin_0_rec, %LRHLS_stubMap_size_s" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 54 'icmp' 'icmp_ln106' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (1.48ns)   --->   "%add_ln106 = add i32 1, %p_begin_0_rec" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 55 'add' 'add_ln106' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "br i1 %icmp_ln106, label %4, label %2" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 56 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_data_s = getelementptr [30 x i32]* %LRHLS_stubMap_data_second_size_s, i64 0, i64 %zext_ln106" [HLS_LR/.settings/LRHLS.cc:107]   --->   Operation 57 'getelementptr' 'LRHLS_stubMap_data_s' <Predicate = (!icmp_ln106)> <Delay = 0.00>
+ST_2 : Operation 58 [2/2] (0.69ns)   --->   "%LRHLS_stubMap_data_57 = load i32* %LRHLS_stubMap_data_s, align 4" [HLS_LR/.settings/LRHLS.cc:107]   --->   Operation 58 'load' 'LRHLS_stubMap_data_57' <Predicate = (!icmp_ln106)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 59 'ret' <Predicate = (icmp_ln106)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.83>
+ST_3 : Operation 60 [1/2] (0.69ns)   --->   "%LRHLS_stubMap_data_57 = load i32* %LRHLS_stubMap_data_s, align 4" [HLS_LR/.settings/LRHLS.cc:107]   --->   Operation 60 'load' 'LRHLS_stubMap_data_57' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_3 : Operation 61 [1/1] (1.14ns)   --->   "%icmp_ln162 = icmp eq i32 %LRHLS_stubMap_data_57, 0" [HLS_LR/.settings/LRutility.h:162->HLS_LR/.settings/LRHLS.cc:107]   --->   Operation 61 'icmp' 'icmp_ln162' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "br i1 %icmp_ln162, label %._crit_edge, label %.preheader.preheader" [HLS_LR/.settings/LRHLS.cc:107]   --->   Operation 62 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.83ns)   --->   "br label %.preheader"   --->   Operation 63 'br' <Predicate = (!icmp_ln162)> <Delay = 0.83>
+
+State 4 <SV = 3> <Delay = 1.48>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%p_begin2_0_rec = phi i32 [ %add_ln111, %"deltaPhiHLS<float>.exit_ifconv" ], [ 0, %.preheader.preheader ]" [HLS_LR/.settings/LRHLS.cc:111]   --->   Operation 64 'phi' 'p_begin2_0_rec' <Predicate = (!icmp_ln162)> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%empty = trunc i32 %p_begin2_0_rec to i10" [HLS_LR/.settings/LRHLS.cc:111]   --->   Operation 65 'trunc' 'empty' <Predicate = (!icmp_ln162)> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (1.31ns)   --->   "%empty_20 = add i10 %p_cast3, %empty" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 66 'add' 'empty_20' <Predicate = (!icmp_ln162)> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%p_cast = zext i10 %empty_20 to i64" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 67 'zext' 'p_cast' <Predicate = (!icmp_ln162)> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_data_58 = getelementptr [480 x float]* %LRHLS_stubMap_data_second_data_r_s, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 68 'getelementptr' 'LRHLS_stubMap_data_58' <Predicate = (!icmp_ln162)> <Delay = 0.00>
+ST_4 : Operation 69 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_data_59 = getelementptr [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 69 'getelementptr' 'LRHLS_stubMap_data_59' <Predicate = (!icmp_ln162)> <Delay = 0.00>
+ST_4 : Operation 70 [1/1] (1.14ns)   --->   "%icmp_ln111 = icmp eq i32 %p_begin2_0_rec, %LRHLS_stubMap_data_57" [HLS_LR/.settings/LRHLS.cc:111]   --->   Operation 70 'icmp' 'icmp_ln111' <Predicate = (!icmp_ln162)> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 71 [1/1] (1.48ns)   --->   "%add_ln111 = add i32 1, %p_begin2_0_rec" [HLS_LR/.settings/LRHLS.cc:111]   --->   Operation 71 'add' 'add_ln111' <Predicate = (!icmp_ln162)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "br i1 %icmp_ln111, label %._crit_edge.loopexit, label %_ifconv" [HLS_LR/.settings/LRHLS.cc:111]   --->   Operation 72 'br' <Predicate = (!icmp_ln162)> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "br label %._crit_edge"   --->   Operation 73 'br' <Predicate = (!icmp_ln162 & icmp_ln111)> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "br label %1" [HLS_LR/.settings/LRHLS.cc:106]   --->   Operation 74 'br' <Predicate = (icmp_ln111) | (icmp_ln162)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 1.77>
+ST_5 : Operation 75 [2/2] (1.77ns)   --->   "%LRHLS_stubMap_data_60 = load float* %LRHLS_stubMap_data_58, align 4" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 75 'load' 'LRHLS_stubMap_data_60' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_5 : Operation 76 [2/2] (1.77ns)   --->   "%LRHLS_stubMap_data_61 = load float* %LRHLS_stubMap_data_59, align 4" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 76 'load' 'LRHLS_stubMap_data_61' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 6 <SV = 5> <Delay = 1.77>
+ST_6 : Operation 77 [1/2] (1.77ns)   --->   "%LRHLS_stubMap_data_60 = load float* %LRHLS_stubMap_data_58, align 4" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 77 'load' 'LRHLS_stubMap_data_60' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_6 : Operation 78 [1/2] (1.77ns)   --->   "%LRHLS_stubMap_data_61 = load float* %LRHLS_stubMap_data_59, align 4" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 78 'load' 'LRHLS_stubMap_data_61' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 7 <SV = 6> <Delay = 2.46>
+ST_7 : Operation 79 [10/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 79 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 80 [10/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 80 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 2.46>
+ST_8 : Operation 81 [9/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 81 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 82 [9/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 82 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 2.46>
+ST_9 : Operation 83 [8/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 83 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 84 [8/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 84 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 2.46>
+ST_10 : Operation 85 [7/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 85 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 86 [7/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 86 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 2.46>
+ST_11 : Operation 87 [6/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 87 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 88 [6/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 88 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 2.46>
+ST_12 : Operation 89 [5/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 89 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 90 [5/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 90 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 2.46>
+ST_13 : Operation 91 [4/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 91 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 92 [4/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 92 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 2.46>
+ST_14 : Operation 93 [3/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 93 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 94 [3/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 94 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 2.46>
+ST_15 : Operation 95 [2/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 95 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 96 [2/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 96 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 2.46>
+ST_16 : Operation 97 [1/10] (2.46ns)   --->   "%pos_RPhi = fsub float %LRHLS_stubMap_data_60, %LRHLS_settings_chos" [HLS_LR/.settings/LRHLS.h:70->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 97 'fsub' 'pos_RPhi' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 98 [1/10] (2.46ns)   --->   "%tmp_s = fsub float %LRHLS_stubMap_data_61, %LRHLS_HTParameter_p" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 98 'fsub' 'tmp_s' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 2.56>
+ST_17 : Operation 99 [6/6] (2.56ns)   --->   "%tmp_14 = fmul float %pos_RPhi, %LRHLS_HTParameter_q" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 99 'fmul' 'tmp_14' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 2.56>
+ST_18 : Operation 100 [5/6] (2.56ns)   --->   "%tmp_14 = fmul float %pos_RPhi, %LRHLS_HTParameter_q" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 100 'fmul' 'tmp_14' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 2.56>
+ST_19 : Operation 101 [4/6] (2.56ns)   --->   "%tmp_14 = fmul float %pos_RPhi, %LRHLS_HTParameter_q" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 101 'fmul' 'tmp_14' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 2.56>
+ST_20 : Operation 102 [3/6] (2.56ns)   --->   "%tmp_14 = fmul float %pos_RPhi, %LRHLS_HTParameter_q" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 102 'fmul' 'tmp_14' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 2.56>
+ST_21 : Operation 103 [2/6] (2.56ns)   --->   "%tmp_14 = fmul float %pos_RPhi, %LRHLS_HTParameter_q" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 103 'fmul' 'tmp_14' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 2.56>
+ST_22 : Operation 104 [1/6] (2.56ns)   --->   "%tmp_14 = fmul float %pos_RPhi, %LRHLS_HTParameter_q" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 104 'fmul' 'tmp_14' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 2.46>
+ST_23 : Operation 105 [10/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 105 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 2.46>
+ST_24 : Operation 106 [9/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 106 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 2.46>
+ST_25 : Operation 107 [8/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 107 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 2.46>
+ST_26 : Operation 108 [7/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 108 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 2.46>
+ST_27 : Operation 109 [6/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 109 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 2.46>
+ST_28 : Operation 110 [5/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 110 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 2.46>
+ST_29 : Operation 111 [4/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 111 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 2.46>
+ST_30 : Operation 112 [3/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 112 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 2.46>
+ST_31 : Operation 113 [2/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 113 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 2.46>
+ST_32 : Operation 114 [1/10] (2.46ns)   --->   "%phi1_assign = fsub float %tmp_s, %tmp_14" [HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 114 'fsub' 'phi1_assign' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 2.31>
+ST_33 : Operation 115 [3/3] (2.31ns)   --->   "%tmp_19 = fcmp olt float %phi1_assign, 0.000000e+00" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 115 'fcmp' 'tmp_19' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 2.31>
+ST_34 : Operation 116 [2/3] (2.31ns)   --->   "%tmp_19 = fcmp olt float %phi1_assign, 0.000000e+00" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 116 'fcmp' 'tmp_19' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 2.31>
+ST_35 : Operation 117 [1/3] (2.31ns)   --->   "%tmp_19 = fcmp olt float %phi1_assign, 0.000000e+00" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 117 'fcmp' 'tmp_19' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 1.70>
+ST_36 : Operation 118 [1/1] (0.00ns)   --->   "%bitcast_ln32 = bitcast float %phi1_assign to i32" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 118 'bitcast' 'bitcast_ln32' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 119 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln32, i32 23, i32 30)" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 119 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 120 [1/1] (0.00ns)   --->   "%trunc_ln32 = trunc i32 %bitcast_ln32 to i23" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 120 'trunc' 'trunc_ln32' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 121 [1/1] (0.78ns)   --->   "%icmp_ln32 = icmp ne i8 %tmp, -1" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 121 'icmp' 'icmp_ln32' <Predicate = true> <Delay = 0.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 122 [1/1] (1.11ns)   --->   "%icmp_ln32_8 = icmp eq i23 %trunc_ln32, 0" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 122 'icmp' 'icmp_ln32_8' <Predicate = true> <Delay = 1.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node select_ln32)   --->   "%or_ln32 = or i1 %icmp_ln32_8, %icmp_ln32" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 123 'or' 'or_ln32' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node select_ln32)   --->   "%and_ln32 = and i1 %or_ln32, %tmp_19" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 124 'and' 'and_ln32' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 125 [1/1] (0.00ns) (grouped into LUT with out node select_ln32)   --->   "%xor_ln33 = xor i32 %bitcast_ln32, -2147483648" [HLS_LR/.settings/LRutility.h:33->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 125 'xor' 'xor_ln33' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node select_ln32)   --->   "%bitcast_ln33 = bitcast i32 %xor_ln33 to float" [HLS_LR/.settings/LRutility.h:33->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 126 'bitcast' 'bitcast_ln33' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 127 [1/1] (0.59ns) (out node of the LUT)   --->   "%select_ln32 = select i1 %and_ln32, float %bitcast_ln33, float %phi1_assign" [HLS_LR/.settings/LRutility.h:32->HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 127 'select' 'select_ln32' <Predicate = true> <Delay = 0.59> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 2.31>
+ST_37 : Operation 128 [1/1] (0.00ns)   --->   "%bitcast_ln40 = bitcast float %select_ln32 to i32" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 128 'bitcast' 'bitcast_ln40' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_20 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln40, i32 23, i32 30)" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 129 'partselect' 'tmp_20' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 130 [1/1] (0.00ns)   --->   "%trunc_ln40 = trunc i32 %bitcast_ln40 to i23" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 130 'trunc' 'trunc_ln40' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 131 [1/1] (0.78ns)   --->   "%icmp_ln40 = icmp ne i8 %tmp_20, -1" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 131 'icmp' 'icmp_ln40' <Predicate = true> <Delay = 0.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 132 [1/1] (1.11ns)   --->   "%icmp_ln40_3 = icmp eq i23 %trunc_ln40, 0" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 132 'icmp' 'icmp_ln40_3' <Predicate = true> <Delay = 1.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 133 [3/3] (2.31ns)   --->   "%tmp_21 = fcmp ole float %select_ln32, 0x400921FB60000000" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 133 'fcmp' 'tmp_21' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 2.31>
+ST_38 : Operation 134 [2/3] (2.31ns)   --->   "%tmp_21 = fcmp ole float %select_ln32, 0x400921FB60000000" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 134 'fcmp' 'tmp_21' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 2.65>
+ST_39 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node and_ln40)   --->   "%or_ln40 = or i1 %icmp_ln40_3, %icmp_ln40" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 135 'or' 'or_ln40' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 136 [1/3] (2.31ns)   --->   "%tmp_21 = fcmp ole float %select_ln32, 0x400921FB60000000" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 136 'fcmp' 'tmp_21' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 137 [1/1] (0.33ns) (out node of the LUT)   --->   "%and_ln40 = and i1 %or_ln40, %tmp_21" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 137 'and' 'and_ln40' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 138 [1/1] (0.00ns)   --->   "br i1 %and_ln40, label %"deltaPhiHLS<float>.exit_ifconv", label %3" [HLS_LR/.settings/LRutility.h:40->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 138 'br' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 139 [1/1] (0.00ns)   --->   "%guard_variable_for_f_3 = load i1* @guard_variable_for_f, align 1" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 139 'load' 'guard_variable_for_f_3' <Predicate = (!and_ln40)> <Delay = 0.00>
+ST_39 : Operation 140 [1/1] (0.00ns)   --->   "br i1 %guard_variable_for_f_3, label %._crit_edge1.i.i, label %codeRepl" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 140 'br' <Predicate = (!and_ln40)> <Delay = 0.00>
+ST_39 : Operation 141 [6/6] (2.56ns)   --->   "%tmp_2_i_i_i_i = fmul float %phi1_assign, 0x3FC45F3060000000" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 141 'fmul' 'tmp_2_i_i_i_i' <Predicate = (!and_ln40 & !guard_variable_for_f_3)> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 142 [1/1] (0.00ns)   --->   "store i1 true, i1* @guard_variable_for_f, align 1" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 142 'store' <Predicate = (!and_ln40 & !guard_variable_for_f_3)> <Delay = 0.00>
+
+State 40 <SV = 39> <Delay = 2.56>
+ST_40 : Operation 143 [5/6] (2.56ns)   --->   "%tmp_2_i_i_i_i = fmul float %phi1_assign, 0x3FC45F3060000000" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 143 'fmul' 'tmp_2_i_i_i_i' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 2.56>
+ST_41 : Operation 144 [4/6] (2.56ns)   --->   "%tmp_2_i_i_i_i = fmul float %phi1_assign, 0x3FC45F3060000000" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 144 'fmul' 'tmp_2_i_i_i_i' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 2.56>
+ST_42 : Operation 145 [3/6] (2.56ns)   --->   "%tmp_2_i_i_i_i = fmul float %phi1_assign, 0x3FC45F3060000000" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 145 'fmul' 'tmp_2_i_i_i_i' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 2.56>
+ST_43 : Operation 146 [2/6] (2.56ns)   --->   "%tmp_2_i_i_i_i = fmul float %phi1_assign, 0x3FC45F3060000000" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 146 'fmul' 'tmp_2_i_i_i_i' <Predicate = true> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 2.56>
+ST_44 : Operation 147 [1/6] (2.56ns)   --->   "%tmp_2_i_i_i_i = fmul float %phi1_assign, 0x3FC45F3060000000" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 147 'fmul' 'tmp_2_i_i_i_i' <Predicate = (!and_ln40 & !guard_variable_for_f_3)> <Delay = 2.56> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 148 [1/1] (0.00ns)   --->   "store float %tmp_2_i_i_i_i, float* @n, align 4" [HLS_LR/.settings/LRutility.h:42->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 148 'store' <Predicate = (!and_ln40 & !guard_variable_for_f_3)> <Delay = 0.00>
+ST_44 : Operation 149 [1/1] (0.00ns)   --->   "br label %._crit_edge1.i.i"   --->   Operation 149 'br' <Predicate = (!and_ln40 & !guard_variable_for_f_3)> <Delay = 0.00>
+ST_44 : Operation 150 [1/1] (0.00ns)   --->   "br label %"deltaPhiHLS<float>.exit_ifconv"" [HLS_LR/.settings/LRutility.h:43->HLS_LR/.settings/LRutility.h:48->HLS_LR/.settings/LRHLS.h:71->HLS_LR/.settings/LRHLS.h:73->HLS_LR/.settings/LRHLS.cc:112]   --->   Operation 150 'br' <Predicate = (!and_ln40)> <Delay = 0.00>
+ST_44 : Operation 151 [1/1] (0.00ns)   --->   "br label %.preheader" [HLS_LR/.settings/LRHLS.cc:111]   --->   Operation 151 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ LRHLS_settings_chosenRofPhi_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ LRHLS_HTParameter_qOverPt_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ LRHLS_HTParameter_phiT_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ LRHLS_stubMap_size_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ LRHLS_stubMap_data_second_size_s]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ LRHLS_stubMap_data_second_data_r_s]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ LRHLS_stubMap_data_second_data_phi_s]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ guard_variable_for_f]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ n]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_vld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+LRHLS_stubMap_size_s   (read          ) [ 001111111111111111111111111111111111111111111]
+LRHLS_HTParameter_p    (read          ) [ 001111111111111111111111111111111111111111111]
+LRHLS_HTParameter_q    (read          ) [ 001111111111111111111111111111111111111111111]
+LRHLS_settings_chos    (read          ) [ 001111111111111111111111111111111111111111111]
+br_ln106               (br            ) [ 011111111111111111111111111111111111111111111]
+p_begin_0_rec          (phi           ) [ 001000000000000000000000000000000000000000000]
+zext_ln106             (zext          ) [ 000000000000000000000000000000000000000000000]
+trunc_ln106            (trunc         ) [ 000000000000000000000000000000000000000000000]
+p_cast3                (bitconcatenate) [ 000111111111111111111111111111111111111111111]
+icmp_ln106             (icmp          ) [ 001111111111111111111111111111111111111111111]
+add_ln106              (add           ) [ 011111111111111111111111111111111111111111111]
+br_ln106               (br            ) [ 000000000000000000000000000000000000000000000]
+LRHLS_stubMap_data_s   (getelementptr ) [ 000100000000000000000000000000000000000000000]
+ret_ln0                (ret           ) [ 000000000000000000000000000000000000000000000]
+LRHLS_stubMap_data_57  (load          ) [ 000011111111111111111111111111111111111111111]
+icmp_ln162             (icmp          ) [ 001111111111111111111111111111111111111111111]
+br_ln107               (br            ) [ 000000000000000000000000000000000000000000000]
+br_ln0                 (br            ) [ 001111111111111111111111111111111111111111111]
+p_begin2_0_rec         (phi           ) [ 000010000000000000000000000000000000000000000]
+empty                  (trunc         ) [ 000000000000000000000000000000000000000000000]
+empty_20               (add           ) [ 000000000000000000000000000000000000000000000]
+p_cast                 (zext          ) [ 000000000000000000000000000000000000000000000]
+LRHLS_stubMap_data_58  (getelementptr ) [ 000001100000000000000000000000000000000000000]
+LRHLS_stubMap_data_59  (getelementptr ) [ 000001100000000000000000000000000000000000000]
+icmp_ln111             (icmp          ) [ 001111111111111111111111111111111111111111111]
+add_ln111              (add           ) [ 001111111111111111111111111111111111111111111]
+br_ln111               (br            ) [ 000000000000000000000000000000000000000000000]
+br_ln0                 (br            ) [ 000000000000000000000000000000000000000000000]
+br_ln106               (br            ) [ 011111111111111111111111111111111111111111111]
+LRHLS_stubMap_data_60  (load          ) [ 000000011111111110000000000000000000000000000]
+LRHLS_stubMap_data_61  (load          ) [ 000000011111111110000000000000000000000000000]
+pos_RPhi               (fsub          ) [ 000000000000000001111110000000000000000000000]
+tmp_s                  (fsub          ) [ 000000000000000001111111111111111000000000000]
+tmp_14                 (fmul          ) [ 000000000000000000000001111111111000000000000]
+phi1_assign            (fsub          ) [ 000000000000000000000000000000000111111111111]
+tmp_19                 (fcmp          ) [ 000000000000000000000000000000000000100000000]
+bitcast_ln32           (bitcast       ) [ 000000000000000000000000000000000000000000000]
+tmp                    (partselect    ) [ 000000000000000000000000000000000000000000000]
+trunc_ln32             (trunc         ) [ 000000000000000000000000000000000000000000000]
+icmp_ln32              (icmp          ) [ 000000000000000000000000000000000000000000000]
+icmp_ln32_8            (icmp          ) [ 000000000000000000000000000000000000000000000]
+or_ln32                (or            ) [ 000000000000000000000000000000000000000000000]
+and_ln32               (and           ) [ 000000000000000000000000000000000000000000000]
+xor_ln33               (xor           ) [ 000000000000000000000000000000000000000000000]
+bitcast_ln33           (bitcast       ) [ 000000000000000000000000000000000000000000000]
+select_ln32            (select        ) [ 000000000000000000000000000000000000011100000]
+bitcast_ln40           (bitcast       ) [ 000000000000000000000000000000000000000000000]
+tmp_20                 (partselect    ) [ 000000000000000000000000000000000000000000000]
+trunc_ln40             (trunc         ) [ 000000000000000000000000000000000000000000000]
+icmp_ln40              (icmp          ) [ 000000000000000000000000000000000000001100000]
+icmp_ln40_3            (icmp          ) [ 000000000000000000000000000000000000001100000]
+or_ln40                (or            ) [ 000000000000000000000000000000000000000000000]
+tmp_21                 (fcmp          ) [ 000000000000000000000000000000000000000000000]
+and_ln40               (and           ) [ 001111111111111111111111111111111111111111111]
+br_ln40                (br            ) [ 000000000000000000000000000000000000000000000]
+guard_variable_for_f_3 (load          ) [ 001111111111111111111111111111111111111111111]
+br_ln42                (br            ) [ 000000000000000000000000000000000000000000000]
+store_ln42             (store         ) [ 000000000000000000000000000000000000000000000]
+tmp_2_i_i_i_i          (fmul          ) [ 000000000000000000000000000000000000000000000]
+store_ln42             (store         ) [ 000000000000000000000000000000000000000000000]
+br_ln0                 (br            ) [ 000000000000000000000000000000000000000000000]
+br_ln43                (br            ) [ 000000000000000000000000000000000000000000000]
+br_ln111               (br            ) [ 001111111111111111111111111111111111111111111]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="LRHLS_settings_chosenRofPhi_read">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_settings_chosenRofPhi_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="LRHLS_HTParameter_qOverPt_read">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_HTParameter_qOverPt_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="LRHLS_HTParameter_phiT_read">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_HTParameter_phiT_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="LRHLS_stubMap_size_read">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_stubMap_size_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="LRHLS_stubMap_data_second_size_s">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_stubMap_data_second_size_s"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="LRHLS_stubMap_data_second_data_r_s">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_stubMap_data_second_data_r_s"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="LRHLS_stubMap_data_second_data_phi_s">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_stubMap_data_second_data_phi_s"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="guard_variable_for_f">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="guard_variable_for_f"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="n">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="n"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.float"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i10.i6.i4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i8.i32.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="LRHLS_stubMap_size_s_read_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="32" slack="0"/>
+<pin id="54" dir="0" index="1" bw="32" slack="0"/>
+<pin id="55" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="LRHLS_stubMap_size_s/1 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="LRHLS_HTParameter_p_read_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="32" slack="0"/>
+<pin id="60" dir="0" index="1" bw="32" slack="0"/>
+<pin id="61" dir="1" index="2" bw="32" slack="6"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="LRHLS_HTParameter_p/1 "/>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="LRHLS_HTParameter_q_read_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="32" slack="0"/>
+<pin id="66" dir="0" index="1" bw="32" slack="0"/>
+<pin id="67" dir="1" index="2" bw="32" slack="16"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="LRHLS_HTParameter_q/1 "/>
+</bind>
+</comp>
+
+<comp id="70" class="1004" name="LRHLS_settings_chos_read_fu_70">
+<pin_list>
+<pin id="71" dir="0" index="0" bw="32" slack="0"/>
+<pin id="72" dir="0" index="1" bw="32" slack="0"/>
+<pin id="73" dir="1" index="2" bw="32" slack="6"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="LRHLS_settings_chos/1 "/>
+</bind>
+</comp>
+
+<comp id="76" class="1004" name="LRHLS_stubMap_data_s_gep_fu_76">
+<pin_list>
+<pin id="77" dir="0" index="0" bw="32" slack="0"/>
+<pin id="78" dir="0" index="1" bw="1" slack="0"/>
+<pin id="79" dir="0" index="2" bw="32" slack="0"/>
+<pin id="80" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="LRHLS_stubMap_data_s/2 "/>
+</bind>
+</comp>
+
+<comp id="83" class="1004" name="grp_access_fu_83">
+<pin_list>
+<pin id="84" dir="0" index="0" bw="5" slack="0"/>
+<pin id="85" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="86" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="87" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="LRHLS_stubMap_data_57/2 "/>
+</bind>
+</comp>
+
+<comp id="89" class="1004" name="LRHLS_stubMap_data_58_gep_fu_89">
+<pin_list>
+<pin id="90" dir="0" index="0" bw="32" slack="0"/>
+<pin id="91" dir="0" index="1" bw="1" slack="0"/>
+<pin id="92" dir="0" index="2" bw="10" slack="0"/>
+<pin id="93" dir="1" index="3" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="LRHLS_stubMap_data_58/4 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="LRHLS_stubMap_data_59_gep_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="32" slack="0"/>
+<pin id="98" dir="0" index="1" bw="1" slack="0"/>
+<pin id="99" dir="0" index="2" bw="10" slack="0"/>
+<pin id="100" dir="1" index="3" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="LRHLS_stubMap_data_59/4 "/>
+</bind>
+</comp>
+
+<comp id="103" class="1004" name="grp_access_fu_103">
+<pin_list>
+<pin id="104" dir="0" index="0" bw="9" slack="1"/>
+<pin id="105" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="106" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="107" dir="1" index="3" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="LRHLS_stubMap_data_60/5 "/>
+</bind>
+</comp>
+
+<comp id="108" class="1004" name="grp_access_fu_108">
+<pin_list>
+<pin id="109" dir="0" index="0" bw="9" slack="1"/>
+<pin id="110" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="111" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="112" dir="1" index="3" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="LRHLS_stubMap_data_61/5 "/>
+</bind>
+</comp>
+
+<comp id="113" class="1005" name="p_begin_0_rec_reg_113">
+<pin_list>
+<pin id="114" dir="0" index="0" bw="32" slack="1"/>
+<pin id="115" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_begin_0_rec (phireg) "/>
+</bind>
+</comp>
+
+<comp id="117" class="1004" name="p_begin_0_rec_phi_fu_117">
+<pin_list>
+<pin id="118" dir="0" index="0" bw="1" slack="1"/>
+<pin id="119" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="120" dir="0" index="2" bw="32" slack="0"/>
+<pin id="121" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="122" dir="1" index="4" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="p_begin_0_rec/2 "/>
+</bind>
+</comp>
+
+<comp id="124" class="1005" name="p_begin2_0_rec_reg_124">
+<pin_list>
+<pin id="125" dir="0" index="0" bw="32" slack="1"/>
+<pin id="126" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_begin2_0_rec (phireg) "/>
+</bind>
+</comp>
+
+<comp id="128" class="1004" name="p_begin2_0_rec_phi_fu_128">
+<pin_list>
+<pin id="129" dir="0" index="0" bw="32" slack="0"/>
+<pin id="130" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="131" dir="0" index="2" bw="1" slack="1"/>
+<pin id="132" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="133" dir="1" index="4" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="p_begin2_0_rec/4 "/>
+</bind>
+</comp>
+
+<comp id="135" class="1004" name="grp_fu_135">
+<pin_list>
+<pin id="136" dir="0" index="0" bw="32" slack="1"/>
+<pin id="137" dir="0" index="1" bw="32" slack="1"/>
+<pin id="138" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="fsub(11) " fcode="fadd"/>
+<opset="pos_RPhi/7 phi1_assign/23 "/>
+</bind>
+</comp>
+
+<comp id="139" class="1004" name="grp_fu_139">
+<pin_list>
+<pin id="140" dir="0" index="0" bw="32" slack="1"/>
+<pin id="141" dir="0" index="1" bw="32" slack="6"/>
+<pin id="142" dir="1" index="2" bw="32" slack="7"/>
+</pin_list>
+<bind>
+<opcode="fsub(11) " fcode="fadd"/>
+<opset="tmp_s/7 "/>
+</bind>
+</comp>
+
+<comp id="143" class="1004" name="grp_fu_143">
+<pin_list>
+<pin id="144" dir="0" index="0" bw="32" slack="1"/>
+<pin id="145" dir="0" index="1" bw="32" slack="0"/>
+<pin id="146" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="fmul(13) " fcode="fmul"/>
+<opset="tmp_14/17 tmp_2_i_i_i_i/39 "/>
+</bind>
+</comp>
+
+<comp id="148" class="1004" name="grp_fu_148">
+<pin_list>
+<pin id="149" dir="0" index="0" bw="32" slack="1"/>
+<pin id="150" dir="0" index="1" bw="32" slack="0"/>
+<pin id="151" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="fcmp(46) " fcode="fcmp"/>
+<opset="tmp_19/33 tmp_21/37 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1005" name="reg_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="32" slack="1"/>
+<pin id="156" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="pos_RPhi phi1_assign "/>
+</bind>
+</comp>
+
+<comp id="160" class="1004" name="zext_ln106_fu_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="32" slack="0"/>
+<pin id="162" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln106/2 "/>
+</bind>
+</comp>
+
+<comp id="165" class="1004" name="trunc_ln106_fu_165">
+<pin_list>
+<pin id="166" dir="0" index="0" bw="32" slack="0"/>
+<pin id="167" dir="1" index="1" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln106/2 "/>
+</bind>
+</comp>
+
+<comp id="169" class="1004" name="p_cast3_fu_169">
+<pin_list>
+<pin id="170" dir="0" index="0" bw="10" slack="0"/>
+<pin id="171" dir="0" index="1" bw="6" slack="0"/>
+<pin id="172" dir="0" index="2" bw="1" slack="0"/>
+<pin id="173" dir="1" index="3" bw="10" slack="2"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_cast3/2 "/>
+</bind>
+</comp>
+
+<comp id="177" class="1004" name="icmp_ln106_fu_177">
+<pin_list>
+<pin id="178" dir="0" index="0" bw="32" slack="0"/>
+<pin id="179" dir="0" index="1" bw="32" slack="1"/>
+<pin id="180" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln106/2 "/>
+</bind>
+</comp>
+
+<comp id="182" class="1004" name="add_ln106_fu_182">
+<pin_list>
+<pin id="183" dir="0" index="0" bw="1" slack="0"/>
+<pin id="184" dir="0" index="1" bw="32" slack="0"/>
+<pin id="185" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln106/2 "/>
+</bind>
+</comp>
+
+<comp id="188" class="1004" name="icmp_ln162_fu_188">
+<pin_list>
+<pin id="189" dir="0" index="0" bw="32" slack="0"/>
+<pin id="190" dir="0" index="1" bw="32" slack="0"/>
+<pin id="191" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln162/3 "/>
+</bind>
+</comp>
+
+<comp id="194" class="1004" name="empty_fu_194">
+<pin_list>
+<pin id="195" dir="0" index="0" bw="32" slack="0"/>
+<pin id="196" dir="1" index="1" bw="10" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="empty/4 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="empty_20_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="10" slack="2"/>
+<pin id="200" dir="0" index="1" bw="10" slack="0"/>
+<pin id="201" dir="1" index="2" bw="10" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="empty_20/4 "/>
+</bind>
+</comp>
+
+<comp id="203" class="1004" name="p_cast_fu_203">
+<pin_list>
+<pin id="204" dir="0" index="0" bw="10" slack="0"/>
+<pin id="205" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="p_cast/4 "/>
+</bind>
+</comp>
+
+<comp id="209" class="1004" name="icmp_ln111_fu_209">
+<pin_list>
+<pin id="210" dir="0" index="0" bw="32" slack="0"/>
+<pin id="211" dir="0" index="1" bw="32" slack="1"/>
+<pin id="212" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln111/4 "/>
+</bind>
+</comp>
+
+<comp id="214" class="1004" name="add_ln111_fu_214">
+<pin_list>
+<pin id="215" dir="0" index="0" bw="1" slack="0"/>
+<pin id="216" dir="0" index="1" bw="32" slack="0"/>
+<pin id="217" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln111/4 "/>
+</bind>
+</comp>
+
+<comp id="220" class="1004" name="bitcast_ln32_fu_220">
+<pin_list>
+<pin id="221" dir="0" index="0" bw="32" slack="4"/>
+<pin id="222" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln32/36 "/>
+</bind>
+</comp>
+
+<comp id="224" class="1004" name="tmp_fu_224">
+<pin_list>
+<pin id="225" dir="0" index="0" bw="8" slack="0"/>
+<pin id="226" dir="0" index="1" bw="32" slack="0"/>
+<pin id="227" dir="0" index="2" bw="6" slack="0"/>
+<pin id="228" dir="0" index="3" bw="6" slack="0"/>
+<pin id="229" dir="1" index="4" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp/36 "/>
+</bind>
+</comp>
+
+<comp id="234" class="1004" name="trunc_ln32_fu_234">
+<pin_list>
+<pin id="235" dir="0" index="0" bw="32" slack="0"/>
+<pin id="236" dir="1" index="1" bw="23" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln32/36 "/>
+</bind>
+</comp>
+
+<comp id="238" class="1004" name="icmp_ln32_fu_238">
+<pin_list>
+<pin id="239" dir="0" index="0" bw="8" slack="0"/>
+<pin id="240" dir="0" index="1" bw="8" slack="0"/>
+<pin id="241" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln32/36 "/>
+</bind>
+</comp>
+
+<comp id="244" class="1004" name="icmp_ln32_8_fu_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="23" slack="0"/>
+<pin id="246" dir="0" index="1" bw="23" slack="0"/>
+<pin id="247" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln32_8/36 "/>
+</bind>
+</comp>
+
+<comp id="250" class="1004" name="or_ln32_fu_250">
+<pin_list>
+<pin id="251" dir="0" index="0" bw="1" slack="0"/>
+<pin id="252" dir="0" index="1" bw="1" slack="0"/>
+<pin id="253" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="or_ln32/36 "/>
+</bind>
+</comp>
+
+<comp id="256" class="1004" name="and_ln32_fu_256">
+<pin_list>
+<pin id="257" dir="0" index="0" bw="1" slack="0"/>
+<pin id="258" dir="0" index="1" bw="1" slack="1"/>
+<pin id="259" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="and_ln32/36 "/>
+</bind>
+</comp>
+
+<comp id="261" class="1004" name="xor_ln33_fu_261">
+<pin_list>
+<pin id="262" dir="0" index="0" bw="32" slack="0"/>
+<pin id="263" dir="0" index="1" bw="32" slack="0"/>
+<pin id="264" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="xor(25) " fcode="xor"/>
+<opset="xor_ln33/36 "/>
+</bind>
+</comp>
+
+<comp id="267" class="1004" name="bitcast_ln33_fu_267">
+<pin_list>
+<pin id="268" dir="0" index="0" bw="32" slack="0"/>
+<pin id="269" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln33/36 "/>
+</bind>
+</comp>
+
+<comp id="271" class="1004" name="select_ln32_fu_271">
+<pin_list>
+<pin id="272" dir="0" index="0" bw="1" slack="0"/>
+<pin id="273" dir="0" index="1" bw="32" slack="0"/>
+<pin id="274" dir="0" index="2" bw="32" slack="4"/>
+<pin id="275" dir="1" index="3" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="select_ln32/36 "/>
+</bind>
+</comp>
+
+<comp id="279" class="1004" name="bitcast_ln40_fu_279">
+<pin_list>
+<pin id="280" dir="0" index="0" bw="32" slack="1"/>
+<pin id="281" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln40/37 "/>
+</bind>
+</comp>
+
+<comp id="282" class="1004" name="tmp_20_fu_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="8" slack="0"/>
+<pin id="284" dir="0" index="1" bw="32" slack="0"/>
+<pin id="285" dir="0" index="2" bw="6" slack="0"/>
+<pin id="286" dir="0" index="3" bw="6" slack="0"/>
+<pin id="287" dir="1" index="4" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_20/37 "/>
+</bind>
+</comp>
+
+<comp id="292" class="1004" name="trunc_ln40_fu_292">
+<pin_list>
+<pin id="293" dir="0" index="0" bw="32" slack="0"/>
+<pin id="294" dir="1" index="1" bw="23" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln40/37 "/>
+</bind>
+</comp>
+
+<comp id="296" class="1004" name="icmp_ln40_fu_296">
+<pin_list>
+<pin id="297" dir="0" index="0" bw="8" slack="0"/>
+<pin id="298" dir="0" index="1" bw="8" slack="0"/>
+<pin id="299" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln40/37 "/>
+</bind>
+</comp>
+
+<comp id="302" class="1004" name="icmp_ln40_3_fu_302">
+<pin_list>
+<pin id="303" dir="0" index="0" bw="23" slack="0"/>
+<pin id="304" dir="0" index="1" bw="23" slack="0"/>
+<pin id="305" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln40_3/37 "/>
+</bind>
+</comp>
+
+<comp id="308" class="1004" name="or_ln40_fu_308">
+<pin_list>
+<pin id="309" dir="0" index="0" bw="1" slack="2"/>
+<pin id="310" dir="0" index="1" bw="1" slack="2"/>
+<pin id="311" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="or_ln40/39 "/>
+</bind>
+</comp>
+
+<comp id="312" class="1004" name="and_ln40_fu_312">
+<pin_list>
+<pin id="313" dir="0" index="0" bw="1" slack="0"/>
+<pin id="314" dir="0" index="1" bw="1" slack="0"/>
+<pin id="315" dir="1" index="2" bw="1" slack="5"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="and_ln40/39 "/>
+</bind>
+</comp>
+
+<comp id="318" class="1004" name="guard_variable_for_f_3_load_fu_318">
+<pin_list>
+<pin id="319" dir="0" index="0" bw="1" slack="0"/>
+<pin id="320" dir="1" index="1" bw="1" slack="5"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="guard_variable_for_f_3/39 "/>
+</bind>
+</comp>
+
+<comp id="322" class="1004" name="store_ln42_store_fu_322">
+<pin_list>
+<pin id="323" dir="0" index="0" bw="1" slack="0"/>
+<pin id="324" dir="0" index="1" bw="1" slack="0"/>
+<pin id="325" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln42/39 "/>
+</bind>
+</comp>
+
+<comp id="328" class="1004" name="store_ln42_store_fu_328">
+<pin_list>
+<pin id="329" dir="0" index="0" bw="32" slack="0"/>
+<pin id="330" dir="0" index="1" bw="32" slack="0"/>
+<pin id="331" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln42/44 "/>
+</bind>
+</comp>
+
+<comp id="334" class="1005" name="LRHLS_stubMap_size_s_reg_334">
+<pin_list>
+<pin id="335" dir="0" index="0" bw="32" slack="1"/>
+<pin id="336" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_size_s "/>
+</bind>
+</comp>
+
+<comp id="339" class="1005" name="LRHLS_HTParameter_p_reg_339">
+<pin_list>
+<pin id="340" dir="0" index="0" bw="32" slack="6"/>
+<pin id="341" dir="1" index="1" bw="32" slack="6"/>
+</pin_list>
+<bind>
+<opset="LRHLS_HTParameter_p "/>
+</bind>
+</comp>
+
+<comp id="344" class="1005" name="LRHLS_HTParameter_q_reg_344">
+<pin_list>
+<pin id="345" dir="0" index="0" bw="32" slack="16"/>
+<pin id="346" dir="1" index="1" bw="32" slack="16"/>
+</pin_list>
+<bind>
+<opset="LRHLS_HTParameter_q "/>
+</bind>
+</comp>
+
+<comp id="349" class="1005" name="LRHLS_settings_chos_reg_349">
+<pin_list>
+<pin id="350" dir="0" index="0" bw="32" slack="6"/>
+<pin id="351" dir="1" index="1" bw="32" slack="6"/>
+</pin_list>
+<bind>
+<opset="LRHLS_settings_chos "/>
+</bind>
+</comp>
+
+<comp id="354" class="1005" name="p_cast3_reg_354">
+<pin_list>
+<pin id="355" dir="0" index="0" bw="10" slack="2"/>
+<pin id="356" dir="1" index="1" bw="10" slack="2"/>
+</pin_list>
+<bind>
+<opset="p_cast3 "/>
+</bind>
+</comp>
+
+<comp id="362" class="1005" name="add_ln106_reg_362">
+<pin_list>
+<pin id="363" dir="0" index="0" bw="32" slack="0"/>
+<pin id="364" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="add_ln106 "/>
+</bind>
+</comp>
+
+<comp id="367" class="1005" name="LRHLS_stubMap_data_s_reg_367">
+<pin_list>
+<pin id="368" dir="0" index="0" bw="5" slack="1"/>
+<pin id="369" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_data_s "/>
+</bind>
+</comp>
+
+<comp id="372" class="1005" name="LRHLS_stubMap_data_57_reg_372">
+<pin_list>
+<pin id="373" dir="0" index="0" bw="32" slack="1"/>
+<pin id="374" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_data_57 "/>
+</bind>
+</comp>
+
+<comp id="377" class="1005" name="icmp_ln162_reg_377">
+<pin_list>
+<pin id="378" dir="0" index="0" bw="1" slack="1"/>
+<pin id="379" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln162 "/>
+</bind>
+</comp>
+
+<comp id="381" class="1005" name="LRHLS_stubMap_data_58_reg_381">
+<pin_list>
+<pin id="382" dir="0" index="0" bw="9" slack="1"/>
+<pin id="383" dir="1" index="1" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_data_58 "/>
+</bind>
+</comp>
+
+<comp id="386" class="1005" name="LRHLS_stubMap_data_59_reg_386">
+<pin_list>
+<pin id="387" dir="0" index="0" bw="9" slack="1"/>
+<pin id="388" dir="1" index="1" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_data_59 "/>
+</bind>
+</comp>
+
+<comp id="394" class="1005" name="add_ln111_reg_394">
+<pin_list>
+<pin id="395" dir="0" index="0" bw="32" slack="0"/>
+<pin id="396" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="add_ln111 "/>
+</bind>
+</comp>
+
+<comp id="399" class="1005" name="LRHLS_stubMap_data_60_reg_399">
+<pin_list>
+<pin id="400" dir="0" index="0" bw="32" slack="1"/>
+<pin id="401" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_data_60 "/>
+</bind>
+</comp>
+
+<comp id="404" class="1005" name="LRHLS_stubMap_data_61_reg_404">
+<pin_list>
+<pin id="405" dir="0" index="0" bw="32" slack="1"/>
+<pin id="406" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_stubMap_data_61 "/>
+</bind>
+</comp>
+
+<comp id="409" class="1005" name="tmp_s_reg_409">
+<pin_list>
+<pin id="410" dir="0" index="0" bw="32" slack="7"/>
+<pin id="411" dir="1" index="1" bw="32" slack="7"/>
+</pin_list>
+<bind>
+<opset="tmp_s "/>
+</bind>
+</comp>
+
+<comp id="414" class="1005" name="tmp_14_reg_414">
+<pin_list>
+<pin id="415" dir="0" index="0" bw="32" slack="1"/>
+<pin id="416" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_14 "/>
+</bind>
+</comp>
+
+<comp id="419" class="1005" name="tmp_19_reg_419">
+<pin_list>
+<pin id="420" dir="0" index="0" bw="1" slack="1"/>
+<pin id="421" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_19 "/>
+</bind>
+</comp>
+
+<comp id="424" class="1005" name="select_ln32_reg_424">
+<pin_list>
+<pin id="425" dir="0" index="0" bw="32" slack="1"/>
+<pin id="426" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="select_ln32 "/>
+</bind>
+</comp>
+
+<comp id="430" class="1005" name="icmp_ln40_reg_430">
+<pin_list>
+<pin id="431" dir="0" index="0" bw="1" slack="2"/>
+<pin id="432" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opset="icmp_ln40 "/>
+</bind>
+</comp>
+
+<comp id="435" class="1005" name="icmp_ln40_3_reg_435">
+<pin_list>
+<pin id="436" dir="0" index="0" bw="1" slack="2"/>
+<pin id="437" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opset="icmp_ln40_3 "/>
+</bind>
+</comp>
+
+<comp id="440" class="1005" name="and_ln40_reg_440">
+<pin_list>
+<pin id="441" dir="0" index="0" bw="1" slack="5"/>
+<pin id="442" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="and_ln40 "/>
+</bind>
+</comp>
+
+<comp id="444" class="1005" name="guard_variable_for_f_3_reg_444">
+<pin_list>
+<pin id="445" dir="0" index="0" bw="1" slack="5"/>
+<pin id="446" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="guard_variable_for_f_3 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="56"><net_src comp="18" pin="0"/><net_sink comp="52" pin=0"/></net>
+
+<net id="57"><net_src comp="6" pin="0"/><net_sink comp="52" pin=1"/></net>
+
+<net id="62"><net_src comp="20" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="63"><net_src comp="4" pin="0"/><net_sink comp="58" pin=1"/></net>
+
+<net id="68"><net_src comp="20" pin="0"/><net_sink comp="64" pin=0"/></net>
+
+<net id="69"><net_src comp="2" pin="0"/><net_sink comp="64" pin=1"/></net>
+
+<net id="74"><net_src comp="20" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="75"><net_src comp="0" pin="0"/><net_sink comp="70" pin=1"/></net>
+
+<net id="81"><net_src comp="8" pin="0"/><net_sink comp="76" pin=0"/></net>
+
+<net id="82"><net_src comp="30" pin="0"/><net_sink comp="76" pin=1"/></net>
+
+<net id="88"><net_src comp="76" pin="3"/><net_sink comp="83" pin=0"/></net>
+
+<net id="94"><net_src comp="10" pin="0"/><net_sink comp="89" pin=0"/></net>
+
+<net id="95"><net_src comp="30" pin="0"/><net_sink comp="89" pin=1"/></net>
+
+<net id="101"><net_src comp="12" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="102"><net_src comp="30" pin="0"/><net_sink comp="96" pin=1"/></net>
+
+<net id="116"><net_src comp="22" pin="0"/><net_sink comp="113" pin=0"/></net>
+
+<net id="123"><net_src comp="113" pin="1"/><net_sink comp="117" pin=0"/></net>
+
+<net id="127"><net_src comp="22" pin="0"/><net_sink comp="124" pin=0"/></net>
+
+<net id="134"><net_src comp="124" pin="1"/><net_sink comp="128" pin=2"/></net>
+
+<net id="147"><net_src comp="48" pin="0"/><net_sink comp="143" pin=1"/></net>
+
+<net id="152"><net_src comp="32" pin="0"/><net_sink comp="148" pin=1"/></net>
+
+<net id="153"><net_src comp="46" pin="0"/><net_sink comp="148" pin=1"/></net>
+
+<net id="157"><net_src comp="135" pin="2"/><net_sink comp="154" pin=0"/></net>
+
+<net id="158"><net_src comp="154" pin="1"/><net_sink comp="143" pin=0"/></net>
+
+<net id="159"><net_src comp="154" pin="1"/><net_sink comp="148" pin=0"/></net>
+
+<net id="163"><net_src comp="117" pin="4"/><net_sink comp="160" pin=0"/></net>
+
+<net id="164"><net_src comp="160" pin="1"/><net_sink comp="76" pin=2"/></net>
+
+<net id="168"><net_src comp="117" pin="4"/><net_sink comp="165" pin=0"/></net>
+
+<net id="174"><net_src comp="24" pin="0"/><net_sink comp="169" pin=0"/></net>
+
+<net id="175"><net_src comp="165" pin="1"/><net_sink comp="169" pin=1"/></net>
+
+<net id="176"><net_src comp="26" pin="0"/><net_sink comp="169" pin=2"/></net>
+
+<net id="181"><net_src comp="117" pin="4"/><net_sink comp="177" pin=0"/></net>
+
+<net id="186"><net_src comp="28" pin="0"/><net_sink comp="182" pin=0"/></net>
+
+<net id="187"><net_src comp="117" pin="4"/><net_sink comp="182" pin=1"/></net>
+
+<net id="192"><net_src comp="83" pin="3"/><net_sink comp="188" pin=0"/></net>
+
+<net id="193"><net_src comp="22" pin="0"/><net_sink comp="188" pin=1"/></net>
+
+<net id="197"><net_src comp="128" pin="4"/><net_sink comp="194" pin=0"/></net>
+
+<net id="202"><net_src comp="194" pin="1"/><net_sink comp="198" pin=1"/></net>
+
+<net id="206"><net_src comp="198" pin="2"/><net_sink comp="203" pin=0"/></net>
+
+<net id="207"><net_src comp="203" pin="1"/><net_sink comp="89" pin=2"/></net>
+
+<net id="208"><net_src comp="203" pin="1"/><net_sink comp="96" pin=2"/></net>
+
+<net id="213"><net_src comp="128" pin="4"/><net_sink comp="209" pin=0"/></net>
+
+<net id="218"><net_src comp="28" pin="0"/><net_sink comp="214" pin=0"/></net>
+
+<net id="219"><net_src comp="128" pin="4"/><net_sink comp="214" pin=1"/></net>
+
+<net id="223"><net_src comp="154" pin="1"/><net_sink comp="220" pin=0"/></net>
+
+<net id="230"><net_src comp="34" pin="0"/><net_sink comp="224" pin=0"/></net>
+
+<net id="231"><net_src comp="220" pin="1"/><net_sink comp="224" pin=1"/></net>
+
+<net id="232"><net_src comp="36" pin="0"/><net_sink comp="224" pin=2"/></net>
+
+<net id="233"><net_src comp="38" pin="0"/><net_sink comp="224" pin=3"/></net>
+
+<net id="237"><net_src comp="220" pin="1"/><net_sink comp="234" pin=0"/></net>
+
+<net id="242"><net_src comp="224" pin="4"/><net_sink comp="238" pin=0"/></net>
+
+<net id="243"><net_src comp="40" pin="0"/><net_sink comp="238" pin=1"/></net>
+
+<net id="248"><net_src comp="234" pin="1"/><net_sink comp="244" pin=0"/></net>
+
+<net id="249"><net_src comp="42" pin="0"/><net_sink comp="244" pin=1"/></net>
+
+<net id="254"><net_src comp="244" pin="2"/><net_sink comp="250" pin=0"/></net>
+
+<net id="255"><net_src comp="238" pin="2"/><net_sink comp="250" pin=1"/></net>
+
+<net id="260"><net_src comp="250" pin="2"/><net_sink comp="256" pin=0"/></net>
+
+<net id="265"><net_src comp="220" pin="1"/><net_sink comp="261" pin=0"/></net>
+
+<net id="266"><net_src comp="44" pin="0"/><net_sink comp="261" pin=1"/></net>
+
+<net id="270"><net_src comp="261" pin="2"/><net_sink comp="267" pin=0"/></net>
+
+<net id="276"><net_src comp="256" pin="2"/><net_sink comp="271" pin=0"/></net>
+
+<net id="277"><net_src comp="267" pin="1"/><net_sink comp="271" pin=1"/></net>
+
+<net id="278"><net_src comp="154" pin="1"/><net_sink comp="271" pin=2"/></net>
+
+<net id="288"><net_src comp="34" pin="0"/><net_sink comp="282" pin=0"/></net>
+
+<net id="289"><net_src comp="279" pin="1"/><net_sink comp="282" pin=1"/></net>
+
+<net id="290"><net_src comp="36" pin="0"/><net_sink comp="282" pin=2"/></net>
+
+<net id="291"><net_src comp="38" pin="0"/><net_sink comp="282" pin=3"/></net>
+
+<net id="295"><net_src comp="279" pin="1"/><net_sink comp="292" pin=0"/></net>
+
+<net id="300"><net_src comp="282" pin="4"/><net_sink comp="296" pin=0"/></net>
+
+<net id="301"><net_src comp="40" pin="0"/><net_sink comp="296" pin=1"/></net>
+
+<net id="306"><net_src comp="292" pin="1"/><net_sink comp="302" pin=0"/></net>
+
+<net id="307"><net_src comp="42" pin="0"/><net_sink comp="302" pin=1"/></net>
+
+<net id="316"><net_src comp="308" pin="2"/><net_sink comp="312" pin=0"/></net>
+
+<net id="317"><net_src comp="148" pin="2"/><net_sink comp="312" pin=1"/></net>
+
+<net id="321"><net_src comp="14" pin="0"/><net_sink comp="318" pin=0"/></net>
+
+<net id="326"><net_src comp="50" pin="0"/><net_sink comp="322" pin=0"/></net>
+
+<net id="327"><net_src comp="14" pin="0"/><net_sink comp="322" pin=1"/></net>
+
+<net id="332"><net_src comp="143" pin="2"/><net_sink comp="328" pin=0"/></net>
+
+<net id="333"><net_src comp="16" pin="0"/><net_sink comp="328" pin=1"/></net>
+
+<net id="337"><net_src comp="52" pin="2"/><net_sink comp="334" pin=0"/></net>
+
+<net id="338"><net_src comp="334" pin="1"/><net_sink comp="177" pin=1"/></net>
+
+<net id="342"><net_src comp="58" pin="2"/><net_sink comp="339" pin=0"/></net>
+
+<net id="343"><net_src comp="339" pin="1"/><net_sink comp="139" pin=1"/></net>
+
+<net id="347"><net_src comp="64" pin="2"/><net_sink comp="344" pin=0"/></net>
+
+<net id="348"><net_src comp="344" pin="1"/><net_sink comp="143" pin=1"/></net>
+
+<net id="352"><net_src comp="70" pin="2"/><net_sink comp="349" pin=0"/></net>
+
+<net id="353"><net_src comp="349" pin="1"/><net_sink comp="135" pin=1"/></net>
+
+<net id="357"><net_src comp="169" pin="3"/><net_sink comp="354" pin=0"/></net>
+
+<net id="358"><net_src comp="354" pin="1"/><net_sink comp="198" pin=0"/></net>
+
+<net id="365"><net_src comp="182" pin="2"/><net_sink comp="362" pin=0"/></net>
+
+<net id="366"><net_src comp="362" pin="1"/><net_sink comp="117" pin=2"/></net>
+
+<net id="370"><net_src comp="76" pin="3"/><net_sink comp="367" pin=0"/></net>
+
+<net id="371"><net_src comp="367" pin="1"/><net_sink comp="83" pin=0"/></net>
+
+<net id="375"><net_src comp="83" pin="3"/><net_sink comp="372" pin=0"/></net>
+
+<net id="376"><net_src comp="372" pin="1"/><net_sink comp="209" pin=1"/></net>
+
+<net id="380"><net_src comp="188" pin="2"/><net_sink comp="377" pin=0"/></net>
+
+<net id="384"><net_src comp="89" pin="3"/><net_sink comp="381" pin=0"/></net>
+
+<net id="385"><net_src comp="381" pin="1"/><net_sink comp="103" pin=0"/></net>
+
+<net id="389"><net_src comp="96" pin="3"/><net_sink comp="386" pin=0"/></net>
+
+<net id="390"><net_src comp="386" pin="1"/><net_sink comp="108" pin=0"/></net>
+
+<net id="397"><net_src comp="214" pin="2"/><net_sink comp="394" pin=0"/></net>
+
+<net id="398"><net_src comp="394" pin="1"/><net_sink comp="128" pin=0"/></net>
+
+<net id="402"><net_src comp="103" pin="3"/><net_sink comp="399" pin=0"/></net>
+
+<net id="403"><net_src comp="399" pin="1"/><net_sink comp="135" pin=0"/></net>
+
+<net id="407"><net_src comp="108" pin="3"/><net_sink comp="404" pin=0"/></net>
+
+<net id="408"><net_src comp="404" pin="1"/><net_sink comp="139" pin=0"/></net>
+
+<net id="412"><net_src comp="139" pin="2"/><net_sink comp="409" pin=0"/></net>
+
+<net id="413"><net_src comp="409" pin="1"/><net_sink comp="135" pin=0"/></net>
+
+<net id="417"><net_src comp="143" pin="2"/><net_sink comp="414" pin=0"/></net>
+
+<net id="418"><net_src comp="414" pin="1"/><net_sink comp="135" pin=1"/></net>
+
+<net id="422"><net_src comp="148" pin="2"/><net_sink comp="419" pin=0"/></net>
+
+<net id="423"><net_src comp="419" pin="1"/><net_sink comp="256" pin=1"/></net>
+
+<net id="427"><net_src comp="271" pin="3"/><net_sink comp="424" pin=0"/></net>
+
+<net id="428"><net_src comp="424" pin="1"/><net_sink comp="279" pin=0"/></net>
+
+<net id="429"><net_src comp="424" pin="1"/><net_sink comp="148" pin=0"/></net>
+
+<net id="433"><net_src comp="296" pin="2"/><net_sink comp="430" pin=0"/></net>
+
+<net id="434"><net_src comp="430" pin="1"/><net_sink comp="308" pin=1"/></net>
+
+<net id="438"><net_src comp="302" pin="2"/><net_sink comp="435" pin=0"/></net>
+
+<net id="439"><net_src comp="435" pin="1"/><net_sink comp="308" pin=0"/></net>
+
+<net id="443"><net_src comp="312" pin="2"/><net_sink comp="440" pin=0"/></net>
+
+<net id="447"><net_src comp="318" pin="1"/><net_sink comp="444" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: LRHLS_stubMap_data_second_size_s | {}
+	Port: LRHLS_stubMap_data_second_data_r_s | {}
+	Port: LRHLS_stubMap_data_second_data_phi_s | {}
+	Port: guard_variable_for_f | {39 }
+	Port: n | {44 }
+ - Input state : 
+	Port: calcHelix : LRHLS_settings_chosenRofPhi_read | {1 }
+	Port: calcHelix : LRHLS_HTParameter_qOverPt_read | {1 }
+	Port: calcHelix : LRHLS_HTParameter_phiT_read | {1 }
+	Port: calcHelix : LRHLS_stubMap_size_read | {1 }
+	Port: calcHelix : LRHLS_stubMap_data_second_size_s | {2 3 }
+	Port: calcHelix : LRHLS_stubMap_data_second_data_r_s | {5 6 }
+	Port: calcHelix : LRHLS_stubMap_data_second_data_phi_s | {5 6 }
+	Port: calcHelix : guard_variable_for_f | {39 }
+	Port: calcHelix : n | {}
+  - Chain level:
+	State 1
+	State 2
+		zext_ln106 : 1
+		trunc_ln106 : 1
+		p_cast3 : 2
+		icmp_ln106 : 1
+		add_ln106 : 1
+		br_ln106 : 2
+		LRHLS_stubMap_data_s : 2
+		LRHLS_stubMap_data_57 : 3
+	State 3
+		icmp_ln162 : 1
+		br_ln107 : 2
+	State 4
+		empty : 1
+		empty_20 : 2
+		p_cast : 3
+		LRHLS_stubMap_data_58 : 4
+		LRHLS_stubMap_data_59 : 4
+		icmp_ln111 : 1
+		add_ln111 : 1
+		br_ln111 : 2
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+		tmp : 1
+		trunc_ln32 : 1
+		icmp_ln32 : 2
+		icmp_ln32_8 : 2
+		or_ln32 : 3
+		and_ln32 : 3
+		xor_ln33 : 1
+		bitcast_ln33 : 1
+		select_ln32 : 3
+	State 37
+		tmp_20 : 1
+		trunc_ln40 : 1
+		icmp_ln40 : 2
+		icmp_ln40_3 : 2
+	State 38
+	State 39
+		and_ln40 : 1
+		br_ln40 : 1
+		br_ln42 : 1
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+		store_ln42 : 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|---------------------------------|---------|---------|---------|
+| Operation|         Functional Unit         |  DSP48E |    FF   |   LUT   |
+|----------|---------------------------------|---------|---------|---------|
+|   fadd   |            grp_fu_135           |    2    |   365   |   238   |
+|          |            grp_fu_139           |    2    |   365   |   238   |
+|----------|---------------------------------|---------|---------|---------|
+|   fmul   |            grp_fu_143           |    3    |   165   |   146   |
+|----------|---------------------------------|---------|---------|---------|
+|   fcmp   |            grp_fu_148           |    0    |    66   |    72   |
+|----------|---------------------------------|---------|---------|---------|
+|          |        icmp_ln106_fu_177        |    0    |    0    |    20   |
+|          |        icmp_ln162_fu_188        |    0    |    0    |    20   |
+|          |        icmp_ln111_fu_209        |    0    |    0    |    20   |
+|   icmp   |         icmp_ln32_fu_238        |    0    |    0    |    11   |
+|          |        icmp_ln32_8_fu_244       |    0    |    0    |    20   |
+|          |         icmp_ln40_fu_296        |    0    |    0    |    11   |
+|          |        icmp_ln40_3_fu_302       |    0    |    0    |    20   |
+|----------|---------------------------------|---------|---------|---------|
+|          |         add_ln106_fu_182        |    0    |    0    |    39   |
+|    add   |         empty_20_fu_198         |    0    |    0    |    17   |
+|          |         add_ln111_fu_214        |    0    |    0    |    39   |
+|----------|---------------------------------|---------|---------|---------|
+|    xor   |         xor_ln33_fu_261         |    0    |    0    |    32   |
+|----------|---------------------------------|---------|---------|---------|
+|  select  |        select_ln32_fu_271       |    0    |    0    |    32   |
+|----------|---------------------------------|---------|---------|---------|
+|    or    |          or_ln32_fu_250         |    0    |    0    |    2    |
+|          |          or_ln40_fu_308         |    0    |    0    |    2    |
+|----------|---------------------------------|---------|---------|---------|
+|    and   |         and_ln32_fu_256         |    0    |    0    |    2    |
+|          |         and_ln40_fu_312         |    0    |    0    |    2    |
+|----------|---------------------------------|---------|---------|---------|
+|          | LRHLS_stubMap_size_s_read_fu_52 |    0    |    0    |    0    |
+|   read   |  LRHLS_HTParameter_p_read_fu_58 |    0    |    0    |    0    |
+|          |  LRHLS_HTParameter_q_read_fu_64 |    0    |    0    |    0    |
+|          |  LRHLS_settings_chos_read_fu_70 |    0    |    0    |    0    |
+|----------|---------------------------------|---------|---------|---------|
+|   zext   |        zext_ln106_fu_160        |    0    |    0    |    0    |
+|          |          p_cast_fu_203          |    0    |    0    |    0    |
+|----------|---------------------------------|---------|---------|---------|
+|          |        trunc_ln106_fu_165       |    0    |    0    |    0    |
+|   trunc  |           empty_fu_194          |    0    |    0    |    0    |
+|          |        trunc_ln32_fu_234        |    0    |    0    |    0    |
+|          |        trunc_ln40_fu_292        |    0    |    0    |    0    |
+|----------|---------------------------------|---------|---------|---------|
+|bitconcatenate|          p_cast3_fu_169         |    0    |    0    |    0    |
+|----------|---------------------------------|---------|---------|---------|
+|partselect|            tmp_fu_224           |    0    |    0    |    0    |
+|          |          tmp_20_fu_282          |    0    |    0    |    0    |
+|----------|---------------------------------|---------|---------|---------|
+|   Total  |                                 |    7    |   961   |   983   |
+|----------|---------------------------------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++------------------------------+--------+
+|                              |   FF   |
++------------------------------+--------+
+|  LRHLS_HTParameter_p_reg_339 |   32   |
+|  LRHLS_HTParameter_q_reg_344 |   32   |
+|  LRHLS_settings_chos_reg_349 |   32   |
+| LRHLS_stubMap_data_57_reg_372|   32   |
+| LRHLS_stubMap_data_58_reg_381|    9   |
+| LRHLS_stubMap_data_59_reg_386|    9   |
+| LRHLS_stubMap_data_60_reg_399|   32   |
+| LRHLS_stubMap_data_61_reg_404|   32   |
+| LRHLS_stubMap_data_s_reg_367 |    5   |
+| LRHLS_stubMap_size_s_reg_334 |   32   |
+|       add_ln106_reg_362      |   32   |
+|       add_ln111_reg_394      |   32   |
+|       and_ln40_reg_440       |    1   |
+|guard_variable_for_f_3_reg_444|    1   |
+|      icmp_ln162_reg_377      |    1   |
+|      icmp_ln40_3_reg_435     |    1   |
+|       icmp_ln40_reg_430      |    1   |
+|    p_begin2_0_rec_reg_124    |   32   |
+|     p_begin_0_rec_reg_113    |   32   |
+|        p_cast3_reg_354       |   10   |
+|            reg_154           |   32   |
+|      select_ln32_reg_424     |   32   |
+|        tmp_14_reg_414        |   32   |
+|        tmp_19_reg_419        |    1   |
+|         tmp_s_reg_409        |   32   |
++------------------------------+--------+
+|             Total            |   519  |
++------------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_access_fu_83 |  p0  |   2  |   5  |   10   ||    9    |
+|    grp_fu_135    |  p0  |   2  |  32  |   64   ||    9    |
+|    grp_fu_135    |  p1  |   2  |  32  |   64   ||    9    |
+|    grp_fu_143    |  p1  |   2  |  32  |   64   ||    9    |
+|    grp_fu_148    |  p0  |   2  |  32  |   64   ||    9    |
+|    grp_fu_148    |  p1  |   2  |  32  |   64   |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |   330  ||   5.01  ||    45   |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |    7   |    -   |   961  |   983  |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    5   |    -   |   45   |
+|  Register |    -   |    -   |   519  |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |    7   |    5   |  1480  |  1028  |
++-----------+--------+--------+--------+--------+

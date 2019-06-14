@@ -1,0 +1,1248 @@
+
+
+================================================================
+== Vivado HLS Report for 'countLayers'
+================================================================
+* Date:           Fri Jun 14 18:58:38 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     1.926|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        |- Loop 2  |    ?|    ?|         3|          -|          -|     ?|    no    |
+        |- Loop 3  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|     248|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |        -|      -|        -|       -|    -|
+|Memory               |        0|      -|        2|       1|    0|
+|Multiplexer          |        -|      -|        -|     122|    -|
+|Register             |        -|      -|      236|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |        0|      0|      238|     371|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     2160|   2760|   663360|  331680|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |        0|      0|    ~0   |   ~0   |  100|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     4320|   5520|  1326720|  663360|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        0|      0|    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +----------------------+--------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |        Memory        |             Module             | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------------+--------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |foundLayers_data_s_U  |countLayers_foundLayers_data_s  |        0|  2|   1|    0|    30|    1|     1|           30|
+    +----------------------+--------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                 |                                |        0|  2|   1|    0|    30|    1|     1|           30|
+    +----------------------+--------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |add_ln96_fu_173_p2     |     +    |      0|  0|  39|          32|           1|
+    |count_fu_200_p2        |     +    |      0|  0|  39|          32|           1|
+    |i_18_fu_189_p2         |     +    |      0|  0|  39|          32|           1|
+    |i_fu_151_p2            |     +    |      0|  0|  39|          32|           1|
+    |icmp_ln63_fu_146_p2    |   icmp   |      0|  0|  20|          32|          32|
+    |icmp_ln75_fu_184_p2    |   icmp   |      0|  0|  20|          32|          32|
+    |icmp_ln96_fu_168_p2    |   icmp   |      0|  0|  20|          32|          32|
+    |select_ln76_fu_206_p3  |  select  |      0|  0|  32|           1|          32|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 248|         225|         132|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                    |  41|          8|    1|          8|
+    |ap_return                    |   9|          2|   32|         64|
+    |count_0_i_reg_134            |   9|          2|   32|         64|
+    |foundLayers_data_s_address0  |  21|          4|    5|         20|
+    |foundLayers_data_s_d0        |  15|          3|    1|          3|
+    |i_0_i_i_reg_101              |   9|          2|   32|         64|
+    |i_0_i_reg_123                |   9|          2|   32|         64|
+    |p_begin_0_rec_reg_112        |   9|          2|   32|         64|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        | 122|         25|  167|        351|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+----+----+-----+-----------+
+    |              Name             | FF | LUT| Bits| Const Bits|
+    +-------------------------------+----+----+-----+-----------+
+    |add_ln96_reg_250               |  32|   0|   32|          0|
+    |ap_CS_fsm                      |   7|   0|    7|          0|
+    |ap_return_preg                 |  32|   0|   32|          0|
+    |count_0_i_reg_134              |  32|   0|   32|          0|
+    |i_0_i_i_reg_101                |  32|   0|   32|          0|
+    |i_0_i_reg_123                  |  32|   0|   32|          0|
+    |i_18_reg_262                   |  32|   0|   32|          0|
+    |p_begin_0_rec_reg_112          |  32|   0|   32|          0|
+    |stubs_data_moduleHL_1_reg_242  |   4|   0|    4|          0|
+    |stubs_data_moduleHL_2_reg_255  |   1|   0|    1|          0|
+    +-------------------------------+----+----+-----+-----------+
+    |Total                          | 236|   0|  236|          0|
+    +-------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------------+-----+-----+------------+---------------------------------+--------------+
+|                 RTL Ports                | Dir | Bits|  Protocol  |          Source Object          |    C Type    |
++------------------------------------------+-----+-----+------------+---------------------------------+--------------+
+|ap_clk                                    |  in |    1| ap_ctrl_hs |           countLayers           | return value |
+|ap_rst                                    |  in |    1| ap_ctrl_hs |           countLayers           | return value |
+|ap_start                                  |  in |    1| ap_ctrl_hs |           countLayers           | return value |
+|ap_done                                   | out |    1| ap_ctrl_hs |           countLayers           | return value |
+|ap_idle                                   | out |    1| ap_ctrl_hs |           countLayers           | return value |
+|ap_ready                                  | out |    1| ap_ctrl_hs |           countLayers           | return value |
+|ap_return                                 | out |   32| ap_ctrl_hs |           countLayers           | return value |
+|LRHLS_numLayers_read                      |  in |   32|   ap_none  |       LRHLS_numLayers_read      |    scalar    |
+|stubs_size_read                           |  in |   32|   ap_none  |         stubs_size_read         |    scalar    |
+|stubs_data_moduleHLS_psModule_s_address0  | out |    4|  ap_memory | stubs_data_moduleHLS_psModule_s |     array    |
+|stubs_data_moduleHLS_psModule_s_ce0       | out |    1|  ap_memory | stubs_data_moduleHLS_psModule_s |     array    |
+|stubs_data_moduleHLS_psModule_s_q0        |  in |    1|  ap_memory | stubs_data_moduleHLS_psModule_s |     array    |
+|stubs_data_moduleHLS_layerId_s_address0   | out |    4|  ap_memory |  stubs_data_moduleHLS_layerId_s |     array    |
+|stubs_data_moduleHLS_layerId_s_ce0        | out |    1|  ap_memory |  stubs_data_moduleHLS_layerId_s |     array    |
+|stubs_data_moduleHLS_layerId_s_q0         |  in |   32|  ap_memory |  stubs_data_moduleHLS_layerId_s |     array    |
+|onlySeed_read                             |  in |    1|   ap_none  |          onlySeed_read          |    scalar    |
++------------------------------------------+-----+-----+------------+---------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 6 
+4 --> 5 
+5 --> 3 
+6 --> 7 
+7 --> 6 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.83>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%onlySeed_read_1 = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %onlySeed_read)"   --->   Operation 8 'read' 'onlySeed_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%stubs_size_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %stubs_size_read)"   --->   Operation 9 'read' 'stubs_size_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%LRHLS_numLayers_rea = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_numLayers_read)"   --->   Operation 10 'read' 'LRHLS_numLayers_rea' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.69ns)   --->   "%foundLayers_data_s = alloca [30 x i1], align 1" [HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 11 'alloca' 'foundLayers_data_s' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_1 : Operation 12 [1/1] (0.83ns)   --->   "br label %1" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 12 'br' <Predicate = true> <Delay = 0.83>
+
+State 2 <SV = 1> <Delay = 1.48>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i_0_i_i = phi i32 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 13 'phi' 'i_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.14ns)   --->   "%icmp_ln63 = icmp eq i32 %i_0_i_i, %LRHLS_numLayers_rea" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 14 'icmp' 'icmp_ln63' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (1.48ns)   --->   "%i = add i32 %i_0_i_i, 1" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 15 'add' 'i' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "br i1 %icmp_ln63, label %SLVHLS.exit.preheader, label %2" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 16 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln64 = zext i32 %i_0_i_i to i64" [HLS_LR/.settings/LRutility.h:64->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 17 'zext' 'zext_ln64' <Predicate = (!icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%foundLayers_data_ad = getelementptr [30 x i1]* %foundLayers_data_s, i64 0, i64 %zext_ln64" [HLS_LR/.settings/LRutility.h:64->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 18 'getelementptr' 'foundLayers_data_ad' <Predicate = (!icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.69ns)   --->   "store i1 false, i1* %foundLayers_data_ad, align 1" [HLS_LR/.settings/LRutility.h:64->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 19 'store' <Predicate = (!icmp_ln63)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "br label %1" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 20 'br' <Predicate = (!icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.83ns)   --->   "br label %SLVHLS.exit"   --->   Operation 21 'br' <Predicate = (icmp_ln63)> <Delay = 0.83>
+
+State 3 <SV = 2> <Delay = 1.48>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%p_begin_0_rec = phi i32 [ %add_ln96, %._crit_edge2 ], [ 0, %SLVHLS.exit.preheader ]" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 22 'phi' 'p_begin_0_rec' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%p_begin_0_rec_cast = zext i32 %p_begin_0_rec to i64" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 23 'zext' 'p_begin_0_rec_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%stubs_data_moduleHL = getelementptr [16 x i1]* %stubs_data_moduleHLS_psModule_s, i64 0, i64 %p_begin_0_rec_cast" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 24 'getelementptr' 'stubs_data_moduleHL' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%stubs_data_moduleHL_1 = getelementptr [16 x i32]* %stubs_data_moduleHLS_layerId_s, i64 0, i64 %p_begin_0_rec_cast" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 25 'getelementptr' 'stubs_data_moduleHL_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (1.14ns)   --->   "%icmp_ln96 = icmp eq i32 %p_begin_0_rec, %stubs_size_read_1" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 26 'icmp' 'icmp_ln96' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (1.48ns)   --->   "%add_ln96 = add i32 %p_begin_0_rec, 1" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 27 'add' 'add_ln96' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %icmp_ln96, label %.preheader.preheader, label %3" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %onlySeed_read_1, label %4, label %._crit_edge" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 29 'br' <Predicate = (!icmp_ln96)> <Delay = 0.00>
+ST_3 : Operation 30 [2/2] (0.69ns)   --->   "%stubs_data_moduleHL_2 = load i1* %stubs_data_moduleHL, align 1" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 30 'load' 'stubs_data_moduleHL_2' <Predicate = (!icmp_ln96 & onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_3 : Operation 31 [1/1] (0.83ns)   --->   "br label %.preheader" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 31 'br' <Predicate = (icmp_ln96)> <Delay = 0.83>
+
+State 4 <SV = 3> <Delay = 0.69>
+ST_4 : Operation 32 [1/2] (0.69ns)   --->   "%stubs_data_moduleHL_2 = load i1* %stubs_data_moduleHL, align 1" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 32 'load' 'stubs_data_moduleHL_2' <Predicate = (onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "br i1 %stubs_data_moduleHL_2, label %._crit_edge, label %._crit_edge2" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 33 'br' <Predicate = (onlySeed_read_1)> <Delay = 0.00>
+ST_4 : Operation 34 [2/2] (0.69ns)   --->   "%stubs_data_moduleHL_3 = load i32* %stubs_data_moduleHL_1, align 4" [HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 34 'load' 'stubs_data_moduleHL_3' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+
+State 5 <SV = 4> <Delay = 1.39>
+ST_5 : Operation 35 [1/2] (0.69ns)   --->   "%stubs_data_moduleHL_3 = load i32* %stubs_data_moduleHL_1, align 4" [HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 35 'load' 'stubs_data_moduleHL_3' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln69 = zext i32 %stubs_data_moduleHL_3 to i64" [HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 36 'zext' 'zext_ln69' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%foundLayers_data_ad_1 = getelementptr [30 x i1]* %foundLayers_data_s, i64 0, i64 %zext_ln69" [HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 37 'getelementptr' 'foundLayers_data_ad_1' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.00>
+ST_5 : Operation 38 [1/1] (0.69ns)   --->   "store i1 true, i1* %foundLayers_data_ad_1, align 1" [HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 38 'store' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "br label %._crit_edge2" [HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 39 'br' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "br label %SLVHLS.exit" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 1.48>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%i_0_i = phi i32 [ %i_18, %5 ], [ 0, %.preheader.preheader ]"   --->   Operation 41 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%count_0_i = phi i32 [ %select_ln76, %5 ], [ 0, %.preheader.preheader ]" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 42 'phi' 'count_0_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (1.14ns)   --->   "%icmp_ln75 = icmp eq i32 %i_0_i, %LRHLS_numLayers_rea" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 43 'icmp' 'icmp_ln75' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 44 [1/1] (1.48ns)   --->   "%i_18 = add i32 %i_0_i, 1" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 44 'add' 'i_18' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %icmp_ln75, label %count.exit, label %5" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln76 = zext i32 %i_0_i to i64" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 46 'zext' 'zext_ln76' <Predicate = (!icmp_ln75)> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%foundLayers_data_ad_2 = getelementptr [30 x i1]* %foundLayers_data_s, i64 0, i64 %zext_ln76" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 47 'getelementptr' 'foundLayers_data_ad_2' <Predicate = (!icmp_ln75)> <Delay = 0.00>
+ST_6 : Operation 48 [2/2] (0.69ns)   --->   "%foundLayers_data_lo = load i1* %foundLayers_data_ad_2, align 1" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 48 'load' 'foundLayers_data_lo' <Predicate = (!icmp_ln75)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "ret i32 %count_0_i" [HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 49 'ret' <Predicate = (icmp_ln75)> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 1.92>
+ST_7 : Operation 50 [1/2] (0.69ns)   --->   "%foundLayers_data_lo = load i1* %foundLayers_data_ad_2, align 1" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 50 'load' 'foundLayers_data_lo' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_7 : Operation 51 [1/1] (1.48ns)   --->   "%count = add i32 %count_0_i, 1" [HLS_LR/.settings/LRutility.h:77->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 51 'add' 'count' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 52 [1/1] (0.44ns)   --->   "%select_ln76 = select i1 %foundLayers_data_lo, i32 %count, i32 %count_0_i" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 52 'select' 'select_ln76' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "br label %.preheader" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 53 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ LRHLS_numLayers_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ stubs_size_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ stubs_data_moduleHLS_psModule_s]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ stubs_data_moduleHLS_layerId_s]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ onlySeed_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+onlySeed_read_1       (read         ) [ 00111100]
+stubs_size_read_1     (read         ) [ 00111100]
+LRHLS_numLayers_rea   (read         ) [ 00111111]
+foundLayers_data_s    (alloca       ) [ 00111111]
+br_ln63               (br           ) [ 01100000]
+i_0_i_i               (phi          ) [ 00100000]
+icmp_ln63             (icmp         ) [ 00100000]
+i                     (add          ) [ 01100000]
+br_ln63               (br           ) [ 00000000]
+zext_ln64             (zext         ) [ 00000000]
+foundLayers_data_ad   (getelementptr) [ 00000000]
+store_ln64            (store        ) [ 00000000]
+br_ln63               (br           ) [ 01100000]
+br_ln0                (br           ) [ 00111100]
+p_begin_0_rec         (phi          ) [ 00010000]
+p_begin_0_rec_cast    (zext         ) [ 00000000]
+stubs_data_moduleHL   (getelementptr) [ 00001000]
+stubs_data_moduleHL_1 (getelementptr) [ 00001100]
+icmp_ln96             (icmp         ) [ 00011100]
+add_ln96              (add          ) [ 00111100]
+br_ln96               (br           ) [ 00000000]
+br_ln97               (br           ) [ 00000000]
+br_ln75               (br           ) [ 00011111]
+stubs_data_moduleHL_2 (load         ) [ 00011100]
+br_ln97               (br           ) [ 00000000]
+stubs_data_moduleHL_3 (load         ) [ 00000000]
+zext_ln69             (zext         ) [ 00000000]
+foundLayers_data_ad_1 (getelementptr) [ 00000000]
+store_ln69            (store        ) [ 00000000]
+br_ln98               (br           ) [ 00000000]
+br_ln96               (br           ) [ 00111100]
+i_0_i                 (phi          ) [ 00000010]
+count_0_i             (phi          ) [ 00000011]
+icmp_ln75             (icmp         ) [ 00000011]
+i_18                  (add          ) [ 00010011]
+br_ln75               (br           ) [ 00000000]
+zext_ln76             (zext         ) [ 00000000]
+foundLayers_data_ad_2 (getelementptr) [ 00000001]
+ret_ln100             (ret          ) [ 00000000]
+foundLayers_data_lo   (load         ) [ 00000000]
+count                 (add          ) [ 00000000]
+select_ln76           (select       ) [ 00010011]
+br_ln75               (br           ) [ 00010011]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="LRHLS_numLayers_read">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="LRHLS_numLayers_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="stubs_size_read">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="stubs_size_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="stubs_data_moduleHLS_psModule_s">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="stubs_data_moduleHLS_psModule_s"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="stubs_data_moduleHLS_layerId_s">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="stubs_data_moduleHLS_layerId_s"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="onlySeed_read">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="onlySeed_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1004" name="foundLayers_data_s_alloca_fu_26">
+<pin_list>
+<pin id="27" dir="0" index="0" bw="1" slack="0"/>
+<pin id="28" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="foundLayers_data_s/1 "/>
+</bind>
+</comp>
+
+<comp id="30" class="1004" name="onlySeed_read_1_read_fu_30">
+<pin_list>
+<pin id="31" dir="0" index="0" bw="1" slack="0"/>
+<pin id="32" dir="0" index="1" bw="1" slack="0"/>
+<pin id="33" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="onlySeed_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="36" class="1004" name="stubs_size_read_1_read_fu_36">
+<pin_list>
+<pin id="37" dir="0" index="0" bw="32" slack="0"/>
+<pin id="38" dir="0" index="1" bw="32" slack="0"/>
+<pin id="39" dir="1" index="2" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="stubs_size_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="42" class="1004" name="LRHLS_numLayers_rea_read_fu_42">
+<pin_list>
+<pin id="43" dir="0" index="0" bw="32" slack="0"/>
+<pin id="44" dir="0" index="1" bw="32" slack="0"/>
+<pin id="45" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="LRHLS_numLayers_rea/1 "/>
+</bind>
+</comp>
+
+<comp id="48" class="1004" name="foundLayers_data_ad_gep_fu_48">
+<pin_list>
+<pin id="49" dir="0" index="0" bw="1" slack="2147483647"/>
+<pin id="50" dir="0" index="1" bw="1" slack="0"/>
+<pin id="51" dir="0" index="2" bw="32" slack="0"/>
+<pin id="52" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="foundLayers_data_ad/2 "/>
+</bind>
+</comp>
+
+<comp id="54" class="1004" name="grp_access_fu_54">
+<pin_list>
+<pin id="55" dir="0" index="0" bw="5" slack="0"/>
+<pin id="56" dir="0" index="1" bw="1" slack="0"/>
+<pin id="57" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="58" dir="1" index="3" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="load"/>
+<opset="store_ln64/2 store_ln69/5 foundLayers_data_lo/6 "/>
+</bind>
+</comp>
+
+<comp id="61" class="1004" name="stubs_data_moduleHL_gep_fu_61">
+<pin_list>
+<pin id="62" dir="0" index="0" bw="1" slack="0"/>
+<pin id="63" dir="0" index="1" bw="1" slack="0"/>
+<pin id="64" dir="0" index="2" bw="32" slack="0"/>
+<pin id="65" dir="1" index="3" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="stubs_data_moduleHL/3 "/>
+</bind>
+</comp>
+
+<comp id="68" class="1004" name="stubs_data_moduleHL_1_gep_fu_68">
+<pin_list>
+<pin id="69" dir="0" index="0" bw="32" slack="0"/>
+<pin id="70" dir="0" index="1" bw="1" slack="0"/>
+<pin id="71" dir="0" index="2" bw="32" slack="0"/>
+<pin id="72" dir="1" index="3" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="stubs_data_moduleHL_1/3 "/>
+</bind>
+</comp>
+
+<comp id="75" class="1004" name="grp_access_fu_75">
+<pin_list>
+<pin id="76" dir="0" index="0" bw="4" slack="0"/>
+<pin id="77" dir="0" index="1" bw="1" slack="2147483647"/>
+<pin id="78" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="79" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="stubs_data_moduleHL_2/3 "/>
+</bind>
+</comp>
+
+<comp id="81" class="1004" name="grp_access_fu_81">
+<pin_list>
+<pin id="82" dir="0" index="0" bw="4" slack="1"/>
+<pin id="83" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="84" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="85" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="stubs_data_moduleHL_3/4 "/>
+</bind>
+</comp>
+
+<comp id="86" class="1004" name="foundLayers_data_ad_1_gep_fu_86">
+<pin_list>
+<pin id="87" dir="0" index="0" bw="1" slack="2147483647"/>
+<pin id="88" dir="0" index="1" bw="1" slack="0"/>
+<pin id="89" dir="0" index="2" bw="32" slack="0"/>
+<pin id="90" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="foundLayers_data_ad_1/5 "/>
+</bind>
+</comp>
+
+<comp id="94" class="1004" name="foundLayers_data_ad_2_gep_fu_94">
+<pin_list>
+<pin id="95" dir="0" index="0" bw="1" slack="2147483647"/>
+<pin id="96" dir="0" index="1" bw="1" slack="0"/>
+<pin id="97" dir="0" index="2" bw="32" slack="0"/>
+<pin id="98" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="foundLayers_data_ad_2/6 "/>
+</bind>
+</comp>
+
+<comp id="101" class="1005" name="i_0_i_i_reg_101">
+<pin_list>
+<pin id="102" dir="0" index="0" bw="32" slack="1"/>
+<pin id="103" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="i_0_i_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="105" class="1004" name="i_0_i_i_phi_fu_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="1" slack="1"/>
+<pin id="107" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="108" dir="0" index="2" bw="32" slack="0"/>
+<pin id="109" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="110" dir="1" index="4" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="i_0_i_i/2 "/>
+</bind>
+</comp>
+
+<comp id="112" class="1005" name="p_begin_0_rec_reg_112">
+<pin_list>
+<pin id="113" dir="0" index="0" bw="32" slack="1"/>
+<pin id="114" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_begin_0_rec (phireg) "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="p_begin_0_rec_phi_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="32" slack="0"/>
+<pin id="118" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="119" dir="0" index="2" bw="1" slack="1"/>
+<pin id="120" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="121" dir="1" index="4" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="p_begin_0_rec/3 "/>
+</bind>
+</comp>
+
+<comp id="123" class="1005" name="i_0_i_reg_123">
+<pin_list>
+<pin id="124" dir="0" index="0" bw="32" slack="1"/>
+<pin id="125" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="i_0_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="127" class="1004" name="i_0_i_phi_fu_127">
+<pin_list>
+<pin id="128" dir="0" index="0" bw="32" slack="0"/>
+<pin id="129" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="130" dir="0" index="2" bw="1" slack="1"/>
+<pin id="131" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="132" dir="1" index="4" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="i_0_i/6 "/>
+</bind>
+</comp>
+
+<comp id="134" class="1005" name="count_0_i_reg_134">
+<pin_list>
+<pin id="135" dir="0" index="0" bw="32" slack="1"/>
+<pin id="136" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="count_0_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="count_0_i_phi_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="32" slack="1"/>
+<pin id="140" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="141" dir="0" index="2" bw="1" slack="1"/>
+<pin id="142" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="143" dir="1" index="4" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="count_0_i/6 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="icmp_ln63_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="32" slack="0"/>
+<pin id="148" dir="0" index="1" bw="32" slack="1"/>
+<pin id="149" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln63/2 "/>
+</bind>
+</comp>
+
+<comp id="151" class="1004" name="i_fu_151">
+<pin_list>
+<pin id="152" dir="0" index="0" bw="32" slack="0"/>
+<pin id="153" dir="0" index="1" bw="1" slack="0"/>
+<pin id="154" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="i/2 "/>
+</bind>
+</comp>
+
+<comp id="157" class="1004" name="zext_ln64_fu_157">
+<pin_list>
+<pin id="158" dir="0" index="0" bw="32" slack="0"/>
+<pin id="159" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln64/2 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="p_begin_0_rec_cast_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="32" slack="0"/>
+<pin id="164" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="p_begin_0_rec_cast/3 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="icmp_ln96_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="32" slack="0"/>
+<pin id="170" dir="0" index="1" bw="32" slack="2"/>
+<pin id="171" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln96/3 "/>
+</bind>
+</comp>
+
+<comp id="173" class="1004" name="add_ln96_fu_173">
+<pin_list>
+<pin id="174" dir="0" index="0" bw="32" slack="0"/>
+<pin id="175" dir="0" index="1" bw="1" slack="0"/>
+<pin id="176" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln96/3 "/>
+</bind>
+</comp>
+
+<comp id="179" class="1004" name="zext_ln69_fu_179">
+<pin_list>
+<pin id="180" dir="0" index="0" bw="32" slack="0"/>
+<pin id="181" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln69/5 "/>
+</bind>
+</comp>
+
+<comp id="184" class="1004" name="icmp_ln75_fu_184">
+<pin_list>
+<pin id="185" dir="0" index="0" bw="32" slack="0"/>
+<pin id="186" dir="0" index="1" bw="32" slack="3"/>
+<pin id="187" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln75/6 "/>
+</bind>
+</comp>
+
+<comp id="189" class="1004" name="i_18_fu_189">
+<pin_list>
+<pin id="190" dir="0" index="0" bw="32" slack="0"/>
+<pin id="191" dir="0" index="1" bw="1" slack="0"/>
+<pin id="192" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="i_18/6 "/>
+</bind>
+</comp>
+
+<comp id="195" class="1004" name="zext_ln76_fu_195">
+<pin_list>
+<pin id="196" dir="0" index="0" bw="32" slack="0"/>
+<pin id="197" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln76/6 "/>
+</bind>
+</comp>
+
+<comp id="200" class="1004" name="count_fu_200">
+<pin_list>
+<pin id="201" dir="0" index="0" bw="32" slack="1"/>
+<pin id="202" dir="0" index="1" bw="1" slack="0"/>
+<pin id="203" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="count/7 "/>
+</bind>
+</comp>
+
+<comp id="206" class="1004" name="select_ln76_fu_206">
+<pin_list>
+<pin id="207" dir="0" index="0" bw="1" slack="0"/>
+<pin id="208" dir="0" index="1" bw="32" slack="0"/>
+<pin id="209" dir="0" index="2" bw="32" slack="1"/>
+<pin id="210" dir="1" index="3" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="select_ln76/7 "/>
+</bind>
+</comp>
+
+<comp id="214" class="1005" name="onlySeed_read_1_reg_214">
+<pin_list>
+<pin id="215" dir="0" index="0" bw="1" slack="2"/>
+<pin id="216" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="onlySeed_read_1 "/>
+</bind>
+</comp>
+
+<comp id="218" class="1005" name="stubs_size_read_1_reg_218">
+<pin_list>
+<pin id="219" dir="0" index="0" bw="32" slack="2"/>
+<pin id="220" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opset="stubs_size_read_1 "/>
+</bind>
+</comp>
+
+<comp id="223" class="1005" name="LRHLS_numLayers_rea_reg_223">
+<pin_list>
+<pin id="224" dir="0" index="0" bw="32" slack="1"/>
+<pin id="225" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="LRHLS_numLayers_rea "/>
+</bind>
+</comp>
+
+<comp id="232" class="1005" name="i_reg_232">
+<pin_list>
+<pin id="233" dir="0" index="0" bw="32" slack="0"/>
+<pin id="234" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="i "/>
+</bind>
+</comp>
+
+<comp id="237" class="1005" name="stubs_data_moduleHL_reg_237">
+<pin_list>
+<pin id="238" dir="0" index="0" bw="4" slack="1"/>
+<pin id="239" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="stubs_data_moduleHL "/>
+</bind>
+</comp>
+
+<comp id="242" class="1005" name="stubs_data_moduleHL_1_reg_242">
+<pin_list>
+<pin id="243" dir="0" index="0" bw="4" slack="1"/>
+<pin id="244" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="stubs_data_moduleHL_1 "/>
+</bind>
+</comp>
+
+<comp id="250" class="1005" name="add_ln96_reg_250">
+<pin_list>
+<pin id="251" dir="0" index="0" bw="32" slack="0"/>
+<pin id="252" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="add_ln96 "/>
+</bind>
+</comp>
+
+<comp id="255" class="1005" name="stubs_data_moduleHL_2_reg_255">
+<pin_list>
+<pin id="256" dir="0" index="0" bw="1" slack="1"/>
+<pin id="257" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="stubs_data_moduleHL_2 "/>
+</bind>
+</comp>
+
+<comp id="262" class="1005" name="i_18_reg_262">
+<pin_list>
+<pin id="263" dir="0" index="0" bw="32" slack="0"/>
+<pin id="264" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="i_18 "/>
+</bind>
+</comp>
+
+<comp id="267" class="1005" name="foundLayers_data_ad_2_reg_267">
+<pin_list>
+<pin id="268" dir="0" index="0" bw="5" slack="1"/>
+<pin id="269" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="foundLayers_data_ad_2 "/>
+</bind>
+</comp>
+
+<comp id="272" class="1005" name="select_ln76_reg_272">
+<pin_list>
+<pin id="273" dir="0" index="0" bw="32" slack="1"/>
+<pin id="274" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="select_ln76 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="29"><net_src comp="14" pin="0"/><net_sink comp="26" pin=0"/></net>
+
+<net id="34"><net_src comp="10" pin="0"/><net_sink comp="30" pin=0"/></net>
+
+<net id="35"><net_src comp="8" pin="0"/><net_sink comp="30" pin=1"/></net>
+
+<net id="40"><net_src comp="12" pin="0"/><net_sink comp="36" pin=0"/></net>
+
+<net id="41"><net_src comp="2" pin="0"/><net_sink comp="36" pin=1"/></net>
+
+<net id="46"><net_src comp="12" pin="0"/><net_sink comp="42" pin=0"/></net>
+
+<net id="47"><net_src comp="0" pin="0"/><net_sink comp="42" pin=1"/></net>
+
+<net id="53"><net_src comp="20" pin="0"/><net_sink comp="48" pin=1"/></net>
+
+<net id="59"><net_src comp="22" pin="0"/><net_sink comp="54" pin=1"/></net>
+
+<net id="60"><net_src comp="48" pin="3"/><net_sink comp="54" pin=0"/></net>
+
+<net id="66"><net_src comp="4" pin="0"/><net_sink comp="61" pin=0"/></net>
+
+<net id="67"><net_src comp="20" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="73"><net_src comp="6" pin="0"/><net_sink comp="68" pin=0"/></net>
+
+<net id="74"><net_src comp="20" pin="0"/><net_sink comp="68" pin=1"/></net>
+
+<net id="80"><net_src comp="61" pin="3"/><net_sink comp="75" pin=0"/></net>
+
+<net id="91"><net_src comp="20" pin="0"/><net_sink comp="86" pin=1"/></net>
+
+<net id="92"><net_src comp="24" pin="0"/><net_sink comp="54" pin=1"/></net>
+
+<net id="93"><net_src comp="86" pin="3"/><net_sink comp="54" pin=0"/></net>
+
+<net id="99"><net_src comp="20" pin="0"/><net_sink comp="94" pin=1"/></net>
+
+<net id="100"><net_src comp="94" pin="3"/><net_sink comp="54" pin=0"/></net>
+
+<net id="104"><net_src comp="16" pin="0"/><net_sink comp="101" pin=0"/></net>
+
+<net id="111"><net_src comp="101" pin="1"/><net_sink comp="105" pin=0"/></net>
+
+<net id="115"><net_src comp="16" pin="0"/><net_sink comp="112" pin=0"/></net>
+
+<net id="122"><net_src comp="112" pin="1"/><net_sink comp="116" pin=2"/></net>
+
+<net id="126"><net_src comp="16" pin="0"/><net_sink comp="123" pin=0"/></net>
+
+<net id="133"><net_src comp="123" pin="1"/><net_sink comp="127" pin=2"/></net>
+
+<net id="137"><net_src comp="16" pin="0"/><net_sink comp="134" pin=0"/></net>
+
+<net id="144"><net_src comp="134" pin="1"/><net_sink comp="138" pin=2"/></net>
+
+<net id="145"><net_src comp="138" pin="4"/><net_sink comp="134" pin=0"/></net>
+
+<net id="150"><net_src comp="105" pin="4"/><net_sink comp="146" pin=0"/></net>
+
+<net id="155"><net_src comp="105" pin="4"/><net_sink comp="151" pin=0"/></net>
+
+<net id="156"><net_src comp="18" pin="0"/><net_sink comp="151" pin=1"/></net>
+
+<net id="160"><net_src comp="105" pin="4"/><net_sink comp="157" pin=0"/></net>
+
+<net id="161"><net_src comp="157" pin="1"/><net_sink comp="48" pin=2"/></net>
+
+<net id="165"><net_src comp="116" pin="4"/><net_sink comp="162" pin=0"/></net>
+
+<net id="166"><net_src comp="162" pin="1"/><net_sink comp="61" pin=2"/></net>
+
+<net id="167"><net_src comp="162" pin="1"/><net_sink comp="68" pin=2"/></net>
+
+<net id="172"><net_src comp="116" pin="4"/><net_sink comp="168" pin=0"/></net>
+
+<net id="177"><net_src comp="116" pin="4"/><net_sink comp="173" pin=0"/></net>
+
+<net id="178"><net_src comp="18" pin="0"/><net_sink comp="173" pin=1"/></net>
+
+<net id="182"><net_src comp="81" pin="3"/><net_sink comp="179" pin=0"/></net>
+
+<net id="183"><net_src comp="179" pin="1"/><net_sink comp="86" pin=2"/></net>
+
+<net id="188"><net_src comp="127" pin="4"/><net_sink comp="184" pin=0"/></net>
+
+<net id="193"><net_src comp="127" pin="4"/><net_sink comp="189" pin=0"/></net>
+
+<net id="194"><net_src comp="18" pin="0"/><net_sink comp="189" pin=1"/></net>
+
+<net id="198"><net_src comp="127" pin="4"/><net_sink comp="195" pin=0"/></net>
+
+<net id="199"><net_src comp="195" pin="1"/><net_sink comp="94" pin=2"/></net>
+
+<net id="204"><net_src comp="134" pin="1"/><net_sink comp="200" pin=0"/></net>
+
+<net id="205"><net_src comp="18" pin="0"/><net_sink comp="200" pin=1"/></net>
+
+<net id="211"><net_src comp="54" pin="3"/><net_sink comp="206" pin=0"/></net>
+
+<net id="212"><net_src comp="200" pin="2"/><net_sink comp="206" pin=1"/></net>
+
+<net id="213"><net_src comp="134" pin="1"/><net_sink comp="206" pin=2"/></net>
+
+<net id="217"><net_src comp="30" pin="2"/><net_sink comp="214" pin=0"/></net>
+
+<net id="221"><net_src comp="36" pin="2"/><net_sink comp="218" pin=0"/></net>
+
+<net id="222"><net_src comp="218" pin="1"/><net_sink comp="168" pin=1"/></net>
+
+<net id="226"><net_src comp="42" pin="2"/><net_sink comp="223" pin=0"/></net>
+
+<net id="227"><net_src comp="223" pin="1"/><net_sink comp="146" pin=1"/></net>
+
+<net id="228"><net_src comp="223" pin="1"/><net_sink comp="184" pin=1"/></net>
+
+<net id="235"><net_src comp="151" pin="2"/><net_sink comp="232" pin=0"/></net>
+
+<net id="236"><net_src comp="232" pin="1"/><net_sink comp="105" pin=2"/></net>
+
+<net id="240"><net_src comp="61" pin="3"/><net_sink comp="237" pin=0"/></net>
+
+<net id="241"><net_src comp="237" pin="1"/><net_sink comp="75" pin=0"/></net>
+
+<net id="245"><net_src comp="68" pin="3"/><net_sink comp="242" pin=0"/></net>
+
+<net id="246"><net_src comp="242" pin="1"/><net_sink comp="81" pin=0"/></net>
+
+<net id="253"><net_src comp="173" pin="2"/><net_sink comp="250" pin=0"/></net>
+
+<net id="254"><net_src comp="250" pin="1"/><net_sink comp="116" pin=0"/></net>
+
+<net id="258"><net_src comp="75" pin="3"/><net_sink comp="255" pin=0"/></net>
+
+<net id="265"><net_src comp="189" pin="2"/><net_sink comp="262" pin=0"/></net>
+
+<net id="266"><net_src comp="262" pin="1"/><net_sink comp="127" pin=0"/></net>
+
+<net id="270"><net_src comp="94" pin="3"/><net_sink comp="267" pin=0"/></net>
+
+<net id="271"><net_src comp="267" pin="1"/><net_sink comp="54" pin=0"/></net>
+
+<net id="275"><net_src comp="206" pin="3"/><net_sink comp="272" pin=0"/></net>
+
+<net id="276"><net_src comp="272" pin="1"/><net_sink comp="138" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: stubs_data_moduleHLS_psModule_s | {}
+	Port: stubs_data_moduleHLS_layerId_s | {}
+ - Input state : 
+	Port: countLayers : LRHLS_numLayers_read | {1 }
+	Port: countLayers : stubs_size_read | {1 }
+	Port: countLayers : stubs_data_moduleHLS_psModule_s | {3 4 }
+	Port: countLayers : stubs_data_moduleHLS_layerId_s | {4 5 }
+	Port: countLayers : onlySeed_read | {1 }
+  - Chain level:
+	State 1
+	State 2
+		icmp_ln63 : 1
+		i : 1
+		br_ln63 : 2
+		zext_ln64 : 1
+		foundLayers_data_ad : 2
+		store_ln64 : 3
+	State 3
+		p_begin_0_rec_cast : 1
+		stubs_data_moduleHL : 2
+		stubs_data_moduleHL_1 : 2
+		icmp_ln96 : 1
+		add_ln96 : 1
+		br_ln96 : 2
+		stubs_data_moduleHL_2 : 3
+	State 4
+		br_ln97 : 1
+	State 5
+		zext_ln69 : 1
+		foundLayers_data_ad_1 : 2
+		store_ln69 : 3
+	State 6
+		icmp_ln75 : 1
+		i_18 : 1
+		br_ln75 : 2
+		zext_ln76 : 1
+		foundLayers_data_ad_2 : 2
+		foundLayers_data_lo : 3
+		ret_ln100 : 1
+	State 7
+		select_ln76 : 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------|---------|---------|
+| Operation|         Functional Unit        |    FF   |   LUT   |
+|----------|--------------------------------|---------|---------|
+|          |            i_fu_151            |    0    |    39   |
+|    add   |         add_ln96_fu_173        |    0    |    39   |
+|          |           i_18_fu_189          |    0    |    39   |
+|          |          count_fu_200          |    0    |    39   |
+|----------|--------------------------------|---------|---------|
+|          |        icmp_ln63_fu_146        |    0    |    20   |
+|   icmp   |        icmp_ln96_fu_168        |    0    |    20   |
+|          |        icmp_ln75_fu_184        |    0    |    20   |
+|----------|--------------------------------|---------|---------|
+|  select  |       select_ln76_fu_206       |    0    |    32   |
+|----------|--------------------------------|---------|---------|
+|          |   onlySeed_read_1_read_fu_30   |    0    |    0    |
+|   read   |  stubs_size_read_1_read_fu_36  |    0    |    0    |
+|          | LRHLS_numLayers_rea_read_fu_42 |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|          |        zext_ln64_fu_157        |    0    |    0    |
+|   zext   |    p_begin_0_rec_cast_fu_162   |    0    |    0    |
+|          |        zext_ln69_fu_179        |    0    |    0    |
+|          |        zext_ln76_fu_195        |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|   Total  |                                |    0    |   248   |
+|----------|--------------------------------|---------|---------|
+
+Memories:
++------------------+--------+--------+--------+--------+
+|                  |  BRAM  |   FF   |   LUT  |  URAM  |
++------------------+--------+--------+--------+--------+
+|foundLayers_data_s|    0   |    2   |    1   |    0   |
++------------------+--------+--------+--------+--------+
+|       Total      |    0   |    2   |    1   |    0   |
++------------------+--------+--------+--------+--------+
+
+* Register list:
++-----------------------------+--------+
+|                             |   FF   |
++-----------------------------+--------+
+| LRHLS_numLayers_rea_reg_223 |   32   |
+|       add_ln96_reg_250      |   32   |
+|      count_0_i_reg_134      |   32   |
+|foundLayers_data_ad_2_reg_267|    5   |
+|       i_0_i_i_reg_101       |   32   |
+|        i_0_i_reg_123        |   32   |
+|         i_18_reg_262        |   32   |
+|          i_reg_232          |   32   |
+|   onlySeed_read_1_reg_214   |    1   |
+|    p_begin_0_rec_reg_112    |   32   |
+|     select_ln76_reg_272     |   32   |
+|stubs_data_moduleHL_1_reg_242|    4   |
+|stubs_data_moduleHL_2_reg_255|    1   |
+| stubs_data_moduleHL_reg_237 |    4   |
+|  stubs_size_read_1_reg_218  |   32   |
++-----------------------------+--------+
+|            Total            |   335  |
++-----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|-------------------|------|------|------|--------||---------||---------|
+|        Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-------------------|------|------|------|--------||---------||---------|
+|  grp_access_fu_54 |  p0  |   4  |   5  |   20   ||    21   |
+|  grp_access_fu_54 |  p1  |   2  |   1  |    2   |
+|  grp_access_fu_75 |  p0  |   2  |   4  |    8   ||    9    |
+| count_0_i_reg_134 |  p0  |   2  |  32  |   64   ||    9    |
+|-------------------|------|------|------|--------||---------||---------|
+|       Total       |      |      |      |   94   ||  3.507  ||    39   |
+|-------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |    -   |    -   |    0   |   248  |    -   |
+|   Memory  |    0   |    -   |    2   |    1   |    0   |
+|Multiplexer|    -   |    3   |    -   |   39   |    -   |
+|  Register |    -   |    -   |   335  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |    0   |    3   |   337  |   288  |    0   |
++-----------+--------+--------+--------+--------+--------+

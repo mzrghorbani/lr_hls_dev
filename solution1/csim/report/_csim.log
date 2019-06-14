@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../.settings/testbench.cc in debug mode
+In file included from ../../../.settings/testbench.cc:2:0:
+/home/eepgmmg1/workspace/CMSSW_10_4_0/src/L1Trigger/TrackFindingTMTT/interface/LRHLS/SettingsHLS.h:8:59: fatal error: L1Trigger/TrackFindingTMTT/interface/Settings.h: No such file or directory
+ #include "L1Trigger/TrackFindingTMTT/interface/Settings.h"
+                                                           ^
+compilation terminated.
+make: *** [obj/testbench.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

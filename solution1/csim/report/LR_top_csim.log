@@ -1,0 +1,14 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../.settings/testbench.cc in debug mode
+   Compiling ../../../.settings/DataHLS.cc in debug mode
+   Compiling ../../../.settings/LRHLS.cc in debug mode
+   Compiling ../../../.settings/LR_top.cc in debug mode
+   Compiling ../../../.settings/ModuleHLS.cc in debug mode
+   Compiling ../../../.settings/SettingsHLS.cc in debug mode
+   Compiling ../../../.settings/StubHLS.cc in debug mode
+   Compiling ../../../.settings/TrackHLS.cc in debug mode
+   Generating csim.exe
+End of main function!!!
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

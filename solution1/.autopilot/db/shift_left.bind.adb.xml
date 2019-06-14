@@ -1,0 +1,2997 @@
+<stg><name>shift_left</name>
+
+
+<trans_list>
+
+<trans id="155" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="156" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln134" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="158" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="159" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="160" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="161" from="6" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  %idx_read_2 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %idx_read)
+
+]]></Node>
+<StgValue><ssdm name="idx_read_2"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  %arrayHLS_data_setti = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset)
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:2  %arrayHLS_size_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %arrayHLS_TMTT_StubHLS_size_read)
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_size_read"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="33" bw="6" op_0_bw="32">
+<![CDATA[
+:3  %trunc_ln132 = trunc i32 %arrayHLS_data_setti to i6
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln132"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="34" bw="10" op_0_bw="10" op_1_bw="6" op_2_bw="4">
+<![CDATA[
+:4  %zext_ln135_2_cast = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %trunc_ln132, i4 0)
+
+]]></Node>
+<StgValue><ssdm name="zext_ln135_2_cast"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="35" bw="0" op_0_bw="0">
+<![CDATA[
+:5  br label %1
+
+]]></Node>
+<StgValue><ssdm name="br_ln134"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="13" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="37" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+:0  %i_0 = phi i32 [ %idx_read_2, %0 ], [ %i, %2 ]
+
+]]></Node>
+<StgValue><ssdm name="i_0"/></StgValue>
+</operation>
+
+<operation id="14" st_id="2" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  %icmp_ln134 = icmp ult i32 %i_0, %arrayHLS_size_read
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln134"/></StgValue>
+</operation>
+
+<operation id="15" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="39" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:2  br i1 %icmp_ln134, label %2, label %3
+
+]]></Node>
+<StgValue><ssdm name="br_ln134"/></StgValue>
+</operation>
+
+<operation id="16" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln134" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="10" op_0_bw="32">
+<![CDATA[
+:0  %trunc_ln135 = trunc i32 %i_0 to i10
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln135"/></StgValue>
+</operation>
+
+<operation id="17" st_id="2" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln134" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="70" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:29  %i = add i32 1, %i_0
+
+]]></Node>
+<StgValue><ssdm name="i"/></StgValue>
+</operation>
+
+<operation id="18" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln134" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="71" bw="10" op_0_bw="32">
+<![CDATA[
+:30  %trunc_ln135_1 = trunc i32 %i to i10
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln135_1"/></StgValue>
+</operation>
+
+<operation id="19" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln134" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="154" bw="0">
+<![CDATA[
+:0  ret void
+
+]]></Node>
+<StgValue><ssdm name="ret_ln137"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="20" st_id="3" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+:1  %add_ln135 = add i10 %zext_ln135_2_cast, %trunc_ln135
+
+]]></Node>
+<StgValue><ssdm name="add_ln135"/></StgValue>
+</operation>
+
+<operation id="21" st_id="3" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="72" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+:31  %add_ln135_2 = add i10 %zext_ln135_2_cast, %trunc_ln135_1
+
+]]></Node>
+<StgValue><ssdm name="add_ln135_2"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="22" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="73" bw="64" op_0_bw="10">
+<![CDATA[
+:32  %zext_ln135_2 = zext i10 %add_ln135_2 to i64
+
+]]></Node>
+<StgValue><ssdm name="zext_ln135_2"/></StgValue>
+</operation>
+
+<operation id="23" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="74" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:33  %arrayHLS_data_setti_40 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_40"/></StgValue>
+</operation>
+
+<operation id="24" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="75" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:34  %arrayHLS_data_setti_41 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_41"/></StgValue>
+</operation>
+
+<operation id="25" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="76" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:35  %arrayHLS_data_setti_42 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_42"/></StgValue>
+</operation>
+
+<operation id="26" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="77" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:36  %arrayHLS_data_setti_43 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_43"/></StgValue>
+</operation>
+
+<operation id="27" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="78" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:37  %arrayHLS_data_setti_44 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_44"/></StgValue>
+</operation>
+
+<operation id="28" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="79" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:38  %arrayHLS_data_setti_45 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_45"/></StgValue>
+</operation>
+
+<operation id="29" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="80" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:39  %arrayHLS_data_setti_46 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_46"/></StgValue>
+</operation>
+
+<operation id="30" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="81" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:40  %arrayHLS_data_setti_47 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_47"/></StgValue>
+</operation>
+
+<operation id="31" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="82" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:41  %arrayHLS_data_setti_48 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_48"/></StgValue>
+</operation>
+
+<operation id="32" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="83" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:42  %arrayHLS_data_setti_49 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_49"/></StgValue>
+</operation>
+
+<operation id="33" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="84" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:43  %arrayHLS_data_modul_51 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_51"/></StgValue>
+</operation>
+
+<operation id="34" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="85" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:44  %arrayHLS_data_modul_52 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_52"/></StgValue>
+</operation>
+
+<operation id="35" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="86" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:45  %arrayHLS_data_modul_53 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_53"/></StgValue>
+</operation>
+
+<operation id="36" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="87" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:46  %arrayHLS_data_modul_54 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_54"/></StgValue>
+</operation>
+
+<operation id="37" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="88" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:47  %arrayHLS_data_modul_55 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_55"/></StgValue>
+</operation>
+
+<operation id="38" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="89" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:48  %arrayHLS_data_modul_56 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_56"/></StgValue>
+</operation>
+
+<operation id="39" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="90" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:49  %arrayHLS_data_modul_57 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_57"/></StgValue>
+</operation>
+
+<operation id="40" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="91" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:50  %arrayHLS_data_modul_58 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_58"/></StgValue>
+</operation>
+
+<operation id="41" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="92" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:51  %arrayHLS_data_modul_59 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_59"/></StgValue>
+</operation>
+
+<operation id="42" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="93" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:52  %arrayHLS_data_modul_60 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_60"/></StgValue>
+</operation>
+
+<operation id="43" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="94" bw="9" op_0_bw="1" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:53  %arrayHLS_data_modul_61 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_61"/></StgValue>
+</operation>
+
+<operation id="44" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="95" bw="9" op_0_bw="1" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:54  %arrayHLS_data_modul_62 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_62"/></StgValue>
+</operation>
+
+<operation id="45" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="96" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:55  %arrayHLS_data_modul_63 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_63"/></StgValue>
+</operation>
+
+<operation id="46" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="97" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:56  %arrayHLS_data_r_ad_2 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_r_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_r_ad_2"/></StgValue>
+</operation>
+
+<operation id="47" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="98" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:57  %arrayHLS_data_phi_3 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_phi_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_phi_3"/></StgValue>
+</operation>
+
+<operation id="48" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="99" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:58  %arrayHLS_data_z_ad_2 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_z_s, i64 0, i64 %zext_ln135_2
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_z_ad_2"/></StgValue>
+</operation>
+
+<operation id="49" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="100" bw="32" op_0_bw="9">
+<![CDATA[
+:59  %arrayHLS_data_setti_50 = load i32* %arrayHLS_data_setti_40, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_50"/></StgValue>
+</operation>
+
+<operation id="50" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="102" bw="32" op_0_bw="9">
+<![CDATA[
+:61  %arrayHLS_data_setti_51 = load i32* %arrayHLS_data_setti_41, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_51"/></StgValue>
+</operation>
+
+<operation id="51" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="104" bw="32" op_0_bw="9">
+<![CDATA[
+:63  %arrayHLS_data_setti_52 = load i32* %arrayHLS_data_setti_42, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_52"/></StgValue>
+</operation>
+
+<operation id="52" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="106" bw="32" op_0_bw="9">
+<![CDATA[
+:65  %arrayHLS_data_setti_53 = load float* %arrayHLS_data_setti_43, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_53"/></StgValue>
+</operation>
+
+<operation id="53" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="108" bw="32" op_0_bw="9">
+<![CDATA[
+:67  %arrayHLS_data_setti_54 = load float* %arrayHLS_data_setti_44, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_54"/></StgValue>
+</operation>
+
+<operation id="54" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="110" bw="32" op_0_bw="9">
+<![CDATA[
+:69  %arrayHLS_data_setti_55 = load float* %arrayHLS_data_setti_45, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_55"/></StgValue>
+</operation>
+
+<operation id="55" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="112" bw="32" op_0_bw="9">
+<![CDATA[
+:71  %arrayHLS_data_setti_56 = load float* %arrayHLS_data_setti_46, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_56"/></StgValue>
+</operation>
+
+<operation id="56" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="114" bw="32" op_0_bw="9">
+<![CDATA[
+:73  %arrayHLS_data_setti_57 = load float* %arrayHLS_data_setti_47, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_57"/></StgValue>
+</operation>
+
+<operation id="57" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="116" bw="32" op_0_bw="9">
+<![CDATA[
+:75  %arrayHLS_data_setti_58 = load float* %arrayHLS_data_setti_48, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_58"/></StgValue>
+</operation>
+
+<operation id="58" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="118" bw="32" op_0_bw="9">
+<![CDATA[
+:77  %arrayHLS_data_setti_59 = load i32* %arrayHLS_data_setti_49, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_59"/></StgValue>
+</operation>
+
+<operation id="59" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="120" bw="32" op_0_bw="9">
+<![CDATA[
+:79  %arrayHLS_data_modul_64 = load i32* %arrayHLS_data_modul_51, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_64"/></StgValue>
+</operation>
+
+<operation id="60" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="32" op_0_bw="9">
+<![CDATA[
+:81  %arrayHLS_data_modul_65 = load i32* %arrayHLS_data_modul_52, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_65"/></StgValue>
+</operation>
+
+<operation id="61" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="124" bw="32" op_0_bw="9">
+<![CDATA[
+:83  %arrayHLS_data_modul_66 = load i32* %arrayHLS_data_modul_53, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_66"/></StgValue>
+</operation>
+
+<operation id="62" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="32" op_0_bw="9">
+<![CDATA[
+:85  %arrayHLS_data_modul_67 = load float* %arrayHLS_data_modul_54, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_67"/></StgValue>
+</operation>
+
+<operation id="63" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="128" bw="32" op_0_bw="9">
+<![CDATA[
+:87  %arrayHLS_data_modul_68 = load float* %arrayHLS_data_modul_55, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_68"/></StgValue>
+</operation>
+
+<operation id="64" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="130" bw="32" op_0_bw="9">
+<![CDATA[
+:89  %arrayHLS_data_modul_69 = load float* %arrayHLS_data_modul_56, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_69"/></StgValue>
+</operation>
+
+<operation id="65" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="132" bw="32" op_0_bw="9">
+<![CDATA[
+:91  %arrayHLS_data_modul_70 = load float* %arrayHLS_data_modul_57, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_70"/></StgValue>
+</operation>
+
+<operation id="66" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="134" bw="32" op_0_bw="9">
+<![CDATA[
+:93  %arrayHLS_data_modul_71 = load float* %arrayHLS_data_modul_58, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_71"/></StgValue>
+</operation>
+
+<operation id="67" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="136" bw="32" op_0_bw="9">
+<![CDATA[
+:95  %arrayHLS_data_modul_72 = load float* %arrayHLS_data_modul_59, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_72"/></StgValue>
+</operation>
+
+<operation id="68" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="138" bw="32" op_0_bw="9">
+<![CDATA[
+:97  %arrayHLS_data_modul_73 = load i32* %arrayHLS_data_modul_60, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_73"/></StgValue>
+</operation>
+
+<operation id="69" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="140" bw="1" op_0_bw="9">
+<![CDATA[
+:99  %arrayHLS_data_modul_74 = load i1* %arrayHLS_data_modul_61, align 1
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_74"/></StgValue>
+</operation>
+
+<operation id="70" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="142" bw="1" op_0_bw="9">
+<![CDATA[
+:101  %arrayHLS_data_modul_75 = load i1* %arrayHLS_data_modul_62, align 1
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_75"/></StgValue>
+</operation>
+
+<operation id="71" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="144" bw="32" op_0_bw="9">
+<![CDATA[
+:103  %arrayHLS_data_modul_76 = load i32* %arrayHLS_data_modul_63, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_76"/></StgValue>
+</operation>
+
+<operation id="72" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="146" bw="32" op_0_bw="9">
+<![CDATA[
+:105  %arrayHLS_data_r_lo = load float* %arrayHLS_data_r_ad_2, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_r_lo"/></StgValue>
+</operation>
+
+<operation id="73" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="148" bw="32" op_0_bw="9">
+<![CDATA[
+:107  %arrayHLS_data_phi_4 = load float* %arrayHLS_data_phi_3, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_phi_4"/></StgValue>
+</operation>
+
+<operation id="74" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="150" bw="32" op_0_bw="9">
+<![CDATA[
+:109  %arrayHLS_data_z_lo = load float* %arrayHLS_data_z_ad_2, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_z_lo"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="75" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="100" bw="32" op_0_bw="9">
+<![CDATA[
+:59  %arrayHLS_data_setti_50 = load i32* %arrayHLS_data_setti_40, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_50"/></StgValue>
+</operation>
+
+<operation id="76" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="102" bw="32" op_0_bw="9">
+<![CDATA[
+:61  %arrayHLS_data_setti_51 = load i32* %arrayHLS_data_setti_41, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_51"/></StgValue>
+</operation>
+
+<operation id="77" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="104" bw="32" op_0_bw="9">
+<![CDATA[
+:63  %arrayHLS_data_setti_52 = load i32* %arrayHLS_data_setti_42, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_52"/></StgValue>
+</operation>
+
+<operation id="78" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="106" bw="32" op_0_bw="9">
+<![CDATA[
+:65  %arrayHLS_data_setti_53 = load float* %arrayHLS_data_setti_43, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_53"/></StgValue>
+</operation>
+
+<operation id="79" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="108" bw="32" op_0_bw="9">
+<![CDATA[
+:67  %arrayHLS_data_setti_54 = load float* %arrayHLS_data_setti_44, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_54"/></StgValue>
+</operation>
+
+<operation id="80" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="110" bw="32" op_0_bw="9">
+<![CDATA[
+:69  %arrayHLS_data_setti_55 = load float* %arrayHLS_data_setti_45, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_55"/></StgValue>
+</operation>
+
+<operation id="81" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="112" bw="32" op_0_bw="9">
+<![CDATA[
+:71  %arrayHLS_data_setti_56 = load float* %arrayHLS_data_setti_46, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_56"/></StgValue>
+</operation>
+
+<operation id="82" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="114" bw="32" op_0_bw="9">
+<![CDATA[
+:73  %arrayHLS_data_setti_57 = load float* %arrayHLS_data_setti_47, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_57"/></StgValue>
+</operation>
+
+<operation id="83" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="116" bw="32" op_0_bw="9">
+<![CDATA[
+:75  %arrayHLS_data_setti_58 = load float* %arrayHLS_data_setti_48, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_58"/></StgValue>
+</operation>
+
+<operation id="84" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="118" bw="32" op_0_bw="9">
+<![CDATA[
+:77  %arrayHLS_data_setti_59 = load i32* %arrayHLS_data_setti_49, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_59"/></StgValue>
+</operation>
+
+<operation id="85" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="120" bw="32" op_0_bw="9">
+<![CDATA[
+:79  %arrayHLS_data_modul_64 = load i32* %arrayHLS_data_modul_51, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_64"/></StgValue>
+</operation>
+
+<operation id="86" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="32" op_0_bw="9">
+<![CDATA[
+:81  %arrayHLS_data_modul_65 = load i32* %arrayHLS_data_modul_52, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_65"/></StgValue>
+</operation>
+
+<operation id="87" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="124" bw="32" op_0_bw="9">
+<![CDATA[
+:83  %arrayHLS_data_modul_66 = load i32* %arrayHLS_data_modul_53, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_66"/></StgValue>
+</operation>
+
+<operation id="88" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="32" op_0_bw="9">
+<![CDATA[
+:85  %arrayHLS_data_modul_67 = load float* %arrayHLS_data_modul_54, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_67"/></StgValue>
+</operation>
+
+<operation id="89" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="128" bw="32" op_0_bw="9">
+<![CDATA[
+:87  %arrayHLS_data_modul_68 = load float* %arrayHLS_data_modul_55, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_68"/></StgValue>
+</operation>
+
+<operation id="90" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="130" bw="32" op_0_bw="9">
+<![CDATA[
+:89  %arrayHLS_data_modul_69 = load float* %arrayHLS_data_modul_56, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_69"/></StgValue>
+</operation>
+
+<operation id="91" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="132" bw="32" op_0_bw="9">
+<![CDATA[
+:91  %arrayHLS_data_modul_70 = load float* %arrayHLS_data_modul_57, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_70"/></StgValue>
+</operation>
+
+<operation id="92" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="134" bw="32" op_0_bw="9">
+<![CDATA[
+:93  %arrayHLS_data_modul_71 = load float* %arrayHLS_data_modul_58, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_71"/></StgValue>
+</operation>
+
+<operation id="93" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="136" bw="32" op_0_bw="9">
+<![CDATA[
+:95  %arrayHLS_data_modul_72 = load float* %arrayHLS_data_modul_59, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_72"/></StgValue>
+</operation>
+
+<operation id="94" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="138" bw="32" op_0_bw="9">
+<![CDATA[
+:97  %arrayHLS_data_modul_73 = load i32* %arrayHLS_data_modul_60, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_73"/></StgValue>
+</operation>
+
+<operation id="95" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="140" bw="1" op_0_bw="9">
+<![CDATA[
+:99  %arrayHLS_data_modul_74 = load i1* %arrayHLS_data_modul_61, align 1
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_74"/></StgValue>
+</operation>
+
+<operation id="96" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="142" bw="1" op_0_bw="9">
+<![CDATA[
+:101  %arrayHLS_data_modul_75 = load i1* %arrayHLS_data_modul_62, align 1
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_75"/></StgValue>
+</operation>
+
+<operation id="97" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="144" bw="32" op_0_bw="9">
+<![CDATA[
+:103  %arrayHLS_data_modul_76 = load i32* %arrayHLS_data_modul_63, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_76"/></StgValue>
+</operation>
+
+<operation id="98" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="146" bw="32" op_0_bw="9">
+<![CDATA[
+:105  %arrayHLS_data_r_lo = load float* %arrayHLS_data_r_ad_2, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_r_lo"/></StgValue>
+</operation>
+
+<operation id="99" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="148" bw="32" op_0_bw="9">
+<![CDATA[
+:107  %arrayHLS_data_phi_4 = load float* %arrayHLS_data_phi_3, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_phi_4"/></StgValue>
+</operation>
+
+<operation id="100" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="150" bw="32" op_0_bw="9">
+<![CDATA[
+:109  %arrayHLS_data_z_lo = load float* %arrayHLS_data_z_ad_2, align 4
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_z_lo"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="101" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="43" bw="64" op_0_bw="10">
+<![CDATA[
+:2  %zext_ln135 = zext i10 %add_ln135 to i64
+
+]]></Node>
+<StgValue><ssdm name="zext_ln135"/></StgValue>
+</operation>
+
+<operation id="102" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="44" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:3  %arrayHLS_data_setti_30 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_30"/></StgValue>
+</operation>
+
+<operation id="103" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="45" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:4  %arrayHLS_data_setti_31 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_31"/></StgValue>
+</operation>
+
+<operation id="104" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="46" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:5  %arrayHLS_data_setti_32 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_32"/></StgValue>
+</operation>
+
+<operation id="105" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="47" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:6  %arrayHLS_data_setti_33 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_33"/></StgValue>
+</operation>
+
+<operation id="106" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="48" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:7  %arrayHLS_data_setti_34 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_34"/></StgValue>
+</operation>
+
+<operation id="107" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="49" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:8  %arrayHLS_data_setti_35 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_35"/></StgValue>
+</operation>
+
+<operation id="108" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="50" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:9  %arrayHLS_data_setti_36 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_36"/></StgValue>
+</operation>
+
+<operation id="109" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="51" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:10  %arrayHLS_data_setti_37 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_37"/></StgValue>
+</operation>
+
+<operation id="110" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="52" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:11  %arrayHLS_data_setti_38 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_38"/></StgValue>
+</operation>
+
+<operation id="111" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="53" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:12  %arrayHLS_data_setti_39 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_setti_39"/></StgValue>
+</operation>
+
+<operation id="112" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="54" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:13  %arrayHLS_data_modul = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul"/></StgValue>
+</operation>
+
+<operation id="113" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="55" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:14  %arrayHLS_data_modul_39 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_39"/></StgValue>
+</operation>
+
+<operation id="114" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="56" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:15  %arrayHLS_data_modul_40 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_40"/></StgValue>
+</operation>
+
+<operation id="115" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="57" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:16  %arrayHLS_data_modul_41 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_41"/></StgValue>
+</operation>
+
+<operation id="116" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="58" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:17  %arrayHLS_data_modul_42 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_42"/></StgValue>
+</operation>
+
+<operation id="117" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="59" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:18  %arrayHLS_data_modul_43 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_43"/></StgValue>
+</operation>
+
+<operation id="118" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="60" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:19  %arrayHLS_data_modul_44 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_44"/></StgValue>
+</operation>
+
+<operation id="119" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="61" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:20  %arrayHLS_data_modul_45 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_45"/></StgValue>
+</operation>
+
+<operation id="120" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="62" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:21  %arrayHLS_data_modul_46 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_46"/></StgValue>
+</operation>
+
+<operation id="121" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="63" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:22  %arrayHLS_data_modul_47 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_47"/></StgValue>
+</operation>
+
+<operation id="122" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="64" bw="9" op_0_bw="1" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:23  %arrayHLS_data_modul_48 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_48"/></StgValue>
+</operation>
+
+<operation id="123" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="65" bw="9" op_0_bw="1" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:24  %arrayHLS_data_modul_49 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_49"/></StgValue>
+</operation>
+
+<operation id="124" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="66" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:25  %arrayHLS_data_modul_50 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_modul_50"/></StgValue>
+</operation>
+
+<operation id="125" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="67" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:26  %arrayHLS_data_r_ad = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_r_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_r_ad"/></StgValue>
+</operation>
+
+<operation id="126" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="68" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:27  %arrayHLS_data_phi_s = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_phi_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_phi_s"/></StgValue>
+</operation>
+
+<operation id="127" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="69" bw="9" op_0_bw="32" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:28  %arrayHLS_data_z_ad = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_z_s, i64 0, i64 %zext_ln135
+
+]]></Node>
+<StgValue><ssdm name="arrayHLS_data_z_ad"/></StgValue>
+</operation>
+
+<operation id="128" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="101" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:60  store i32 %arrayHLS_data_setti_50, i32* %arrayHLS_data_setti_30, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="129" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="103" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:62  store i32 %arrayHLS_data_setti_51, i32* %arrayHLS_data_setti_31, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="130" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="105" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:64  store i32 %arrayHLS_data_setti_52, i32* %arrayHLS_data_setti_32, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="131" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="107" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:66  store float %arrayHLS_data_setti_53, float* %arrayHLS_data_setti_33, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="132" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:68  store float %arrayHLS_data_setti_54, float* %arrayHLS_data_setti_34, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="133" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="111" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:70  store float %arrayHLS_data_setti_55, float* %arrayHLS_data_setti_35, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="134" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="113" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:72  store float %arrayHLS_data_setti_56, float* %arrayHLS_data_setti_36, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="135" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="115" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:74  store float %arrayHLS_data_setti_57, float* %arrayHLS_data_setti_37, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="136" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="117" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:76  store float %arrayHLS_data_setti_58, float* %arrayHLS_data_setti_38, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="137" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="119" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:78  store i32 %arrayHLS_data_setti_59, i32* %arrayHLS_data_setti_39, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="138" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="121" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:80  store i32 %arrayHLS_data_modul_64, i32* %arrayHLS_data_modul, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="139" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="123" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:82  store i32 %arrayHLS_data_modul_65, i32* %arrayHLS_data_modul_39, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="140" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="125" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:84  store i32 %arrayHLS_data_modul_66, i32* %arrayHLS_data_modul_40, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="141" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="127" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:86  store float %arrayHLS_data_modul_67, float* %arrayHLS_data_modul_41, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="142" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="129" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:88  store float %arrayHLS_data_modul_68, float* %arrayHLS_data_modul_42, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="143" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="131" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:90  store float %arrayHLS_data_modul_69, float* %arrayHLS_data_modul_43, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="144" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="133" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:92  store float %arrayHLS_data_modul_70, float* %arrayHLS_data_modul_44, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="145" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="135" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:94  store float %arrayHLS_data_modul_71, float* %arrayHLS_data_modul_45, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="146" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="137" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:96  store float %arrayHLS_data_modul_72, float* %arrayHLS_data_modul_46, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="147" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="139" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:98  store i32 %arrayHLS_data_modul_73, i32* %arrayHLS_data_modul_47, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="148" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="141" bw="0" op_0_bw="1" op_1_bw="9">
+<![CDATA[
+:100  store i1 %arrayHLS_data_modul_74, i1* %arrayHLS_data_modul_48, align 1
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="149" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="143" bw="0" op_0_bw="1" op_1_bw="9">
+<![CDATA[
+:102  store i1 %arrayHLS_data_modul_75, i1* %arrayHLS_data_modul_49, align 1
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="150" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="145" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:104  store i32 %arrayHLS_data_modul_76, i32* %arrayHLS_data_modul_50, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="151" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="147" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:106  store float %arrayHLS_data_r_lo, float* %arrayHLS_data_r_ad, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="152" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="149" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:108  store float %arrayHLS_data_phi_4, float* %arrayHLS_data_phi_s, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="153" st_id="6" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="151" bw="0" op_0_bw="32" op_1_bw="9">
+<![CDATA[
+:110  store float %arrayHLS_data_z_lo, float* %arrayHLS_data_z_ad, align 4
+
+]]></Node>
+<StgValue><ssdm name="store_ln135"/></StgValue>
+</operation>
+
+<operation id="154" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="152" bw="0" op_0_bw="0">
+<![CDATA[
+:111  br label %1
+
+]]></Node>
+<StgValue><ssdm name="br_ln134"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="162" name="arrayHLS_TMTT_StubHLS_size_read" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_size_read"/></StgValue>
+</port>
+<port id="163" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="164" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset"/></StgValue>
+</port>
+<port id="165" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="166" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="167" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="168" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="169" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="170" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="171" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="172" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="173" name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="174" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="175" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="176" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="177" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="178" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="179" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="180" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="181" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="182" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="183" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="184" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="185" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="186" name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="187" name="arrayHLS_TMTT_StubHLS_data_r_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_r_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="188" name="arrayHLS_TMTT_StubHLS_data_phi_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_phi_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="189" name="arrayHLS_TMTT_StubHLS_data_z_s" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="arrayHLS_TMTT_StubHLS_data_z_s"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="190" name="idx_read" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="idx_read"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="192" from="_ssdm_op_Read.ap_auto.i32" to="idx_read_2" fromId="191" toId="7">
+</dataflow>
+<dataflow id="193" from="idx_read" to="idx_read_2" fromId="190" toId="7">
+</dataflow>
+<dataflow id="194" from="_ssdm_op_Read.ap_auto.i32" to="arrayHLS_data_setti" fromId="191" toId="8">
+</dataflow>
+<dataflow id="195" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset" to="arrayHLS_data_setti" fromId="164" toId="8">
+</dataflow>
+<dataflow id="196" from="_ssdm_op_Read.ap_auto.i32" to="arrayHLS_size_read" fromId="191" toId="9">
+</dataflow>
+<dataflow id="197" from="arrayHLS_TMTT_StubHLS_size_read" to="arrayHLS_size_read" fromId="162" toId="9">
+</dataflow>
+<dataflow id="198" from="arrayHLS_data_setti" to="trunc_ln132" fromId="8" toId="10">
+</dataflow>
+<dataflow id="200" from="_ssdm_op_BitConcatenate.i10.i6.i4" to="zext_ln135_2_cast" fromId="199" toId="11">
+</dataflow>
+<dataflow id="201" from="trunc_ln132" to="zext_ln135_2_cast" fromId="10" toId="11">
+</dataflow>
+<dataflow id="203" from="StgValue_202" to="zext_ln135_2_cast" fromId="202" toId="11">
+</dataflow>
+<dataflow id="204" from="idx_read_2" to="i_0" fromId="7" toId="13">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="205" from="br_ln134" to="i_0" fromId="12" toId="13">
+</dataflow>
+<dataflow id="206" from="i" to="i_0" fromId="17" toId="13">
+<BackEdge/>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="207" from="br_ln134" to="i_0" fromId="154" toId="13">
+<BackEdge/>
+</dataflow>
+<dataflow id="208" from="i_0" to="icmp_ln134" fromId="13" toId="14">
+</dataflow>
+<dataflow id="209" from="arrayHLS_size_read" to="icmp_ln134" fromId="9" toId="14">
+</dataflow>
+<dataflow id="210" from="icmp_ln134" to="br_ln134" fromId="14" toId="15">
+</dataflow>
+<dataflow id="211" from="i_0" to="trunc_ln135" fromId="13" toId="16">
+</dataflow>
+<dataflow id="213" from="StgValue_212" to="i" fromId="212" toId="17">
+</dataflow>
+<dataflow id="214" from="i_0" to="i" fromId="13" toId="17">
+</dataflow>
+<dataflow id="215" from="i" to="trunc_ln135_1" fromId="17" toId="18">
+</dataflow>
+<dataflow id="216" from="zext_ln135_2_cast" to="add_ln135" fromId="11" toId="20">
+</dataflow>
+<dataflow id="217" from="trunc_ln135" to="add_ln135" fromId="16" toId="20">
+</dataflow>
+<dataflow id="218" from="zext_ln135_2_cast" to="add_ln135_2" fromId="11" toId="21">
+</dataflow>
+<dataflow id="219" from="trunc_ln135_1" to="add_ln135_2" fromId="18" toId="21">
+</dataflow>
+<dataflow id="220" from="add_ln135_2" to="zext_ln135_2" fromId="21" toId="22">
+</dataflow>
+<dataflow id="221" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s" to="arrayHLS_data_setti_40" fromId="163" toId="23">
+</dataflow>
+<dataflow id="223" from="StgValue_222" to="arrayHLS_data_setti_40" fromId="222" toId="23">
+</dataflow>
+<dataflow id="224" from="zext_ln135_2" to="arrayHLS_data_setti_40" fromId="22" toId="23">
+</dataflow>
+<dataflow id="225" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s" to="arrayHLS_data_setti_41" fromId="165" toId="24">
+</dataflow>
+<dataflow id="226" from="StgValue_222" to="arrayHLS_data_setti_41" fromId="222" toId="24">
+</dataflow>
+<dataflow id="227" from="zext_ln135_2" to="arrayHLS_data_setti_41" fromId="22" toId="24">
+</dataflow>
+<dataflow id="228" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s" to="arrayHLS_data_setti_42" fromId="166" toId="25">
+</dataflow>
+<dataflow id="229" from="StgValue_222" to="arrayHLS_data_setti_42" fromId="222" toId="25">
+</dataflow>
+<dataflow id="230" from="zext_ln135_2" to="arrayHLS_data_setti_42" fromId="22" toId="25">
+</dataflow>
+<dataflow id="231" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s" to="arrayHLS_data_setti_43" fromId="167" toId="26">
+</dataflow>
+<dataflow id="232" from="StgValue_222" to="arrayHLS_data_setti_43" fromId="222" toId="26">
+</dataflow>
+<dataflow id="233" from="zext_ln135_2" to="arrayHLS_data_setti_43" fromId="22" toId="26">
+</dataflow>
+<dataflow id="234" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s" to="arrayHLS_data_setti_44" fromId="168" toId="27">
+</dataflow>
+<dataflow id="235" from="StgValue_222" to="arrayHLS_data_setti_44" fromId="222" toId="27">
+</dataflow>
+<dataflow id="236" from="zext_ln135_2" to="arrayHLS_data_setti_44" fromId="22" toId="27">
+</dataflow>
+<dataflow id="237" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s" to="arrayHLS_data_setti_45" fromId="169" toId="28">
+</dataflow>
+<dataflow id="238" from="StgValue_222" to="arrayHLS_data_setti_45" fromId="222" toId="28">
+</dataflow>
+<dataflow id="239" from="zext_ln135_2" to="arrayHLS_data_setti_45" fromId="22" toId="28">
+</dataflow>
+<dataflow id="240" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s" to="arrayHLS_data_setti_46" fromId="170" toId="29">
+</dataflow>
+<dataflow id="241" from="StgValue_222" to="arrayHLS_data_setti_46" fromId="222" toId="29">
+</dataflow>
+<dataflow id="242" from="zext_ln135_2" to="arrayHLS_data_setti_46" fromId="22" toId="29">
+</dataflow>
+<dataflow id="243" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s" to="arrayHLS_data_setti_47" fromId="171" toId="30">
+</dataflow>
+<dataflow id="244" from="StgValue_222" to="arrayHLS_data_setti_47" fromId="222" toId="30">
+</dataflow>
+<dataflow id="245" from="zext_ln135_2" to="arrayHLS_data_setti_47" fromId="22" toId="30">
+</dataflow>
+<dataflow id="246" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s" to="arrayHLS_data_setti_48" fromId="172" toId="31">
+</dataflow>
+<dataflow id="247" from="StgValue_222" to="arrayHLS_data_setti_48" fromId="222" toId="31">
+</dataflow>
+<dataflow id="248" from="zext_ln135_2" to="arrayHLS_data_setti_48" fromId="22" toId="31">
+</dataflow>
+<dataflow id="249" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s" to="arrayHLS_data_setti_49" fromId="173" toId="32">
+</dataflow>
+<dataflow id="250" from="StgValue_222" to="arrayHLS_data_setti_49" fromId="222" toId="32">
+</dataflow>
+<dataflow id="251" from="zext_ln135_2" to="arrayHLS_data_setti_49" fromId="22" toId="32">
+</dataflow>
+<dataflow id="252" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s" to="arrayHLS_data_modul_51" fromId="174" toId="33">
+</dataflow>
+<dataflow id="253" from="StgValue_222" to="arrayHLS_data_modul_51" fromId="222" toId="33">
+</dataflow>
+<dataflow id="254" from="zext_ln135_2" to="arrayHLS_data_modul_51" fromId="22" toId="33">
+</dataflow>
+<dataflow id="255" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s" to="arrayHLS_data_modul_52" fromId="175" toId="34">
+</dataflow>
+<dataflow id="256" from="StgValue_222" to="arrayHLS_data_modul_52" fromId="222" toId="34">
+</dataflow>
+<dataflow id="257" from="zext_ln135_2" to="arrayHLS_data_modul_52" fromId="22" toId="34">
+</dataflow>
+<dataflow id="258" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s" to="arrayHLS_data_modul_53" fromId="176" toId="35">
+</dataflow>
+<dataflow id="259" from="StgValue_222" to="arrayHLS_data_modul_53" fromId="222" toId="35">
+</dataflow>
+<dataflow id="260" from="zext_ln135_2" to="arrayHLS_data_modul_53" fromId="22" toId="35">
+</dataflow>
+<dataflow id="261" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s" to="arrayHLS_data_modul_54" fromId="177" toId="36">
+</dataflow>
+<dataflow id="262" from="StgValue_222" to="arrayHLS_data_modul_54" fromId="222" toId="36">
+</dataflow>
+<dataflow id="263" from="zext_ln135_2" to="arrayHLS_data_modul_54" fromId="22" toId="36">
+</dataflow>
+<dataflow id="264" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s" to="arrayHLS_data_modul_55" fromId="178" toId="37">
+</dataflow>
+<dataflow id="265" from="StgValue_222" to="arrayHLS_data_modul_55" fromId="222" toId="37">
+</dataflow>
+<dataflow id="266" from="zext_ln135_2" to="arrayHLS_data_modul_55" fromId="22" toId="37">
+</dataflow>
+<dataflow id="267" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s" to="arrayHLS_data_modul_56" fromId="179" toId="38">
+</dataflow>
+<dataflow id="268" from="StgValue_222" to="arrayHLS_data_modul_56" fromId="222" toId="38">
+</dataflow>
+<dataflow id="269" from="zext_ln135_2" to="arrayHLS_data_modul_56" fromId="22" toId="38">
+</dataflow>
+<dataflow id="270" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s" to="arrayHLS_data_modul_57" fromId="180" toId="39">
+</dataflow>
+<dataflow id="271" from="StgValue_222" to="arrayHLS_data_modul_57" fromId="222" toId="39">
+</dataflow>
+<dataflow id="272" from="zext_ln135_2" to="arrayHLS_data_modul_57" fromId="22" toId="39">
+</dataflow>
+<dataflow id="273" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s" to="arrayHLS_data_modul_58" fromId="181" toId="40">
+</dataflow>
+<dataflow id="274" from="StgValue_222" to="arrayHLS_data_modul_58" fromId="222" toId="40">
+</dataflow>
+<dataflow id="275" from="zext_ln135_2" to="arrayHLS_data_modul_58" fromId="22" toId="40">
+</dataflow>
+<dataflow id="276" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s" to="arrayHLS_data_modul_59" fromId="182" toId="41">
+</dataflow>
+<dataflow id="277" from="StgValue_222" to="arrayHLS_data_modul_59" fromId="222" toId="41">
+</dataflow>
+<dataflow id="278" from="zext_ln135_2" to="arrayHLS_data_modul_59" fromId="22" toId="41">
+</dataflow>
+<dataflow id="279" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s" to="arrayHLS_data_modul_60" fromId="183" toId="42">
+</dataflow>
+<dataflow id="280" from="StgValue_222" to="arrayHLS_data_modul_60" fromId="222" toId="42">
+</dataflow>
+<dataflow id="281" from="zext_ln135_2" to="arrayHLS_data_modul_60" fromId="22" toId="42">
+</dataflow>
+<dataflow id="282" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s" to="arrayHLS_data_modul_61" fromId="184" toId="43">
+</dataflow>
+<dataflow id="283" from="StgValue_222" to="arrayHLS_data_modul_61" fromId="222" toId="43">
+</dataflow>
+<dataflow id="284" from="zext_ln135_2" to="arrayHLS_data_modul_61" fromId="22" toId="43">
+</dataflow>
+<dataflow id="285" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s" to="arrayHLS_data_modul_62" fromId="185" toId="44">
+</dataflow>
+<dataflow id="286" from="StgValue_222" to="arrayHLS_data_modul_62" fromId="222" toId="44">
+</dataflow>
+<dataflow id="287" from="zext_ln135_2" to="arrayHLS_data_modul_62" fromId="22" toId="44">
+</dataflow>
+<dataflow id="288" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s" to="arrayHLS_data_modul_63" fromId="186" toId="45">
+</dataflow>
+<dataflow id="289" from="StgValue_222" to="arrayHLS_data_modul_63" fromId="222" toId="45">
+</dataflow>
+<dataflow id="290" from="zext_ln135_2" to="arrayHLS_data_modul_63" fromId="22" toId="45">
+</dataflow>
+<dataflow id="291" from="arrayHLS_TMTT_StubHLS_data_r_s" to="arrayHLS_data_r_ad_2" fromId="187" toId="46">
+</dataflow>
+<dataflow id="292" from="StgValue_222" to="arrayHLS_data_r_ad_2" fromId="222" toId="46">
+</dataflow>
+<dataflow id="293" from="zext_ln135_2" to="arrayHLS_data_r_ad_2" fromId="22" toId="46">
+</dataflow>
+<dataflow id="294" from="arrayHLS_TMTT_StubHLS_data_phi_s" to="arrayHLS_data_phi_3" fromId="188" toId="47">
+</dataflow>
+<dataflow id="295" from="StgValue_222" to="arrayHLS_data_phi_3" fromId="222" toId="47">
+</dataflow>
+<dataflow id="296" from="zext_ln135_2" to="arrayHLS_data_phi_3" fromId="22" toId="47">
+</dataflow>
+<dataflow id="297" from="arrayHLS_TMTT_StubHLS_data_z_s" to="arrayHLS_data_z_ad_2" fromId="189" toId="48">
+</dataflow>
+<dataflow id="298" from="StgValue_222" to="arrayHLS_data_z_ad_2" fromId="222" toId="48">
+</dataflow>
+<dataflow id="299" from="zext_ln135_2" to="arrayHLS_data_z_ad_2" fromId="22" toId="48">
+</dataflow>
+<dataflow id="300" from="arrayHLS_data_setti_40" to="arrayHLS_data_setti_50" fromId="23" toId="49">
+</dataflow>
+<dataflow id="301" from="arrayHLS_data_setti_41" to="arrayHLS_data_setti_51" fromId="24" toId="50">
+</dataflow>
+<dataflow id="302" from="arrayHLS_data_setti_42" to="arrayHLS_data_setti_52" fromId="25" toId="51">
+</dataflow>
+<dataflow id="303" from="arrayHLS_data_setti_43" to="arrayHLS_data_setti_53" fromId="26" toId="52">
+</dataflow>
+<dataflow id="304" from="arrayHLS_data_setti_44" to="arrayHLS_data_setti_54" fromId="27" toId="53">
+</dataflow>
+<dataflow id="305" from="arrayHLS_data_setti_45" to="arrayHLS_data_setti_55" fromId="28" toId="54">
+</dataflow>
+<dataflow id="306" from="arrayHLS_data_setti_46" to="arrayHLS_data_setti_56" fromId="29" toId="55">
+</dataflow>
+<dataflow id="307" from="arrayHLS_data_setti_47" to="arrayHLS_data_setti_57" fromId="30" toId="56">
+</dataflow>
+<dataflow id="308" from="arrayHLS_data_setti_48" to="arrayHLS_data_setti_58" fromId="31" toId="57">
+</dataflow>
+<dataflow id="309" from="arrayHLS_data_setti_49" to="arrayHLS_data_setti_59" fromId="32" toId="58">
+</dataflow>
+<dataflow id="310" from="arrayHLS_data_modul_51" to="arrayHLS_data_modul_64" fromId="33" toId="59">
+</dataflow>
+<dataflow id="311" from="arrayHLS_data_modul_52" to="arrayHLS_data_modul_65" fromId="34" toId="60">
+</dataflow>
+<dataflow id="312" from="arrayHLS_data_modul_53" to="arrayHLS_data_modul_66" fromId="35" toId="61">
+</dataflow>
+<dataflow id="313" from="arrayHLS_data_modul_54" to="arrayHLS_data_modul_67" fromId="36" toId="62">
+</dataflow>
+<dataflow id="314" from="arrayHLS_data_modul_55" to="arrayHLS_data_modul_68" fromId="37" toId="63">
+</dataflow>
+<dataflow id="315" from="arrayHLS_data_modul_56" to="arrayHLS_data_modul_69" fromId="38" toId="64">
+</dataflow>
+<dataflow id="316" from="arrayHLS_data_modul_57" to="arrayHLS_data_modul_70" fromId="39" toId="65">
+</dataflow>
+<dataflow id="317" from="arrayHLS_data_modul_58" to="arrayHLS_data_modul_71" fromId="40" toId="66">
+</dataflow>
+<dataflow id="318" from="arrayHLS_data_modul_59" to="arrayHLS_data_modul_72" fromId="41" toId="67">
+</dataflow>
+<dataflow id="319" from="arrayHLS_data_modul_60" to="arrayHLS_data_modul_73" fromId="42" toId="68">
+</dataflow>
+<dataflow id="320" from="arrayHLS_data_modul_61" to="arrayHLS_data_modul_74" fromId="43" toId="69">
+</dataflow>
+<dataflow id="321" from="arrayHLS_data_modul_62" to="arrayHLS_data_modul_75" fromId="44" toId="70">
+</dataflow>
+<dataflow id="322" from="arrayHLS_data_modul_63" to="arrayHLS_data_modul_76" fromId="45" toId="71">
+</dataflow>
+<dataflow id="323" from="arrayHLS_data_r_ad_2" to="arrayHLS_data_r_lo" fromId="46" toId="72">
+</dataflow>
+<dataflow id="324" from="arrayHLS_data_phi_3" to="arrayHLS_data_phi_4" fromId="47" toId="73">
+</dataflow>
+<dataflow id="325" from="arrayHLS_data_z_ad_2" to="arrayHLS_data_z_lo" fromId="48" toId="74">
+</dataflow>
+<dataflow id="326" from="arrayHLS_data_setti_40" to="arrayHLS_data_setti_50" fromId="23" toId="75">
+</dataflow>
+<dataflow id="327" from="arrayHLS_data_setti_41" to="arrayHLS_data_setti_51" fromId="24" toId="76">
+</dataflow>
+<dataflow id="328" from="arrayHLS_data_setti_42" to="arrayHLS_data_setti_52" fromId="25" toId="77">
+</dataflow>
+<dataflow id="329" from="arrayHLS_data_setti_43" to="arrayHLS_data_setti_53" fromId="26" toId="78">
+</dataflow>
+<dataflow id="330" from="arrayHLS_data_setti_44" to="arrayHLS_data_setti_54" fromId="27" toId="79">
+</dataflow>
+<dataflow id="331" from="arrayHLS_data_setti_45" to="arrayHLS_data_setti_55" fromId="28" toId="80">
+</dataflow>
+<dataflow id="332" from="arrayHLS_data_setti_46" to="arrayHLS_data_setti_56" fromId="29" toId="81">
+</dataflow>
+<dataflow id="333" from="arrayHLS_data_setti_47" to="arrayHLS_data_setti_57" fromId="30" toId="82">
+</dataflow>
+<dataflow id="334" from="arrayHLS_data_setti_48" to="arrayHLS_data_setti_58" fromId="31" toId="83">
+</dataflow>
+<dataflow id="335" from="arrayHLS_data_setti_49" to="arrayHLS_data_setti_59" fromId="32" toId="84">
+</dataflow>
+<dataflow id="336" from="arrayHLS_data_modul_51" to="arrayHLS_data_modul_64" fromId="33" toId="85">
+</dataflow>
+<dataflow id="337" from="arrayHLS_data_modul_52" to="arrayHLS_data_modul_65" fromId="34" toId="86">
+</dataflow>
+<dataflow id="338" from="arrayHLS_data_modul_53" to="arrayHLS_data_modul_66" fromId="35" toId="87">
+</dataflow>
+<dataflow id="339" from="arrayHLS_data_modul_54" to="arrayHLS_data_modul_67" fromId="36" toId="88">
+</dataflow>
+<dataflow id="340" from="arrayHLS_data_modul_55" to="arrayHLS_data_modul_68" fromId="37" toId="89">
+</dataflow>
+<dataflow id="341" from="arrayHLS_data_modul_56" to="arrayHLS_data_modul_69" fromId="38" toId="90">
+</dataflow>
+<dataflow id="342" from="arrayHLS_data_modul_57" to="arrayHLS_data_modul_70" fromId="39" toId="91">
+</dataflow>
+<dataflow id="343" from="arrayHLS_data_modul_58" to="arrayHLS_data_modul_71" fromId="40" toId="92">
+</dataflow>
+<dataflow id="344" from="arrayHLS_data_modul_59" to="arrayHLS_data_modul_72" fromId="41" toId="93">
+</dataflow>
+<dataflow id="345" from="arrayHLS_data_modul_60" to="arrayHLS_data_modul_73" fromId="42" toId="94">
+</dataflow>
+<dataflow id="346" from="arrayHLS_data_modul_61" to="arrayHLS_data_modul_74" fromId="43" toId="95">
+</dataflow>
+<dataflow id="347" from="arrayHLS_data_modul_62" to="arrayHLS_data_modul_75" fromId="44" toId="96">
+</dataflow>
+<dataflow id="348" from="arrayHLS_data_modul_63" to="arrayHLS_data_modul_76" fromId="45" toId="97">
+</dataflow>
+<dataflow id="349" from="arrayHLS_data_r_ad_2" to="arrayHLS_data_r_lo" fromId="46" toId="98">
+</dataflow>
+<dataflow id="350" from="arrayHLS_data_phi_3" to="arrayHLS_data_phi_4" fromId="47" toId="99">
+</dataflow>
+<dataflow id="351" from="arrayHLS_data_z_ad_2" to="arrayHLS_data_z_lo" fromId="48" toId="100">
+</dataflow>
+<dataflow id="352" from="add_ln135" to="zext_ln135" fromId="20" toId="101">
+</dataflow>
+<dataflow id="353" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s" to="arrayHLS_data_setti_30" fromId="163" toId="102">
+</dataflow>
+<dataflow id="354" from="StgValue_222" to="arrayHLS_data_setti_30" fromId="222" toId="102">
+</dataflow>
+<dataflow id="355" from="zext_ln135" to="arrayHLS_data_setti_30" fromId="101" toId="102">
+</dataflow>
+<dataflow id="356" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s" to="arrayHLS_data_setti_31" fromId="165" toId="103">
+</dataflow>
+<dataflow id="357" from="StgValue_222" to="arrayHLS_data_setti_31" fromId="222" toId="103">
+</dataflow>
+<dataflow id="358" from="zext_ln135" to="arrayHLS_data_setti_31" fromId="101" toId="103">
+</dataflow>
+<dataflow id="359" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s" to="arrayHLS_data_setti_32" fromId="166" toId="104">
+</dataflow>
+<dataflow id="360" from="StgValue_222" to="arrayHLS_data_setti_32" fromId="222" toId="104">
+</dataflow>
+<dataflow id="361" from="zext_ln135" to="arrayHLS_data_setti_32" fromId="101" toId="104">
+</dataflow>
+<dataflow id="362" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s" to="arrayHLS_data_setti_33" fromId="167" toId="105">
+</dataflow>
+<dataflow id="363" from="StgValue_222" to="arrayHLS_data_setti_33" fromId="222" toId="105">
+</dataflow>
+<dataflow id="364" from="zext_ln135" to="arrayHLS_data_setti_33" fromId="101" toId="105">
+</dataflow>
+<dataflow id="365" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s" to="arrayHLS_data_setti_34" fromId="168" toId="106">
+</dataflow>
+<dataflow id="366" from="StgValue_222" to="arrayHLS_data_setti_34" fromId="222" toId="106">
+</dataflow>
+<dataflow id="367" from="zext_ln135" to="arrayHLS_data_setti_34" fromId="101" toId="106">
+</dataflow>
+<dataflow id="368" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s" to="arrayHLS_data_setti_35" fromId="169" toId="107">
+</dataflow>
+<dataflow id="369" from="StgValue_222" to="arrayHLS_data_setti_35" fromId="222" toId="107">
+</dataflow>
+<dataflow id="370" from="zext_ln135" to="arrayHLS_data_setti_35" fromId="101" toId="107">
+</dataflow>
+<dataflow id="371" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s" to="arrayHLS_data_setti_36" fromId="170" toId="108">
+</dataflow>
+<dataflow id="372" from="StgValue_222" to="arrayHLS_data_setti_36" fromId="222" toId="108">
+</dataflow>
+<dataflow id="373" from="zext_ln135" to="arrayHLS_data_setti_36" fromId="101" toId="108">
+</dataflow>
+<dataflow id="374" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s" to="arrayHLS_data_setti_37" fromId="171" toId="109">
+</dataflow>
+<dataflow id="375" from="StgValue_222" to="arrayHLS_data_setti_37" fromId="222" toId="109">
+</dataflow>
+<dataflow id="376" from="zext_ln135" to="arrayHLS_data_setti_37" fromId="101" toId="109">
+</dataflow>
+<dataflow id="377" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s" to="arrayHLS_data_setti_38" fromId="172" toId="110">
+</dataflow>
+<dataflow id="378" from="StgValue_222" to="arrayHLS_data_setti_38" fromId="222" toId="110">
+</dataflow>
+<dataflow id="379" from="zext_ln135" to="arrayHLS_data_setti_38" fromId="101" toId="110">
+</dataflow>
+<dataflow id="380" from="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s" to="arrayHLS_data_setti_39" fromId="173" toId="111">
+</dataflow>
+<dataflow id="381" from="StgValue_222" to="arrayHLS_data_setti_39" fromId="222" toId="111">
+</dataflow>
+<dataflow id="382" from="zext_ln135" to="arrayHLS_data_setti_39" fromId="101" toId="111">
+</dataflow>
+<dataflow id="383" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s" to="arrayHLS_data_modul" fromId="174" toId="112">
+</dataflow>
+<dataflow id="384" from="StgValue_222" to="arrayHLS_data_modul" fromId="222" toId="112">
+</dataflow>
+<dataflow id="385" from="zext_ln135" to="arrayHLS_data_modul" fromId="101" toId="112">
+</dataflow>
+<dataflow id="386" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s" to="arrayHLS_data_modul_39" fromId="175" toId="113">
+</dataflow>
+<dataflow id="387" from="StgValue_222" to="arrayHLS_data_modul_39" fromId="222" toId="113">
+</dataflow>
+<dataflow id="388" from="zext_ln135" to="arrayHLS_data_modul_39" fromId="101" toId="113">
+</dataflow>
+<dataflow id="389" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s" to="arrayHLS_data_modul_40" fromId="176" toId="114">
+</dataflow>
+<dataflow id="390" from="StgValue_222" to="arrayHLS_data_modul_40" fromId="222" toId="114">
+</dataflow>
+<dataflow id="391" from="zext_ln135" to="arrayHLS_data_modul_40" fromId="101" toId="114">
+</dataflow>
+<dataflow id="392" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s" to="arrayHLS_data_modul_41" fromId="177" toId="115">
+</dataflow>
+<dataflow id="393" from="StgValue_222" to="arrayHLS_data_modul_41" fromId="222" toId="115">
+</dataflow>
+<dataflow id="394" from="zext_ln135" to="arrayHLS_data_modul_41" fromId="101" toId="115">
+</dataflow>
+<dataflow id="395" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s" to="arrayHLS_data_modul_42" fromId="178" toId="116">
+</dataflow>
+<dataflow id="396" from="StgValue_222" to="arrayHLS_data_modul_42" fromId="222" toId="116">
+</dataflow>
+<dataflow id="397" from="zext_ln135" to="arrayHLS_data_modul_42" fromId="101" toId="116">
+</dataflow>
+<dataflow id="398" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s" to="arrayHLS_data_modul_43" fromId="179" toId="117">
+</dataflow>
+<dataflow id="399" from="StgValue_222" to="arrayHLS_data_modul_43" fromId="222" toId="117">
+</dataflow>
+<dataflow id="400" from="zext_ln135" to="arrayHLS_data_modul_43" fromId="101" toId="117">
+</dataflow>
+<dataflow id="401" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s" to="arrayHLS_data_modul_44" fromId="180" toId="118">
+</dataflow>
+<dataflow id="402" from="StgValue_222" to="arrayHLS_data_modul_44" fromId="222" toId="118">
+</dataflow>
+<dataflow id="403" from="zext_ln135" to="arrayHLS_data_modul_44" fromId="101" toId="118">
+</dataflow>
+<dataflow id="404" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s" to="arrayHLS_data_modul_45" fromId="181" toId="119">
+</dataflow>
+<dataflow id="405" from="StgValue_222" to="arrayHLS_data_modul_45" fromId="222" toId="119">
+</dataflow>
+<dataflow id="406" from="zext_ln135" to="arrayHLS_data_modul_45" fromId="101" toId="119">
+</dataflow>
+<dataflow id="407" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s" to="arrayHLS_data_modul_46" fromId="182" toId="120">
+</dataflow>
+<dataflow id="408" from="StgValue_222" to="arrayHLS_data_modul_46" fromId="222" toId="120">
+</dataflow>
+<dataflow id="409" from="zext_ln135" to="arrayHLS_data_modul_46" fromId="101" toId="120">
+</dataflow>
+<dataflow id="410" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s" to="arrayHLS_data_modul_47" fromId="183" toId="121">
+</dataflow>
+<dataflow id="411" from="StgValue_222" to="arrayHLS_data_modul_47" fromId="222" toId="121">
+</dataflow>
+<dataflow id="412" from="zext_ln135" to="arrayHLS_data_modul_47" fromId="101" toId="121">
+</dataflow>
+<dataflow id="413" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s" to="arrayHLS_data_modul_48" fromId="184" toId="122">
+</dataflow>
+<dataflow id="414" from="StgValue_222" to="arrayHLS_data_modul_48" fromId="222" toId="122">
+</dataflow>
+<dataflow id="415" from="zext_ln135" to="arrayHLS_data_modul_48" fromId="101" toId="122">
+</dataflow>
+<dataflow id="416" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s" to="arrayHLS_data_modul_49" fromId="185" toId="123">
+</dataflow>
+<dataflow id="417" from="StgValue_222" to="arrayHLS_data_modul_49" fromId="222" toId="123">
+</dataflow>
+<dataflow id="418" from="zext_ln135" to="arrayHLS_data_modul_49" fromId="101" toId="123">
+</dataflow>
+<dataflow id="419" from="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s" to="arrayHLS_data_modul_50" fromId="186" toId="124">
+</dataflow>
+<dataflow id="420" from="StgValue_222" to="arrayHLS_data_modul_50" fromId="222" toId="124">
+</dataflow>
+<dataflow id="421" from="zext_ln135" to="arrayHLS_data_modul_50" fromId="101" toId="124">
+</dataflow>
+<dataflow id="422" from="arrayHLS_TMTT_StubHLS_data_r_s" to="arrayHLS_data_r_ad" fromId="187" toId="125">
+</dataflow>
+<dataflow id="423" from="StgValue_222" to="arrayHLS_data_r_ad" fromId="222" toId="125">
+</dataflow>
+<dataflow id="424" from="zext_ln135" to="arrayHLS_data_r_ad" fromId="101" toId="125">
+</dataflow>
+<dataflow id="425" from="arrayHLS_TMTT_StubHLS_data_phi_s" to="arrayHLS_data_phi_s" fromId="188" toId="126">
+</dataflow>
+<dataflow id="426" from="StgValue_222" to="arrayHLS_data_phi_s" fromId="222" toId="126">
+</dataflow>
+<dataflow id="427" from="zext_ln135" to="arrayHLS_data_phi_s" fromId="101" toId="126">
+</dataflow>
+<dataflow id="428" from="arrayHLS_TMTT_StubHLS_data_z_s" to="arrayHLS_data_z_ad" fromId="189" toId="127">
+</dataflow>
+<dataflow id="429" from="StgValue_222" to="arrayHLS_data_z_ad" fromId="222" toId="127">
+</dataflow>
+<dataflow id="430" from="zext_ln135" to="arrayHLS_data_z_ad" fromId="101" toId="127">
+</dataflow>
+<dataflow id="431" from="arrayHLS_data_setti_50" to="store_ln135" fromId="75" toId="128">
+</dataflow>
+<dataflow id="432" from="arrayHLS_data_setti_30" to="store_ln135" fromId="102" toId="128">
+</dataflow>
+<dataflow id="433" from="arrayHLS_data_setti_51" to="store_ln135" fromId="76" toId="129">
+</dataflow>
+<dataflow id="434" from="arrayHLS_data_setti_31" to="store_ln135" fromId="103" toId="129">
+</dataflow>
+<dataflow id="435" from="arrayHLS_data_setti_52" to="store_ln135" fromId="77" toId="130">
+</dataflow>
+<dataflow id="436" from="arrayHLS_data_setti_32" to="store_ln135" fromId="104" toId="130">
+</dataflow>
+<dataflow id="437" from="arrayHLS_data_setti_53" to="store_ln135" fromId="78" toId="131">
+</dataflow>
+<dataflow id="438" from="arrayHLS_data_setti_33" to="store_ln135" fromId="105" toId="131">
+</dataflow>
+<dataflow id="439" from="arrayHLS_data_setti_54" to="store_ln135" fromId="79" toId="132">
+</dataflow>
+<dataflow id="440" from="arrayHLS_data_setti_34" to="store_ln135" fromId="106" toId="132">
+</dataflow>
+<dataflow id="441" from="arrayHLS_data_setti_55" to="store_ln135" fromId="80" toId="133">
+</dataflow>
+<dataflow id="442" from="arrayHLS_data_setti_35" to="store_ln135" fromId="107" toId="133">
+</dataflow>
+<dataflow id="443" from="arrayHLS_data_setti_56" to="store_ln135" fromId="81" toId="134">
+</dataflow>
+<dataflow id="444" from="arrayHLS_data_setti_36" to="store_ln135" fromId="108" toId="134">
+</dataflow>
+<dataflow id="445" from="arrayHLS_data_setti_57" to="store_ln135" fromId="82" toId="135">
+</dataflow>
+<dataflow id="446" from="arrayHLS_data_setti_37" to="store_ln135" fromId="109" toId="135">
+</dataflow>
+<dataflow id="447" from="arrayHLS_data_setti_58" to="store_ln135" fromId="83" toId="136">
+</dataflow>
+<dataflow id="448" from="arrayHLS_data_setti_38" to="store_ln135" fromId="110" toId="136">
+</dataflow>
+<dataflow id="449" from="arrayHLS_data_setti_59" to="store_ln135" fromId="84" toId="137">
+</dataflow>
+<dataflow id="450" from="arrayHLS_data_setti_39" to="store_ln135" fromId="111" toId="137">
+</dataflow>
+<dataflow id="451" from="arrayHLS_data_modul_64" to="store_ln135" fromId="85" toId="138">
+</dataflow>
+<dataflow id="452" from="arrayHLS_data_modul" to="store_ln135" fromId="112" toId="138">
+</dataflow>
+<dataflow id="453" from="arrayHLS_data_modul_65" to="store_ln135" fromId="86" toId="139">
+</dataflow>
+<dataflow id="454" from="arrayHLS_data_modul_39" to="store_ln135" fromId="113" toId="139">
+</dataflow>
+<dataflow id="455" from="arrayHLS_data_modul_66" to="store_ln135" fromId="87" toId="140">
+</dataflow>
+<dataflow id="456" from="arrayHLS_data_modul_40" to="store_ln135" fromId="114" toId="140">
+</dataflow>
+<dataflow id="457" from="arrayHLS_data_modul_67" to="store_ln135" fromId="88" toId="141">
+</dataflow>
+<dataflow id="458" from="arrayHLS_data_modul_41" to="store_ln135" fromId="115" toId="141">
+</dataflow>
+<dataflow id="459" from="arrayHLS_data_modul_68" to="store_ln135" fromId="89" toId="142">
+</dataflow>
+<dataflow id="460" from="arrayHLS_data_modul_42" to="store_ln135" fromId="116" toId="142">
+</dataflow>
+<dataflow id="461" from="arrayHLS_data_modul_69" to="store_ln135" fromId="90" toId="143">
+</dataflow>
+<dataflow id="462" from="arrayHLS_data_modul_43" to="store_ln135" fromId="117" toId="143">
+</dataflow>
+<dataflow id="463" from="arrayHLS_data_modul_70" to="store_ln135" fromId="91" toId="144">
+</dataflow>
+<dataflow id="464" from="arrayHLS_data_modul_44" to="store_ln135" fromId="118" toId="144">
+</dataflow>
+<dataflow id="465" from="arrayHLS_data_modul_71" to="store_ln135" fromId="92" toId="145">
+</dataflow>
+<dataflow id="466" from="arrayHLS_data_modul_45" to="store_ln135" fromId="119" toId="145">
+</dataflow>
+<dataflow id="467" from="arrayHLS_data_modul_72" to="store_ln135" fromId="93" toId="146">
+</dataflow>
+<dataflow id="468" from="arrayHLS_data_modul_46" to="store_ln135" fromId="120" toId="146">
+</dataflow>
+<dataflow id="469" from="arrayHLS_data_modul_73" to="store_ln135" fromId="94" toId="147">
+</dataflow>
+<dataflow id="470" from="arrayHLS_data_modul_47" to="store_ln135" fromId="121" toId="147">
+</dataflow>
+<dataflow id="471" from="arrayHLS_data_modul_74" to="store_ln135" fromId="95" toId="148">
+</dataflow>
+<dataflow id="472" from="arrayHLS_data_modul_48" to="store_ln135" fromId="122" toId="148">
+</dataflow>
+<dataflow id="473" from="arrayHLS_data_modul_75" to="store_ln135" fromId="96" toId="149">
+</dataflow>
+<dataflow id="474" from="arrayHLS_data_modul_49" to="store_ln135" fromId="123" toId="149">
+</dataflow>
+<dataflow id="475" from="arrayHLS_data_modul_76" to="store_ln135" fromId="97" toId="150">
+</dataflow>
+<dataflow id="476" from="arrayHLS_data_modul_50" to="store_ln135" fromId="124" toId="150">
+</dataflow>
+<dataflow id="477" from="arrayHLS_data_r_lo" to="store_ln135" fromId="98" toId="151">
+</dataflow>
+<dataflow id="478" from="arrayHLS_data_r_ad" to="store_ln135" fromId="125" toId="151">
+</dataflow>
+<dataflow id="479" from="arrayHLS_data_phi_4" to="store_ln135" fromId="99" toId="152">
+</dataflow>
+<dataflow id="480" from="arrayHLS_data_phi_s" to="store_ln135" fromId="126" toId="152">
+</dataflow>
+<dataflow id="481" from="arrayHLS_data_z_lo" to="store_ln135" fromId="100" toId="153">
+</dataflow>
+<dataflow id="482" from="arrayHLS_data_z_ad" to="store_ln135" fromId="127" toId="153">
+</dataflow>
+<dataflow id="483" from="icmp_ln134" to="StgValue_2" fromId="14" toId="2">
+</dataflow>
+</dataflows>
+
+
+</stg>

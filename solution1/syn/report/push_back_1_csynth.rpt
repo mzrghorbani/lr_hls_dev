@@ -1,0 +1,204 @@
+
+
+================================================================
+== Vivado HLS Report for 'push_back_1'
+================================================================
+* Date:           Fri Jun 14 19:06:36 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     1.771|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    7|    7|    8|    8| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|     579|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |        -|      -|        -|       -|    -|
+|Memory               |        -|      -|        -|       -|    -|
+|Multiplexer          |        -|      -|        -|     484|    -|
+|Register             |        -|      -|       72|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |        0|      0|       72|    1063|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     2160|   2760|   663360|  331680|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |        0|      0|    ~0   |   ~0   |  100|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     4320|   5520|  1326720|  663360|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        0|      0|    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |ap_return               |     +    |      0|  0|  39|          32|           1|
+    |or_ln196_10_fu_1007_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_11_fu_1025_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_12_fu_1043_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_13_fu_1061_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_14_fu_1079_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_1_fu_845_p2    |    or    |      0|  0|  36|          36|           2|
+    |or_ln196_2_fu_863_p2    |    or    |      0|  0|  36|          36|           2|
+    |or_ln196_3_fu_881_p2    |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_4_fu_899_p2    |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_5_fu_917_p2    |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_6_fu_935_p2    |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_7_fu_953_p2    |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_8_fu_971_p2    |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_9_fu_989_p2    |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_fu_826_p2      |    or    |      0|  0|  36|          36|           1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |Total                   |          |      0|  0| 579|         572|          50|
+    +------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                        Name                                       | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                                                          |  44|          9|    1|          9|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_address0  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_address1  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_address0      |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_address1      |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_address0       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_address1       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_address0   |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_address1   |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_address0        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_address1        |  44|          9|    9|         81|
+    +-----------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                              | 484|         99|   91|        819|
+    +-----------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------+----+----+-----+-----------+
+    |            Name           | FF | LUT| Bits| Const Bits|
+    +---------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                  |   8|   0|    8|          0|
+    |mapHLS_size_read_reg_1102  |  32|   0|   32|          0|
+    |tmp_reg_1107               |  32|   0|   36|          4|
+    +---------------------------+----+----+-----+-----------+
+    |Total                      |  72|   0|   76|          4|
+    +---------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------------------------------------------+-----+-----+------------+--------------------------------------------------------------------------+--------------+
+|                                     RTL Ports                                     | Dir | Bits|  Protocol  |                               Source Object                              |    C Type    |
++-----------------------------------------------------------------------------------+-----+-----+------------+--------------------------------------------------------------------------+--------------+
+|ap_clk                                                                             |  in |    1| ap_ctrl_hs |                                push_back.1                               | return value |
+|ap_rst                                                                             |  in |    1| ap_ctrl_hs |                                push_back.1                               | return value |
+|ap_start                                                                           |  in |    1| ap_ctrl_hs |                                push_back.1                               | return value |
+|ap_done                                                                            | out |    1| ap_ctrl_hs |                                push_back.1                               | return value |
+|ap_idle                                                                            | out |    1| ap_ctrl_hs |                                push_back.1                               | return value |
+|ap_ready                                                                           | out |    1| ap_ctrl_hs |                                push_back.1                               | return value |
+|ap_return                                                                          | out |   32| ap_ctrl_hs |                                push_back.1                               | return value |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_size_read                          |  in |   32|   ap_none  |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_size_read        |    scalar    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first_address0                | out |    5|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first_ce0                     | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first_we0                     | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first_d0                      | out |   32|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_first        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s_address0        | out |    5|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s_ce0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s_we0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s_d0              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_size_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_address0      | out |    9|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_ce0           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_we0           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_d0            | out |   32|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_address1      | out |    9|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_ce1           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_we1           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi_d1            | out |   32|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_phi   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_address0        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_ce0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_we0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_d0              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_address1        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_ce1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_we1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z_d1              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_z    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_address0  | out |    9|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_ce0       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_we0       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_d0        | out |   32|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_address1  | out |    9|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_ce1       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_we1       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId_d1        | out |   32|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_layerId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_address0   | out |    9|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_ce0        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_we0        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_d0         | out |   32|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_address1   | out |    9|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_ce1        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_we1        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId_d1         | out |   32|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_stubId |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_address0       | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_ce0            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_we0            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_d0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_address1       | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_ce1            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_we1            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps_d1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_Residual_data_second_data_ps   |     array    |
+|value_first_read                                                                   |  in |   32|   ap_none  |                             value_first_read                             |    scalar    |
++-----------------------------------------------------------------------------------+-----+-----+------------+--------------------------------------------------------------------------+--------------+
+

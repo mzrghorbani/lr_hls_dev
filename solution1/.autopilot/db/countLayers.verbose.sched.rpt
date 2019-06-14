@@ -1,0 +1,211 @@
+
+
+================================================================
+== Vivado HLS Report for 'countLayers'
+================================================================
+* Date:           Fri Jun 14 18:16:20 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     1.926|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        |- Loop 2  |    ?|    ?|         3|          -|          -|     ?|    no    |
+        |- Loop 3  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 6 
+4 --> 5 
+5 --> 3 
+6 --> 7 
+7 --> 6 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.83>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%onlySeed_read_1 = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %onlySeed_read)"   --->   Operation 8 'read' 'onlySeed_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%stubs_size_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %stubs_size_read)"   --->   Operation 9 'read' 'stubs_size_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%LRHLS_numLayers_rea = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_numLayers_read)"   --->   Operation 10 'read' 'LRHLS_numLayers_rea' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%foundLayers_data_s = alloca [30 x i1], align 1" [HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 11 'alloca' 'foundLayers_data_s' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_1 : Operation 12 [1/1] (0.83ns)   --->   "br label %1" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 12 'br' <Predicate = true> <Delay = 0.83>
+
+State 2 <SV = 1> <Delay = 1.48>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i_0_i_i = phi i32 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 13 'phi' 'i_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.14ns)   --->   "%icmp_ln63 = icmp eq i32 %i_0_i_i, %LRHLS_numLayers_rea" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 14 'icmp' 'icmp_ln63' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (1.48ns)   --->   "%i = add i32 %i_0_i_i, 1" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 15 'add' 'i' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "br i1 %icmp_ln63, label %SLVHLS.exit.preheader, label %2" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 16 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln64 = zext i32 %i_0_i_i to i64" [HLS_LR/.settings/LRutility.h:64->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 17 'zext' 'zext_ln64' <Predicate = (!icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%foundLayers_data_ad = getelementptr [30 x i1]* %foundLayers_data_s, i64 0, i64 %zext_ln64" [HLS_LR/.settings/LRutility.h:64->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 18 'getelementptr' 'foundLayers_data_ad' <Predicate = (!icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.69ns)   --->   "store i1 false, i1* %foundLayers_data_ad, align 1" [HLS_LR/.settings/LRutility.h:64->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 19 'store' <Predicate = (!icmp_ln63)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "br label %1" [HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94]   --->   Operation 20 'br' <Predicate = (!icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.83ns)   --->   "br label %SLVHLS.exit"   --->   Operation 21 'br' <Predicate = (icmp_ln63)> <Delay = 0.83>
+
+State 3 <SV = 2> <Delay = 1.48>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%p_begin_0_rec = phi i32 [ %add_ln96, %._crit_edge2 ], [ 0, %SLVHLS.exit.preheader ]" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 22 'phi' 'p_begin_0_rec' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%p_begin_0_rec_cast = zext i32 %p_begin_0_rec to i64" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 23 'zext' 'p_begin_0_rec_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%stubs_data_moduleHL = getelementptr [16 x i1]* %stubs_data_moduleHLS_psModule_s, i64 0, i64 %p_begin_0_rec_cast" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 24 'getelementptr' 'stubs_data_moduleHL' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%stubs_data_moduleHL_1 = getelementptr [16 x i32]* %stubs_data_moduleHLS_layerId_s, i64 0, i64 %p_begin_0_rec_cast" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 25 'getelementptr' 'stubs_data_moduleHL_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (1.14ns)   --->   "%icmp_ln96 = icmp eq i32 %p_begin_0_rec, %stubs_size_read_1" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 26 'icmp' 'icmp_ln96' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (1.48ns)   --->   "%add_ln96 = add i32 %p_begin_0_rec, 1" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 27 'add' 'add_ln96' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %icmp_ln96, label %.preheader.preheader, label %3" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %onlySeed_read_1, label %4, label %._crit_edge" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 29 'br' <Predicate = (!icmp_ln96)> <Delay = 0.00>
+ST_3 : Operation 30 [2/2] (0.69ns)   --->   "%stubs_data_moduleHL_2 = load i1* %stubs_data_moduleHL, align 1" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 30 'load' 'stubs_data_moduleHL_2' <Predicate = (!icmp_ln96 & onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_3 : Operation 31 [1/1] (0.83ns)   --->   "br label %.preheader" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 31 'br' <Predicate = (icmp_ln96)> <Delay = 0.83>
+
+State 4 <SV = 3> <Delay = 0.69>
+ST_4 : Operation 32 [1/2] (0.69ns)   --->   "%stubs_data_moduleHL_2 = load i1* %stubs_data_moduleHL, align 1" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 32 'load' 'stubs_data_moduleHL_2' <Predicate = (onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "br i1 %stubs_data_moduleHL_2, label %._crit_edge, label %._crit_edge2" [HLS_LR/.settings/LRHLS.cc:97]   --->   Operation 33 'br' <Predicate = (onlySeed_read_1)> <Delay = 0.00>
+ST_4 : Operation 34 [2/2] (0.69ns)   --->   "%stubs_data_moduleHL_3 = load i32* %stubs_data_moduleHL_1, align 4" [HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 34 'load' 'stubs_data_moduleHL_3' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+
+State 5 <SV = 4> <Delay = 1.39>
+ST_5 : Operation 35 [1/2] (0.69ns)   --->   "%stubs_data_moduleHL_3 = load i32* %stubs_data_moduleHL_1, align 4" [HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 35 'load' 'stubs_data_moduleHL_3' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln69 = zext i32 %stubs_data_moduleHL_3 to i64" [HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 36 'zext' 'zext_ln69' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%foundLayers_data_ad_1 = getelementptr [30 x i1]* %foundLayers_data_s, i64 0, i64 %zext_ln69" [HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 37 'getelementptr' 'foundLayers_data_ad_1' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.00>
+ST_5 : Operation 38 [1/1] (0.69ns)   --->   "store i1 true, i1* %foundLayers_data_ad_1, align 1" [HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 38 'store' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "br label %._crit_edge2" [HLS_LR/.settings/LRHLS.cc:98]   --->   Operation 39 'br' <Predicate = (stubs_data_moduleHL_2) | (!onlySeed_read_1)> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "br label %SLVHLS.exit" [HLS_LR/.settings/LRHLS.cc:96]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 1.48>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%i_0_i = phi i32 [ %i_18, %5 ], [ 0, %.preheader.preheader ]"   --->   Operation 41 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%count_0_i = phi i32 [ %select_ln76, %5 ], [ 0, %.preheader.preheader ]" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 42 'phi' 'count_0_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (1.14ns)   --->   "%icmp_ln75 = icmp eq i32 %i_0_i, %LRHLS_numLayers_rea" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 43 'icmp' 'icmp_ln75' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 44 [1/1] (1.48ns)   --->   "%i_18 = add i32 %i_0_i, 1" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 44 'add' 'i_18' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %icmp_ln75, label %count.exit, label %5" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln76 = zext i32 %i_0_i to i64" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 46 'zext' 'zext_ln76' <Predicate = (!icmp_ln75)> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%foundLayers_data_ad_2 = getelementptr [30 x i1]* %foundLayers_data_s, i64 0, i64 %zext_ln76" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 47 'getelementptr' 'foundLayers_data_ad_2' <Predicate = (!icmp_ln75)> <Delay = 0.00>
+ST_6 : Operation 48 [2/2] (0.69ns)   --->   "%foundLayers_data_lo = load i1* %foundLayers_data_ad_2, align 1" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 48 'load' 'foundLayers_data_lo' <Predicate = (!icmp_ln75)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "ret i32 %count_0_i" [HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 49 'ret' <Predicate = (icmp_ln75)> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 1.92>
+ST_7 : Operation 50 [1/2] (0.69ns)   --->   "%foundLayers_data_lo = load i1* %foundLayers_data_ad_2, align 1" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 50 'load' 'foundLayers_data_lo' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 30> <RAM>
+ST_7 : Operation 51 [1/1] (1.48ns)   --->   "%count = add i32 %count_0_i, 1" [HLS_LR/.settings/LRutility.h:77->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 51 'add' 'count' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 52 [1/1] (0.44ns)   --->   "%select_ln76 = select i1 %foundLayers_data_lo, i32 %count, i32 %count_0_i" [HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 52 'select' 'select_ln76' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "br label %.preheader" [HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100]   --->   Operation 53 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.12ns, clock uncertainty: 0.391ns.
+
+ <State 1>: 0.835ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94) [12]  (0.835 ns)
+
+ <State 2>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94) [12]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:63->HLS_LR/.settings/LRutility.h:66->HLS_LR/.settings/LRHLS.cc:94) [14]  (1.49 ns)
+
+ <State 3>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('p_begin_0_rec', HLS_LR/.settings/LRHLS.cc:96) with incoming values : ('add_ln96', HLS_LR/.settings/LRHLS.cc:96) [24]  (0 ns)
+	'add' operation ('add_ln96', HLS_LR/.settings/LRHLS.cc:96) [29]  (1.49 ns)
+
+ <State 4>: 0.698ns
+The critical path consists of the following:
+	'load' operation ('StubHLS.moduleHLS_.psModule_', HLS_LR/.settings/LRHLS.cc:97) on array 'stubs_data_moduleHLS_psModule_s' [34]  (0.698 ns)
+
+ <State 5>: 1.4ns
+The critical path consists of the following:
+	'load' operation ('StubHLS.moduleHLS_.layerId_', HLS_LR/.settings/LRHLS.cc:98) on array 'stubs_data_moduleHLS_layerId_s' [37]  (0.698 ns)
+	'getelementptr' operation ('foundLayers_data_ad_1', HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98) [39]  (0 ns)
+	'store' operation ('store_ln69', HLS_LR/.settings/LRutility.h:69->HLS_LR/.settings/LRHLS.cc:98) of constant 1 on array 'foundLayers.data_', HLS_LR/.settings/LRHLS.cc:94 [40]  (0.698 ns)
+
+ <State 6>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100) [47]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:75->HLS_LR/.settings/LRHLS.cc:100) [50]  (1.49 ns)
+
+ <State 7>: 1.93ns
+The critical path consists of the following:
+	'add' operation ('count', HLS_LR/.settings/LRutility.h:77->HLS_LR/.settings/LRHLS.cc:100) [56]  (1.49 ns)
+	'select' operation ('select_ln76', HLS_LR/.settings/LRutility.h:76->HLS_LR/.settings/LRHLS.cc:100) [57]  (0.44 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,308 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'shift_left'" level="0">
+<item name = "Date">Fri Jun 14 19:06:47 2019
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">HLS_LR</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">kintexu</item>
+<item name = "Target device">xcku115-flvd1517-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.12, 1.771, 0.39</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">?, ?, 5, -, -, ?, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 93, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 437, -</column>
+<column name="Register">-, -, 886, -, -</column>
+<specialColumn name="Available SLR">2160, 2760, 663360, 331680, 0</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, ~0, 100</specialColumn>
+<specialColumn name="Available">4320, 5520, 1326720, 663360, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln135_2_fu_676_p2">+, 0, 0, 17, 10, 10</column>
+<column name="add_ln135_fu_672_p2">+, 0, 0, 17, 10, 10</column>
+<column name="i_fu_662_p2">+, 0, 0, 39, 1, 32</column>
+<column name="icmp_ln134_fu_653_p2">icmp, 0, 0, 20, 32, 32</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">38, 7, 1, 7</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_phi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_r_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s_address0">15, 3, 9, 27</column>
+<column name="arrayHLS_TMTT_StubHLS_data_z_s_address0">15, 3, 9, 27</column>
+<column name="i_0_reg_632">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln135_2_reg_777">10, 0, 10, 0</column>
+<column name="add_ln135_reg_772">10, 0, 10, 0</column>
+<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="arrayHLS_data_modul_64_reg_962">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_65_reg_967">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_66_reg_972">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_67_reg_977">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_68_reg_982">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_69_reg_987">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_70_reg_992">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_71_reg_997">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_72_reg_1002">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_73_reg_1007">32, 0, 32, 0</column>
+<column name="arrayHLS_data_modul_74_reg_1012">1, 0, 1, 0</column>
+<column name="arrayHLS_data_modul_75_reg_1017">1, 0, 1, 0</column>
+<column name="arrayHLS_data_modul_76_reg_1022">32, 0, 32, 0</column>
+<column name="arrayHLS_data_phi_4_reg_1032">32, 0, 32, 0</column>
+<column name="arrayHLS_data_r_lo_reg_1027">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_50_reg_912">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_51_reg_917">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_52_reg_922">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_53_reg_927">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_54_reg_932">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_55_reg_937">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_56_reg_942">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_57_reg_947">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_58_reg_952">32, 0, 32, 0</column>
+<column name="arrayHLS_data_setti_59_reg_957">32, 0, 32, 0</column>
+<column name="arrayHLS_data_z_lo_reg_1037">32, 0, 32, 0</column>
+<column name="i_0_reg_632">32, 0, 32, 0</column>
+<column name="i_reg_762">32, 0, 32, 0</column>
+<column name="trunc_ln135_1_reg_767">10, 0, 10, 0</column>
+<column name="trunc_ln135_reg_757">10, 0, 10, 0</column>
+<column name="zext_ln135_2_cast_reg_748">6, 0, 10, 4</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, shift_left, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, shift_left, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, shift_left, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, shift_left, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, shift_left, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, shift_left, return value</column>
+<column name="arrayHLS_TMTT_StubHLS_size_read">in, 32, ap_none, arrayHLS_TMTT_StubHLS_size_read, scalar</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset">in, 32, ap_none, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset, scalar</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s_d0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s_q0">in, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s_d0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s_q0">in, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_r_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_r_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_r_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_r_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_r_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_r_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_r_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_r_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_r_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_r_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_phi_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_phi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_phi_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_phi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_phi_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_phi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_phi_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_phi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_phi_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_phi_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_z_s_address0">out, 9, ap_memory, arrayHLS_TMTT_StubHLS_data_z_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_z_s_ce0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_z_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_z_s_we0">out, 1, ap_memory, arrayHLS_TMTT_StubHLS_data_z_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_z_s_d0">out, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_z_s, array</column>
+<column name="arrayHLS_TMTT_StubHLS_data_z_s_q0">in, 32, ap_memory, arrayHLS_TMTT_StubHLS_data_z_s, array</column>
+<column name="idx_read">in, 32, ap_none, idx_read, scalar</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="DataHLS.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/DataHLS.cc"/>
+    <originFiles name="DataHLS.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/DataHLS.h"/>
+    <originFiles name="LRHLS.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/LRHLS.cc"/>
+    <originFiles name="LRHLS.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/LRHLS.h"/>
+    <originFiles name="LR_top.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/LR_top.cc"/>
+    <originFiles name="LR_top.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/LR_top.h"/>
+    <originFiles name="LRutility.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/LRutility.h"/>
+    <originFiles name="ModuleHLS.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/ModuleHLS.cc"/>
+    <originFiles name="ModuleHLS.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/ModuleHLS.h"/>
+    <originFiles name="SettingsHLS.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/SettingsHLS.cc"/>
+    <originFiles name="SettingsHLS.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/SettingsHLS.h"/>
+    <originFiles name="StubHLS.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/StubHLS.cc"/>
+    <originFiles name="StubHLS.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/StubHLS.h"/>
+    <originFiles name="TrackHLS.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/TrackHLS.cc"/>
+    <originFiles name="TrackHLS.h" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/TrackHLS.h"/>
+  </source>
+  <testbench>
+    <originFiles name="testbench.cc" path="/home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/.settings/testbench.cc"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

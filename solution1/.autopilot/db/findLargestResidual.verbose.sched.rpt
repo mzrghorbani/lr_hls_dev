@@ -1,0 +1,733 @@
+
+
+================================================================
+== Vivado HLS Report for 'findLargestResidual'
+================================================================
+* Date:           Fri Jun 14 18:41:55 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     2.673|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1      |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.1  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.2  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.3  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.4  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 46
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 2 
+7 --> 8 29 
+8 --> 9 
+9 --> 10 13 
+10 --> 9 11 
+11 --> 12 
+12 --> 11 20 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 28 
+26 --> 25 27 
+27 --> 28 
+28 --> 27 29 
+29 --> 30 46 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 46 
+45 --> 46 
+46 --> 6 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio = alloca i32"   --->   Operation 47 'alloca' 'LRHLS_layerPopulatio' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_size_s = alloca i32"   --->   Operation 48 'alloca' 'LRHLS_stubMap_size_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_8 = alloca i1"   --->   Operation 49 'alloca' 'LRHLS_largestResid_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_7 = alloca float"   --->   Operation 50 'alloca' 'LRHLS_largestResid_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_6 = alloca i32"   --->   Operation 51 'alloca' 'LRHLS_largestResid_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_5 = alloca float"   --->   Operation 52 'alloca' 'LRHLS_largestResid_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_s = alloca i32"   --->   Operation 53 'alloca' 'LRHLS_largestResid_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%LRHLS_residuals_siz = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_residuals_size_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 54 'read' 'LRHLS_residuals_siz' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_25 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_layerPopulation_size_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 55 'read' 'LRHLS_layerPopulatio_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_size_7 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_stubMap_size_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 56 'read' 'LRHLS_stubMap_size_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%LRHLS_stubs_size_r = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_stubs_size_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 57 'read' 'LRHLS_stubs_size_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%LRHLS_minLayersPS_r = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_minLayersPS_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 58 'read' 'LRHLS_minLayersPS_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%LRHLS_minLayers_rea = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_minLayers_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 59 'read' 'LRHLS_minLayers_rea' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%LRHLS_numLayers_rea = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LRHLS_numLayers_read)" [HLS_LR/.settings/LRHLS.cc:176]   --->   Operation 60 'read' 'LRHLS_numLayers_rea' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (1.14ns)   --->   "%icmp_ln187 = icmp ugt i32 %LRHLS_stubs_size_r, 4" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 61 'icmp' 'icmp_ln187' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (0.83ns)   --->   "store i32 0, i32* %LRHLS_largestResid_s" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 62 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 63 [1/1] (0.83ns)   --->   "store float -1.000000e+00, float* %LRHLS_largestResid_5" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 63 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 64 [1/1] (0.83ns)   --->   "store i32 0, i32* %LRHLS_largestResid_6" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 64 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 65 [1/1] (0.83ns)   --->   "store float -1.000000e+00, float* %LRHLS_largestResid_7" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 65 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 66 [1/1] (0.83ns)   --->   "store i1 false, i1* %LRHLS_largestResid_8" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 66 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 67 [1/1] (0.83ns)   --->   "store i32 %LRHLS_stubMap_size_7, i32* %LRHLS_stubMap_size_s" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 67 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 68 [1/1] (0.83ns)   --->   "store i32 %LRHLS_layerPopulatio_25, i32* %LRHLS_layerPopulatio" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 68 'store' <Predicate = true> <Delay = 0.83>
+ST_1 : Operation 69 [1/1] (0.83ns)   --->   "br label %.loopexit" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 69 'br' <Predicate = true> <Delay = 0.83>
+
+State 2 <SV = 1> <Delay = 1.48>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%p_begin_0_rec = phi i32 [ 0, %0 ], [ %add_ln179, %.loopexit.backedge ]" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 70 'phi' 'p_begin_0_rec' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%p_begin_0_rec_cast = zext i32 %p_begin_0_rec to i64" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 71 'zext' 'p_begin_0_rec_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%empty = trunc i32 %p_begin_0_rec to i6" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 72 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%p_cast1 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %empty, i4 0)" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 73 'bitconcatenate' 'p_cast1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat = getelementptr [30 x i32]* %LRHLS_residuals_data_first, i64 0, i64 %p_begin_0_rec_cast" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 74 'getelementptr' 'LRHLS_residuals_dat' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (1.14ns)   --->   "%icmp_ln179 = icmp eq i32 %p_begin_0_rec, %LRHLS_residuals_siz" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 75 'icmp' 'icmp_ln179' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 76 [1/1] (1.48ns)   --->   "%add_ln179 = add i32 1, %p_begin_0_rec" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 76 'add' 'add_ln179' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "br i1 %icmp_ln179, label %12, label %1" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 77 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat_1 = getelementptr [30 x i32]* %LRHLS_residuals_data_second_size_s, i64 0, i64 %p_begin_0_rec_cast" [HLS_LR/.settings/LRHLS.cc:180]   --->   Operation 78 'getelementptr' 'LRHLS_residuals_dat_1' <Predicate = (!icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 79 [2/2] (0.69ns)   --->   "%LRHLS_residuals_dat_2 = load i32* %LRHLS_residuals_dat_1, align 4" [HLS_LR/.settings/LRHLS.cc:180]   --->   Operation 79 'load' 'LRHLS_residuals_dat_2' <Predicate = (!icmp_ln179)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_2 : Operation 80 [2/2] (0.00ns)   --->   "%tmp_s = call fastcc i32 @countLayers(i32 %LRHLS_numLayers_rea, i32 %LRHLS_stubs_size_r, [16 x i1]* %LRHLS_stubs_data_moduleHLS_psModule_s, [16 x i32]* %LRHLS_stubs_data_moduleHLS_layerId_s, i1 false)" [HLS_LR/.settings/LRHLS.cc:181]   --->   Operation 80 'call' 'tmp_s' <Predicate = (!icmp_ln179)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_36 = load i32* %LRHLS_layerPopulatio" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 81 'load' 'LRHLS_layerPopulatio_36' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_size_8 = load i32* %LRHLS_stubMap_size_s" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 82 'load' 'LRHLS_stubMap_size_8' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_3 = load i1* %LRHLS_largestResid_8" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 83 'load' 'LRHLS_largestResid_3' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_4 = load float* %LRHLS_largestResid_7" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 84 'load' 'LRHLS_largestResid_4' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_9 = load i32* %LRHLS_largestResid_6" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 85 'load' 'LRHLS_largestResid_9' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_10 = load float* %LRHLS_largestResid_5" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 86 'load' 'LRHLS_largestResid_10' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_11 = load i32* %LRHLS_largestResid_s" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 87 'load' 'LRHLS_largestResid_11' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%mrv_03 = insertvalue { float, float, i32, i32, i1, i32, i32 } undef, float %LRHLS_largestResid_4, 0" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 88 'insertvalue' 'mrv_03' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%mrv_14 = insertvalue { float, float, i32, i32, i1, i32, i32 } %mrv_03, float %LRHLS_largestResid_10, 1" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 89 'insertvalue' 'mrv_14' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%mrv_25 = insertvalue { float, float, i32, i32, i1, i32, i32 } %mrv_14, i32 %LRHLS_largestResid_11, 2" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 90 'insertvalue' 'mrv_25' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%mrv_36 = insertvalue { float, float, i32, i32, i1, i32, i32 } %mrv_25, i32 %LRHLS_largestResid_9, 3" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 91 'insertvalue' 'mrv_36' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%mrv_47 = insertvalue { float, float, i32, i32, i1, i32, i32 } %mrv_36, i1 %LRHLS_largestResid_3, 4" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 92 'insertvalue' 'mrv_47' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue { float, float, i32, i32, i1, i32, i32 } %mrv_47, i32 %LRHLS_stubMap_size_8, 5" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 93 'insertvalue' 'mrv_5' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue { float, float, i32, i32, i1, i32, i32 } %mrv_5, i32 %LRHLS_layerPopulatio_36, 6" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 94 'insertvalue' 'mrv_6' <Predicate = (icmp_ln179)> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "ret { float, float, i32, i32, i1, i32, i32 } %mrv_6" [HLS_LR/.settings/LRHLS.cc:194]   --->   Operation 95 'ret' <Predicate = (icmp_ln179)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.17>
+ST_3 : Operation 96 [1/2] (0.69ns)   --->   "%LRHLS_residuals_dat_2 = load i32* %LRHLS_residuals_dat_1, align 4" [HLS_LR/.settings/LRHLS.cc:180]   --->   Operation 96 'load' 'LRHLS_residuals_dat_2' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_3 : Operation 97 [1/2] (0.00ns)   --->   "%tmp_s = call fastcc i32 @countLayers(i32 %LRHLS_numLayers_rea, i32 %LRHLS_stubs_size_r, [16 x i1]* %LRHLS_stubs_data_moduleHLS_psModule_s, [16 x i32]* %LRHLS_stubs_data_moduleHLS_layerId_s, i1 false)" [HLS_LR/.settings/LRHLS.cc:181]   --->   Operation 97 'call' 'tmp_s' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 98 [1/1] (1.14ns)   --->   "%notPurged = icmp eq i32 %tmp_s, %LRHLS_stubs_size_r" [HLS_LR/.settings/LRHLS.cc:181]   --->   Operation 98 'icmp' 'notPurged' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 99 [1/1] (1.14ns)   --->   "%icmp_ln184 = icmp ne i32 %LRHLS_residuals_dat_2, 1" [HLS_LR/.settings/LRHLS.cc:184]   --->   Operation 99 'icmp' 'icmp_ln184' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (1.14ns)   --->   "%icmp_ln184_1 = icmp ne i32 %tmp_s, %LRHLS_minLayers_rea" [HLS_LR/.settings/LRHLS.cc:184]   --->   Operation 100 'icmp' 'icmp_ln184_1' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node or_ln184_1)   --->   "%or_ln184 = or i1 %notPurged, %icmp_ln184_1" [HLS_LR/.settings/LRHLS.cc:184]   --->   Operation 101 'or' 'or_ln184' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 102 [1/1] (0.33ns) (out node of the LUT)   --->   "%or_ln184_1 = or i1 %or_ln184, %icmp_ln184" [HLS_LR/.settings/LRHLS.cc:184]   --->   Operation 102 'or' 'or_ln184_1' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 103 [2/2] (0.00ns)   --->   "%tmp_6 = call fastcc i32 @countLayers(i32 %LRHLS_numLayers_rea, i32 %LRHLS_stubs_size_r, [16 x i1]* %LRHLS_stubs_data_moduleHLS_psModule_s, [16 x i32]* %LRHLS_stubs_data_moduleHLS_layerId_s, i1 true)" [HLS_LR/.settings/LRHLS.cc:183]   --->   Operation 103 'call' 'tmp_6' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 1.47>
+ST_5 : Operation 104 [1/2] (0.00ns)   --->   "%tmp_6 = call fastcc i32 @countLayers(i32 %LRHLS_numLayers_rea, i32 %LRHLS_stubs_size_r, [16 x i1]* %LRHLS_stubs_data_moduleHLS_psModule_s, [16 x i32]* %LRHLS_stubs_data_moduleHLS_layerId_s, i1 true)" [HLS_LR/.settings/LRHLS.cc:183]   --->   Operation 104 'call' 'tmp_6' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 105 [1/1] (0.00ns)   --->   "br i1 %or_ln184_1, label %2, label %.loopexit.backedge" [HLS_LR/.settings/LRHLS.cc:184]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 106 [1/1] (1.14ns)   --->   "%icmp_ln187_1 = icmp eq i32 %tmp_6, %LRHLS_minLayersPS_r" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 106 'icmp' 'icmp_ln187_1' <Predicate = (or_ln184_1)> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 107 [1/1] (0.33ns)   --->   "%and_ln187 = and i1 %icmp_ln187_1, %icmp_ln187" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 107 'and' 'and_ln187' <Predicate = (or_ln184_1)> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 108 [1/1] (0.83ns)   --->   "br label %._crit_edge5" [HLS_LR/.settings/LRHLS.cc:186]   --->   Operation 108 'br' <Predicate = (or_ln184_1)> <Delay = 0.83>
+
+State 6 <SV = 5> <Delay = 2.24>
+ST_6 : Operation 109 [1/1] (0.00ns)   --->   "%p_begin2_0_rec = phi i32 [ 0, %2 ], [ %add_ln186, %._crit_edge5.backedge ]" [HLS_LR/.settings/LRHLS.cc:186]   --->   Operation 109 'phi' 'p_begin2_0_rec' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 110 [1/1] (0.00ns)   --->   "%temp_5 = load i32* %LRHLS_layerPopulatio" [HLS_LR/.settings/LRutility.h:197->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 110 'load' 'temp_5' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 111 [1/1] (0.00ns)   --->   "%temp = load i32* %LRHLS_stubMap_size_s"   --->   Operation 111 'load' 'temp' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 112 [1/1] (0.00ns)   --->   "%empty_15 = trunc i32 %p_begin2_0_rec to i10" [HLS_LR/.settings/LRHLS.cc:186]   --->   Operation 112 'trunc' 'empty_15' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 113 [1/1] (1.31ns)   --->   "%empty_16 = add i10 %p_cast1, %empty_15" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 113 'add' 'empty_16' <Predicate = (or_ln184_1)> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 114 [1/1] (0.00ns)   --->   "%p_cast = zext i10 %empty_16 to i64" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 114 'zext' 'p_cast' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 115 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat_3 = getelementptr [480 x float]* %LRHLS_residuals_data_second_data_phi, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 115 'getelementptr' 'LRHLS_residuals_dat_3' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 116 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat_4 = getelementptr [480 x float]* %LRHLS_residuals_data_second_data_z, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:179]   --->   Operation 116 'getelementptr' 'LRHLS_residuals_dat_4' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 117 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat_5 = getelementptr [480 x i32]* %LRHLS_residuals_data_second_data_layerId, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 117 'getelementptr' 'LRHLS_residuals_dat_5' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 118 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat_6 = getelementptr [480 x i32]* %LRHLS_residuals_data_second_data_stubId, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 118 'getelementptr' 'LRHLS_residuals_dat_6' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 119 [1/1] (0.00ns)   --->   "%LRHLS_residuals_dat_7 = getelementptr [480 x i1]* %LRHLS_residuals_data_second_data_ps, i64 0, i64 %p_cast" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 119 'getelementptr' 'LRHLS_residuals_dat_7' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 120 [1/1] (1.14ns)   --->   "%icmp_ln186 = icmp eq i32 %p_begin2_0_rec, %LRHLS_residuals_dat_2" [HLS_LR/.settings/LRHLS.cc:186]   --->   Operation 120 'icmp' 'icmp_ln186' <Predicate = (or_ln184_1)> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 121 [1/1] (1.48ns)   --->   "%add_ln186 = add i32 1, %p_begin2_0_rec" [HLS_LR/.settings/LRHLS.cc:186]   --->   Operation 121 'add' 'add_ln186' <Predicate = (or_ln184_1)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 122 [1/1] (0.00ns)   --->   "br i1 %icmp_ln186, label %.loopexit.backedge.loopexit, label %3" [HLS_LR/.settings/LRHLS.cc:186]   --->   Operation 122 'br' <Predicate = (or_ln184_1)> <Delay = 0.00>
+ST_6 : Operation 123 [2/2] (0.92ns)   --->   "%LRHLS_residuals_dat_8 = load i1* %LRHLS_residuals_dat_7, align 1" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 123 'load' 'LRHLS_residuals_dat_8' <Predicate = (or_ln184_1 & !icmp_ln186)> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_6 : Operation 124 [1/1] (0.00ns)   --->   "br label %.loopexit.backedge"   --->   Operation 124 'br' <Predicate = (or_ln184_1 & icmp_ln186)> <Delay = 0.00>
+ST_6 : Operation 125 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 125 'br' <Predicate = (icmp_ln186) | (!or_ln184_1)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 2.10>
+ST_7 : Operation 126 [1/2] (0.92ns)   --->   "%LRHLS_residuals_dat_8 = load i1* %LRHLS_residuals_dat_7, align 1" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 126 'load' 'LRHLS_residuals_dat_8' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_7 : Operation 127 [1/1] (0.33ns)   --->   "%and_ln187_1 = and i1 %and_ln187, %LRHLS_residuals_dat_8" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 127 'and' 'and_ln187_1' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 128 [1/1] (0.83ns)   --->   "br i1 %and_ln187_1, label %4, label %._crit_edge" [HLS_LR/.settings/LRHLS.cc:187]   --->   Operation 128 'br' <Predicate = true> <Delay = 0.83>
+ST_7 : Operation 129 [2/2] (0.69ns)   --->   "%LRHLS_residuals_dat_9 = load i32* %LRHLS_residuals_dat, align 4" [HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 129 'load' 'LRHLS_residuals_dat_9' <Predicate = (and_ln187_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 8 <SV = 7> <Delay = 0.83>
+ST_8 : Operation 130 [1/2] (0.69ns)   --->   "%LRHLS_residuals_dat_9 = load i32* %LRHLS_residuals_dat, align 4" [HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 130 'load' 'LRHLS_residuals_dat_9' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_8 : Operation 131 [1/1] (0.83ns)   --->   "br label %5" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 131 'br' <Predicate = true> <Delay = 0.83>
+
+State 9 <SV = 8> <Delay = 1.48>
+ST_9 : Operation 132 [1/1] (0.00ns)   --->   "%i_0_i = phi i32 [ 0, %4 ], [ %i, %6 ]"   --->   Operation 132 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 133 [1/1] (1.14ns)   --->   "%icmp_ln202 = icmp ult i32 %i_0_i, %temp" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 133 'icmp' 'icmp_ln202' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 134 [1/1] (1.48ns)   --->   "%i = add i32 %i_0_i, 1" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 134 'add' 'i' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 135 [1/1] (0.00ns)   --->   "br i1 %icmp_ln202, label %6, label %arrayctor.loop.i.i.i.0" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 135 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 136 [1/1] (0.00ns)   --->   "%zext_ln203 = zext i32 %i_0_i to i64" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 136 'zext' 'zext_ln203' <Predicate = (icmp_ln202)> <Delay = 0.00>
+ST_9 : Operation 137 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_data_s = getelementptr [30 x i32]* %LRHLS_stubMap_data_first, i64 0, i64 %zext_ln203" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 137 'getelementptr' 'LRHLS_stubMap_data_s' <Predicate = (icmp_ln202)> <Delay = 0.00>
+ST_9 : Operation 138 [2/2] (0.69ns)   --->   "%LRHLS_stubMap_data_40 = load i32* %LRHLS_stubMap_data_s, align 4" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 138 'load' 'LRHLS_stubMap_data_40' <Predicate = (icmp_ln202)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 10 <SV = 9> <Delay = 2.17>
+ST_10 : Operation 139 [1/2] (0.69ns)   --->   "%LRHLS_stubMap_data_40 = load i32* %LRHLS_stubMap_data_s, align 4" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 139 'load' 'LRHLS_stubMap_data_40' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_10 : Operation 140 [1/1] (1.14ns)   --->   "%icmp_ln203 = icmp eq i32 %LRHLS_stubMap_data_40, %LRHLS_residuals_dat_9" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 140 'icmp' 'icmp_ln203' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 141 [1/1] (0.00ns)   --->   "br i1 %icmp_ln203, label %has_key.exit.preheader, label %5" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 141 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 142 [1/1] (0.83ns)   --->   "br label %has_key.exit" [HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 142 'br' <Predicate = (icmp_ln203)> <Delay = 0.83>
+
+State 11 <SV = 10> <Delay = 1.48>
+ST_11 : Operation 143 [1/1] (0.00ns)   --->   "%i_13 = phi i32 [ %i_14, %7 ], [ 0, %has_key.exit.preheader ]"   --->   Operation 143 'phi' 'i_13' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 144 [1/1] (1.14ns)   --->   "%icmp_ln212 = icmp ult i32 %i_13, %temp" [HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 144 'icmp' 'icmp_ln212' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 145 [1/1] (1.48ns)   --->   "%i_14 = add i32 %i_13, 1" [HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 145 'add' 'i_14' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 146 [1/1] (0.00ns)   --->   "br i1 %icmp_ln212, label %7, label %"operator[].exit.loopexit"" [HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 146 'br' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 147 [1/1] (0.00ns)   --->   "%zext_ln213 = zext i32 %i_13 to i64" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 147 'zext' 'zext_ln213' <Predicate = (icmp_ln212)> <Delay = 0.00>
+ST_11 : Operation 148 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_data_41 = getelementptr [30 x i32]* %LRHLS_stubMap_data_first, i64 0, i64 %zext_ln213" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 148 'getelementptr' 'LRHLS_stubMap_data_41' <Predicate = (icmp_ln212)> <Delay = 0.00>
+ST_11 : Operation 149 [2/2] (0.69ns)   --->   "%LRHLS_stubMap_data_42 = load i32* %LRHLS_stubMap_data_41, align 4" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 149 'load' 'LRHLS_stubMap_data_42' <Predicate = (icmp_ln212)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 12 <SV = 11> <Delay = 2.17>
+ST_12 : Operation 150 [1/2] (0.69ns)   --->   "%LRHLS_stubMap_data_42 = load i32* %LRHLS_stubMap_data_41, align 4" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 150 'load' 'LRHLS_stubMap_data_42' <Predicate = (icmp_ln212)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_12 : Operation 151 [1/1] (1.14ns)   --->   "%icmp_ln213 = icmp eq i32 %LRHLS_stubMap_data_42, %LRHLS_residuals_dat_9" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 151 'icmp' 'icmp_ln213' <Predicate = (icmp_ln212)> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 152 [1/1] (0.00ns)   --->   "br i1 %icmp_ln213, label %"operator[].exit.loopexit", label %has_key.exit" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 152 'br' <Predicate = (icmp_ln212)> <Delay = 0.00>
+ST_12 : Operation 153 [1/1] (0.83ns)   --->   "br label %"operator[].exit""   --->   Operation 153 'br' <Predicate = (icmp_ln213) | (!icmp_ln212)> <Delay = 0.83>
+
+State 13 <SV = 9> <Delay = 1.77>
+ST_13 : Operation 154 [8/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 154 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 10> <Delay = 1.77>
+ST_14 : Operation 155 [7/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 155 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 11> <Delay = 1.77>
+ST_15 : Operation 156 [6/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 156 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 12> <Delay = 1.77>
+ST_16 : Operation 157 [5/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 157 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 13> <Delay = 1.77>
+ST_17 : Operation 158 [4/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 158 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 14> <Delay = 1.77>
+ST_18 : Operation 159 [3/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 159 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 15> <Delay = 1.77>
+ST_19 : Operation 160 [2/8] (1.77ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 160 'call' 'call_ret' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 16> <Delay = 1.77>
+ST_20 : Operation 161 [1/8] (1.48ns)   --->   "%call_ret = call fastcc i32 @push_back(i32 %temp, [30 x i32]* %LRHLS_stubMap_data_first, [30 x i32]* %LRHLS_stubMap_data_second_size_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_settingsHLS_trackerNumLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s, [480 x float]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_barrel_s, [480 x i1]* %LRHLS_stubMap_data_second_data_moduleHLS_psModule_s, [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, [480 x float]* %LRHLS_stubMap_data_second_data_r_s, [480 x float]* %LRHLS_stubMap_data_second_data_phi_s, [480 x float]* %LRHLS_stubMap_data_second_data_z_s, i32 %LRHLS_residuals_dat_9)" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 161 'call' 'call_ret' <Predicate = (!icmp_ln202)> <Delay = 1.48> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 162 [1/1] (0.83ns)   --->   "br label %"operator[].exit""   --->   Operation 162 'br' <Predicate = (!icmp_ln202)> <Delay = 0.83>
+ST_20 : Operation 163 [2/2] (1.77ns)   --->   "%LRHLS_residuals_dat_10 = load i32* %LRHLS_residuals_dat_6, align 4" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 163 'load' 'LRHLS_residuals_dat_10' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 21 <SV = 17> <Delay = 1.77>
+ST_21 : Operation 164 [1/2] (1.77ns)   --->   "%LRHLS_residuals_dat_10 = load i32* %LRHLS_residuals_dat_6, align 4" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 164 'load' 'LRHLS_residuals_dat_10' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 22 <SV = 18> <Delay = 1.31>
+ST_22 : Operation 165 [1/1] (0.00ns) (grouped into LUT with out node add_ln146)   --->   "%p_pn_in_i = phi i32 [ %temp, %arrayctor.loop.i.i.i.0 ], [ %i_13, %"operator[].exit.loopexit" ]"   --->   Operation 165 'phi' 'p_pn_in_i' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 166 [1/1] (0.00ns) (grouped into LUT with out node add_ln146)   --->   "%trunc_ln188 = trunc i32 %p_pn_in_i to i6" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 166 'trunc' 'trunc_ln188' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 167 [1/1] (0.00ns) (grouped into LUT with out node add_ln146)   --->   "%zext_ln146_1_cast = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %trunc_ln188, i4 0)" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 167 'bitconcatenate' 'zext_ln146_1_cast' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 168 [1/1] (0.00ns) (grouped into LUT with out node add_ln146)   --->   "%trunc_ln146 = trunc i32 %LRHLS_residuals_dat_10 to i10" [HLS_LR/.settings/LRutility.h:146->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 168 'trunc' 'trunc_ln146' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 169 [1/1] (1.31ns) (out node of the LUT)   --->   "%add_ln146 = add i10 %zext_ln146_1_cast, %trunc_ln146" [HLS_LR/.settings/LRutility.h:146->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 169 'add' 'add_ln146' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 19> <Delay = 1.77>
+ST_23 : Operation 170 [1/1] (0.00ns)   --->   "%zext_ln146 = zext i10 %add_ln146 to i64" [HLS_LR/.settings/LRutility.h:146->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 170 'zext' 'zext_ln146' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 171 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_data_43 = getelementptr [480 x i32]* %LRHLS_stubMap_data_second_data_moduleHLS_layerId_s, i64 0, i64 %zext_ln146" [HLS_LR/.settings/LRutility.h:146->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 171 'getelementptr' 'LRHLS_stubMap_data_43' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 172 [2/2] (1.77ns)   --->   "%LRHLS_stubMap_data_44 = load i32* %LRHLS_stubMap_data_43, align 4" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 172 'load' 'LRHLS_stubMap_data_44' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 24 <SV = 20> <Delay = 1.77>
+ST_24 : Operation 173 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_size_2 = phi i32 [ %call_ret, %arrayctor.loop.i.i.i.0 ], [ %temp, %"operator[].exit.loopexit" ]"   --->   Operation 173 'phi' 'LRHLS_stubMap_size_2' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 174 [1/2] (1.77ns)   --->   "%LRHLS_stubMap_data_44 = load i32* %LRHLS_stubMap_data_43, align 4" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 174 'load' 'LRHLS_stubMap_data_44' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_24 : Operation 175 [1/1] (0.83ns)   --->   "br label %8" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 175 'br' <Predicate = true> <Delay = 0.83>
+
+State 25 <SV = 21> <Delay = 1.48>
+ST_25 : Operation 176 [1/1] (0.00ns)   --->   "%i_0_i1254 = phi i32 [ 0, %"operator[].exit" ], [ %i_15, %9 ]"   --->   Operation 176 'phi' 'i_0_i1254' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 177 [1/1] (1.14ns)   --->   "%icmp_ln202_3 = icmp ult i32 %i_0_i1254, %temp_5" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 177 'icmp' 'icmp_ln202_3' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 178 [1/1] (1.48ns)   --->   "%i_15 = add i32 %i_0_i1254, 1" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 178 'add' 'i_15' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 179 [1/1] (0.00ns)   --->   "br i1 %icmp_ln202_3, label %9, label %.critedge" [HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 179 'br' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 180 [1/1] (0.00ns)   --->   "%zext_ln203_3 = zext i32 %i_0_i1254 to i64" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 180 'zext' 'zext_ln203_3' <Predicate = (icmp_ln202_3)> <Delay = 0.00>
+ST_25 : Operation 181 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_26 = getelementptr [30 x i32]* %LRHLS_layerPopulation_data_first, i64 0, i64 %zext_ln203_3" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 181 'getelementptr' 'LRHLS_layerPopulatio_26' <Predicate = (icmp_ln202_3)> <Delay = 0.00>
+ST_25 : Operation 182 [2/2] (0.69ns)   --->   "%LRHLS_layerPopulatio_27 = load i32* %LRHLS_layerPopulatio_26, align 4" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 182 'load' 'LRHLS_layerPopulatio_27' <Predicate = (icmp_ln202_3)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_25 : Operation 183 [1/1] (0.00ns)   --->   "%zext_ln196 = zext i32 %temp_5 to i64" [HLS_LR/.settings/LRutility.h:196->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 183 'zext' 'zext_ln196' <Predicate = (!icmp_ln202_3)> <Delay = 0.00>
+ST_25 : Operation 184 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_32 = getelementptr [30 x i32]* %LRHLS_layerPopulation_data_first, i64 0, i64 %zext_ln196" [HLS_LR/.settings/LRutility.h:196->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 184 'getelementptr' 'LRHLS_layerPopulatio_32' <Predicate = (!icmp_ln202_3)> <Delay = 0.00>
+ST_25 : Operation 185 [1/1] (0.69ns)   --->   "store i32 %LRHLS_stubMap_data_44, i32* %LRHLS_layerPopulatio_32, align 4" [HLS_LR/.settings/LRutility.h:196->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 185 'store' <Predicate = (!icmp_ln202_3)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_25 : Operation 186 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_33 = getelementptr [30 x i32]* %LRHLS_layerPopulation_data_second, i64 0, i64 %zext_ln196" [HLS_LR/.settings/LRutility.h:196->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 186 'getelementptr' 'LRHLS_layerPopulatio_33' <Predicate = (!icmp_ln202_3)> <Delay = 0.00>
+ST_25 : Operation 187 [1/1] (0.69ns)   --->   "store i32 0, i32* %LRHLS_layerPopulatio_33, align 4" [HLS_LR/.settings/LRutility.h:196->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 187 'store' <Predicate = (!icmp_ln202_3)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_25 : Operation 188 [1/1] (1.48ns)   --->   "%add_ln197 = add i32 %temp_5, 1" [HLS_LR/.settings/LRutility.h:197->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 188 'add' 'add_ln197' <Predicate = (!icmp_ln202_3)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 189 [1/1] (0.83ns)   --->   "br label %"operator[].exit3"" [HLS_LR/.settings/LRutility.h:235->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 189 'br' <Predicate = (!icmp_ln202_3)> <Delay = 0.83>
+
+State 26 <SV = 22> <Delay = 2.17>
+ST_26 : Operation 190 [1/2] (0.69ns)   --->   "%LRHLS_layerPopulatio_27 = load i32* %LRHLS_layerPopulatio_26, align 4" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 190 'load' 'LRHLS_layerPopulatio_27' <Predicate = true> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_26 : Operation 191 [1/1] (1.14ns)   --->   "%icmp_ln203_3 = icmp eq i32 %LRHLS_layerPopulatio_27, %LRHLS_stubMap_data_44" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 191 'icmp' 'icmp_ln203_3' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 192 [1/1] (0.00ns)   --->   "br i1 %icmp_ln203_3, label %has_key.exit3.preheader, label %8" [HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 192 'br' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 193 [1/1] (0.83ns)   --->   "br label %has_key.exit3" [HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 193 'br' <Predicate = (icmp_ln203_3)> <Delay = 0.83>
+
+State 27 <SV = 23> <Delay = 1.48>
+ST_27 : Operation 194 [1/1] (0.00ns)   --->   "%i_16 = phi i32 [ %i_17, %10 ], [ 0, %has_key.exit3.preheader ]"   --->   Operation 194 'phi' 'i_16' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 195 [1/1] (1.14ns)   --->   "%icmp_ln212_3 = icmp ult i32 %i_16, %temp_5" [HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 195 'icmp' 'icmp_ln212_3' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 196 [1/1] (1.48ns)   --->   "%i_17 = add i32 %i_16, 1" [HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 196 'add' 'i_17' <Predicate = true> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 197 [1/1] (0.00ns)   --->   "br i1 %icmp_ln212_3, label %10, label %"operator[].exit3.loopexit"" [HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 197 'br' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 198 [1/1] (0.00ns)   --->   "%zext_ln213_3 = zext i32 %i_16 to i64" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 198 'zext' 'zext_ln213_3' <Predicate = (icmp_ln212_3)> <Delay = 0.00>
+ST_27 : Operation 199 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_29 = getelementptr [30 x i32]* %LRHLS_layerPopulation_data_first, i64 0, i64 %zext_ln213_3" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 199 'getelementptr' 'LRHLS_layerPopulatio_29' <Predicate = (icmp_ln212_3)> <Delay = 0.00>
+ST_27 : Operation 200 [2/2] (0.69ns)   --->   "%LRHLS_layerPopulatio_30 = load i32* %LRHLS_layerPopulatio_29, align 4" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 200 'load' 'LRHLS_layerPopulatio_30' <Predicate = (icmp_ln212_3)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 28 <SV = 24> <Delay = 2.17>
+ST_28 : Operation 201 [1/2] (0.69ns)   --->   "%LRHLS_layerPopulatio_30 = load i32* %LRHLS_layerPopulatio_29, align 4" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 201 'load' 'LRHLS_layerPopulatio_30' <Predicate = (icmp_ln202_3 & icmp_ln212_3)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_28 : Operation 202 [1/1] (1.14ns)   --->   "%icmp_ln213_3 = icmp eq i32 %LRHLS_layerPopulatio_30, %LRHLS_stubMap_data_44" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 202 'icmp' 'icmp_ln213_3' <Predicate = (icmp_ln202_3 & icmp_ln212_3)> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 203 [1/1] (0.00ns)   --->   "br i1 %icmp_ln213_3, label %"operator[].exit3.loopexit", label %has_key.exit3" [HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 203 'br' <Predicate = (icmp_ln202_3 & icmp_ln212_3)> <Delay = 0.00>
+ST_28 : Operation 204 [1/1] (0.83ns)   --->   "br label %"operator[].exit3""   --->   Operation 204 'br' <Predicate = (icmp_ln202_3 & icmp_ln213_3) | (icmp_ln202_3 & !icmp_ln212_3)> <Delay = 0.83>
+ST_28 : Operation 205 [1/1] (0.00ns)   --->   "%p_pn_in_i10 = phi i32 [ %temp_5, %.critedge ], [ %i_16, %"operator[].exit3.loopexit" ]"   --->   Operation 205 'phi' 'p_pn_in_i10' <Predicate = (icmp_ln213_3) | (!icmp_ln212_3) | (!icmp_ln202_3)> <Delay = 0.00>
+ST_28 : Operation 206 [1/1] (0.00ns)   --->   "%zext_ln235 = zext i32 %p_pn_in_i10 to i64" [HLS_LR/.settings/LRutility.h:235->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 206 'zext' 'zext_ln235' <Predicate = (icmp_ln213_3) | (!icmp_ln212_3) | (!icmp_ln202_3)> <Delay = 0.00>
+ST_28 : Operation 207 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_34 = getelementptr [30 x i32]* %LRHLS_layerPopulation_data_second, i64 0, i64 %zext_ln235" [HLS_LR/.settings/LRutility.h:235->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 207 'getelementptr' 'LRHLS_layerPopulatio_34' <Predicate = (icmp_ln213_3) | (!icmp_ln212_3) | (!icmp_ln202_3)> <Delay = 0.00>
+ST_28 : Operation 208 [2/2] (0.69ns)   --->   "%LRHLS_layerPopulatio_35 = load i32* %LRHLS_layerPopulatio_34, align 4" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 208 'load' 'LRHLS_layerPopulatio_35' <Predicate = (icmp_ln213_3) | (!icmp_ln212_3) | (!icmp_ln202_3)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 29 <SV = 25> <Delay = 2.67>
+ST_29 : Operation 209 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_28 = phi i32 [ %add_ln197, %.critedge ], [ %temp_5, %"operator[].exit3.loopexit" ]"   --->   Operation 209 'phi' 'LRHLS_layerPopulatio_28' <Predicate = (and_ln187_1)> <Delay = 0.00>
+ST_29 : Operation 210 [1/2] (0.69ns)   --->   "%LRHLS_layerPopulatio_35 = load i32* %LRHLS_layerPopulatio_34, align 4" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 210 'load' 'LRHLS_layerPopulatio_35' <Predicate = (and_ln187_1)> <Delay = 0.69> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_29 : Operation 211 [1/1] (1.14ns)   --->   "%icmp_ln188 = icmp eq i32 %LRHLS_layerPopulatio_35, 1" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 211 'icmp' 'icmp_ln188' <Predicate = (and_ln187_1)> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 212 [1/1] (0.83ns)   --->   "br i1 %icmp_ln188, label %._crit_edge5.backedge, label %._crit_edge" [HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 212 'br' <Predicate = (and_ln187_1)> <Delay = 0.83>
+ST_29 : Operation 213 [2/2] (1.77ns)   --->   "%LRHLS_residuals_dat_11 = load float* %LRHLS_residuals_dat_3, align 4" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 213 'load' 'LRHLS_residuals_dat_11' <Predicate = (!icmp_ln188) | (!and_ln187_1)> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_29 : Operation 214 [2/2] (1.77ns)   --->   "%LRHLS_residuals_dat_12 = load float* %LRHLS_residuals_dat_4, align 4" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 214 'load' 'LRHLS_residuals_dat_12' <Predicate = (!icmp_ln188) | (!and_ln187_1)> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 30 <SV = 26> <Delay = 1.77>
+ST_30 : Operation 215 [1/2] (1.77ns)   --->   "%LRHLS_residuals_dat_11 = load float* %LRHLS_residuals_dat_3, align 4" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 215 'load' 'LRHLS_residuals_dat_11' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_30 : Operation 216 [1/2] (1.77ns)   --->   "%LRHLS_residuals_dat_12 = load float* %LRHLS_residuals_dat_4, align 4" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 216 'load' 'LRHLS_residuals_dat_12' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+
+State 31 <SV = 27> <Delay = 2.46>
+ST_31 : Operation 217 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_1 = load float* %LRHLS_largestResid_7" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 217 'load' 'LRHLS_largestResid_1' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 218 [1/1] (0.00ns)   --->   "%LRHLS_largestResid_2 = load float* %LRHLS_largestResid_5" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 218 'load' 'LRHLS_largestResid_2' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 219 [10/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 219 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 220 [10/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 220 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 28> <Delay = 2.46>
+ST_32 : Operation 221 [9/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 221 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 222 [9/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 222 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 29> <Delay = 2.46>
+ST_33 : Operation 223 [8/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 223 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 224 [8/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 224 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 30> <Delay = 2.46>
+ST_34 : Operation 225 [7/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 225 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 226 [7/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 226 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 31> <Delay = 2.46>
+ST_35 : Operation 227 [6/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 227 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 228 [6/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 228 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 32> <Delay = 2.46>
+ST_36 : Operation 229 [5/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 229 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 230 [5/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 230 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 33> <Delay = 2.46>
+ST_37 : Operation 231 [4/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 231 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 232 [4/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 232 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 34> <Delay = 2.46>
+ST_38 : Operation 233 [3/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 233 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 234 [3/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 234 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 35> <Delay = 2.46>
+ST_39 : Operation 235 [2/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 235 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 236 [2/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 236 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 36> <Delay = 2.46>
+ST_40 : Operation 237 [1/10] (2.46ns)   --->   "%tmp_i = fadd float %LRHLS_residuals_dat_11, %LRHLS_residuals_dat_12" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 237 'fadd' 'tmp_i' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 238 [1/10] (2.46ns)   --->   "%tmp_i1 = fadd float %LRHLS_largestResid_1, %LRHLS_largestResid_2" [HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 238 'fadd' 'tmp_i1' <Predicate = true> <Delay = 2.46> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 37> <Delay = 2.31>
+ST_41 : Operation 239 [1/1] (0.00ns)   --->   "%bitcast_ln190 = bitcast float %tmp_i to i32" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 239 'bitcast' 'bitcast_ln190' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 240 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln190, i32 23, i32 30)" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 240 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 241 [1/1] (0.00ns)   --->   "%trunc_ln190 = trunc i32 %bitcast_ln190 to i23" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 241 'trunc' 'trunc_ln190' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 242 [1/1] (0.00ns)   --->   "%bitcast_ln190_1 = bitcast float %tmp_i1 to i32" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 242 'bitcast' 'bitcast_ln190_1' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_1 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln190_1, i32 23, i32 30)" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 243 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 244 [1/1] (0.00ns)   --->   "%trunc_ln190_1 = trunc i32 %bitcast_ln190_1 to i23" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 244 'trunc' 'trunc_ln190_1' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 245 [1/1] (0.78ns)   --->   "%icmp_ln190 = icmp ne i8 %tmp, -1" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 245 'icmp' 'icmp_ln190' <Predicate = true> <Delay = 0.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 246 [1/1] (1.11ns)   --->   "%icmp_ln190_1 = icmp eq i23 %trunc_ln190, 0" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 246 'icmp' 'icmp_ln190_1' <Predicate = true> <Delay = 1.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 247 [1/1] (0.78ns)   --->   "%icmp_ln190_2 = icmp ne i8 %tmp_1, -1" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 247 'icmp' 'icmp_ln190_2' <Predicate = true> <Delay = 0.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 248 [1/1] (1.11ns)   --->   "%icmp_ln190_3 = icmp eq i23 %trunc_ln190_1, 0" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 248 'icmp' 'icmp_ln190_3' <Predicate = true> <Delay = 1.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.11> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 249 [3/3] (2.31ns)   --->   "%tmp_2 = fcmp ogt float %tmp_i, %tmp_i1" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 249 'fcmp' 'tmp_2' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 38> <Delay = 2.31>
+ST_42 : Operation 250 [2/3] (2.31ns)   --->   "%tmp_2 = fcmp ogt float %tmp_i, %tmp_i1" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 250 'fcmp' 'tmp_2' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 39> <Delay = 2.65>
+ST_43 : Operation 251 [1/1] (0.00ns) (grouped into LUT with out node and_ln190_1)   --->   "%or_ln190 = or i1 %icmp_ln190_1, %icmp_ln190" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 251 'or' 'or_ln190' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 252 [1/1] (0.00ns) (grouped into LUT with out node and_ln190_1)   --->   "%or_ln190_1 = or i1 %icmp_ln190_3, %icmp_ln190_2" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 252 'or' 'or_ln190_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 253 [1/1] (0.00ns) (grouped into LUT with out node and_ln190_1)   --->   "%and_ln190 = and i1 %or_ln190, %or_ln190_1" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 253 'and' 'and_ln190' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 254 [1/3] (2.31ns)   --->   "%tmp_2 = fcmp ogt float %tmp_i, %tmp_i1" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 254 'fcmp' 'tmp_2' <Predicate = true> <Delay = 2.31> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 2> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 255 [1/1] (0.33ns) (out node of the LUT)   --->   "%and_ln190_1 = and i1 %and_ln190, %tmp_2" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 255 'and' 'and_ln190_1' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 40> <Delay = 1.77>
+ST_44 : Operation 256 [1/1] (0.00ns)   --->   "%LRHLS_stubMap_size_3 = phi i32 [ %temp, %3 ], [ %LRHLS_stubMap_size_2, %"operator[].exit3" ]"   --->   Operation 256 'phi' 'LRHLS_stubMap_size_3' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 257 [1/1] (0.00ns)   --->   "%LRHLS_layerPopulatio_31 = phi i32 [ %temp_5, %3 ], [ %LRHLS_layerPopulatio_28, %"operator[].exit3" ]"   --->   Operation 257 'phi' 'LRHLS_layerPopulatio_31' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 258 [1/1] (0.83ns)   --->   "br i1 %and_ln190_1, label %11, label %._crit_edge5.backedge" [HLS_LR/.settings/LRHLS.cc:190]   --->   Operation 258 'br' <Predicate = true> <Delay = 0.83>
+ST_44 : Operation 259 [2/2] (1.77ns)   --->   "%LRHLS_residuals_dat_13 = load i32* %LRHLS_residuals_dat_5, align 4" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 259 'load' 'LRHLS_residuals_dat_13' <Predicate = (and_ln190_1)> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_44 : Operation 260 [2/2] (1.77ns)   --->   "%LRHLS_residuals_dat_14 = load i32* %LRHLS_residuals_dat_6, align 4" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 260 'load' 'LRHLS_residuals_dat_14' <Predicate = (and_ln190_1)> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_44 : Operation 261 [2/2] (0.92ns)   --->   "%LRHLS_residuals_dat_15 = load i1* %LRHLS_residuals_dat_7, align 1" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 261 'load' 'LRHLS_residuals_dat_15' <Predicate = (and_ln190_1)> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_44 : Operation 262 [1/1] (0.83ns)   --->   "store float %LRHLS_residuals_dat_12, float* %LRHLS_largestResid_5" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 262 'store' <Predicate = (and_ln190_1)> <Delay = 0.83>
+ST_44 : Operation 263 [1/1] (0.83ns)   --->   "store float %LRHLS_residuals_dat_11, float* %LRHLS_largestResid_7" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 263 'store' <Predicate = (and_ln190_1)> <Delay = 0.83>
+
+State 45 <SV = 41> <Delay = 2.60>
+ST_45 : Operation 264 [1/2] (1.77ns)   --->   "%LRHLS_residuals_dat_13 = load i32* %LRHLS_residuals_dat_5, align 4" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 264 'load' 'LRHLS_residuals_dat_13' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_45 : Operation 265 [1/2] (1.77ns)   --->   "%LRHLS_residuals_dat_14 = load i32* %LRHLS_residuals_dat_6, align 4" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 265 'load' 'LRHLS_residuals_dat_14' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_45 : Operation 266 [1/2] (0.92ns)   --->   "%LRHLS_residuals_dat_15 = load i1* %LRHLS_residuals_dat_7, align 1" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 266 'load' 'LRHLS_residuals_dat_15' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.92> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 480> <RAM>
+ST_45 : Operation 267 [1/1] (0.83ns)   --->   "store i32 %LRHLS_residuals_dat_13, i32* %LRHLS_largestResid_s" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 267 'store' <Predicate = true> <Delay = 0.83>
+ST_45 : Operation 268 [1/1] (0.83ns)   --->   "store i32 %LRHLS_residuals_dat_14, i32* %LRHLS_largestResid_6" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 268 'store' <Predicate = true> <Delay = 0.83>
+ST_45 : Operation 269 [1/1] (0.83ns)   --->   "store i1 %LRHLS_residuals_dat_15, i1* %LRHLS_largestResid_8" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 269 'store' <Predicate = true> <Delay = 0.83>
+ST_45 : Operation 270 [1/1] (0.83ns)   --->   "br label %._crit_edge5.backedge" [HLS_LR/.settings/LRHLS.cc:191]   --->   Operation 270 'br' <Predicate = true> <Delay = 0.83>
+
+State 46 <SV = 42> <Delay = 0.83>
+ST_46 : Operation 271 [1/1] (0.00ns)   --->   "%temp_be = phi i32 [ %LRHLS_stubMap_size_2, %"operator[].exit3" ], [ %LRHLS_stubMap_size_3, %11 ], [ %LRHLS_stubMap_size_3, %._crit_edge ]" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 271 'phi' 'temp_be' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 272 [1/1] (0.00ns)   --->   "%temp_3_be = phi i32 [ %LRHLS_layerPopulatio_28, %"operator[].exit3" ], [ %LRHLS_layerPopulatio_31, %11 ], [ %LRHLS_layerPopulatio_31, %._crit_edge ]" [HLS_LR/.settings/LRutility.h:197->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 272 'phi' 'temp_3_be' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 273 [1/1] (0.83ns)   --->   "store i32 %temp_be, i32* %LRHLS_stubMap_size_s" [HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 273 'store' <Predicate = true> <Delay = 0.83>
+ST_46 : Operation 274 [1/1] (0.83ns)   --->   "store i32 %temp_3_be, i32* %LRHLS_layerPopulatio" [HLS_LR/.settings/LRutility.h:197->HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188]   --->   Operation 274 'store' <Predicate = true> <Delay = 0.83>
+ST_46 : Operation 275 [1/1] (0.00ns)   --->   "br label %._crit_edge5"   --->   Operation 275 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.12ns, clock uncertainty: 0.391ns.
+
+ <State 1>: 1.14ns
+The critical path consists of the following:
+	wire read on port 'LRHLS_stubs_size_read' (HLS_LR/.settings/LRHLS.cc:176) [57]  (0 ns)
+	'icmp' operation ('icmp_ln187', HLS_LR/.settings/LRHLS.cc:187) [61]  (1.14 ns)
+
+ <State 2>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('p_begin_0_rec', HLS_LR/.settings/LRHLS.cc:179) with incoming values : ('add_ln179', HLS_LR/.settings/LRHLS.cc:179) [71]  (0 ns)
+	'add' operation ('add_ln179', HLS_LR/.settings/LRHLS.cc:179) [77]  (1.49 ns)
+
+ <State 3>: 2.17ns
+The critical path consists of the following:
+	'load' operation ('arrayHLS<TMTT::Residual>.size_', HLS_LR/.settings/LRHLS.cc:180) on array 'LRHLS_residuals_data_second_size_s' [81]  (0.698 ns)
+	'icmp' operation ('icmp_ln184', HLS_LR/.settings/LRHLS.cc:184) [85]  (1.14 ns)
+	'or' operation ('or_ln184_1', HLS_LR/.settings/LRHLS.cc:184) [88]  (0.337 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 1.48ns
+The critical path consists of the following:
+	'call' operation ('tmp_6', HLS_LR/.settings/LRHLS.cc:183) to 'countLayers' [84]  (0 ns)
+	'icmp' operation ('icmp_ln187_1', HLS_LR/.settings/LRHLS.cc:187) [91]  (1.14 ns)
+	'and' operation ('and_ln187', HLS_LR/.settings/LRHLS.cc:187) [92]  (0.337 ns)
+
+ <State 6>: 2.25ns
+The critical path consists of the following:
+	'phi' operation ('p_begin2_0_rec', HLS_LR/.settings/LRHLS.cc:186) with incoming values : ('add_ln186', HLS_LR/.settings/LRHLS.cc:186) [95]  (0 ns)
+	'add' operation ('empty_16', HLS_LR/.settings/LRHLS.cc:179) [99]  (1.32 ns)
+	'getelementptr' operation ('LRHLS_residuals_dat_7', HLS_LR/.settings/LRHLS.cc:187) [105]  (0 ns)
+	'load' operation ('LRHLS_residuals_dat_8', HLS_LR/.settings/LRHLS.cc:187) on array 'LRHLS_residuals_data_second_data_ps' [110]  (0.928 ns)
+
+ <State 7>: 2.1ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_residuals_dat_8', HLS_LR/.settings/LRHLS.cc:187) on array 'LRHLS_residuals_data_second_data_ps' [110]  (0.928 ns)
+	'and' operation ('and_ln187_1', HLS_LR/.settings/LRHLS.cc:187) [111]  (0.337 ns)
+	multiplexor before 'phi' operation ('temp') with incoming values : ('mapHLS<unsigned int, TMTT::arrayHLS<TMTT::StubHLS> >.size_') ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) [200]  (0.835 ns)
+
+ <State 8>: 0.835ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [117]  (0.835 ns)
+
+ <State 9>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [117]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [119]  (1.49 ns)
+
+ <State 10>: 2.17ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_stubMap_data_40', HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_stubMap_data_first' [124]  (0.698 ns)
+	'icmp' operation ('icmp_ln203', HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [125]  (1.14 ns)
+	blocking operation 0.337 ns on control path)
+
+ <State 11>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [130]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [132]  (1.49 ns)
+
+ <State 12>: 2.17ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_stubMap_data_42', HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_stubMap_data_first' [137]  (0.698 ns)
+	'icmp' operation ('icmp_ln213', HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [138]  (1.14 ns)
+	blocking operation 0.337 ns on control path)
+
+ <State 13>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 14>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 15>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 16>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 17>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 18>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 19>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) to 'push_back' [143]  (1.77 ns)
+
+ <State 20>: 1.77ns
+The critical path consists of the following:
+	'load' operation ('idx', HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_residuals_data_second_data_stubId' [150]  (1.77 ns)
+
+ <State 21>: 1.77ns
+The critical path consists of the following:
+	'load' operation ('idx', HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_residuals_data_second_data_stubId' [150]  (1.77 ns)
+
+ <State 22>: 1.32ns
+The critical path consists of the following:
+	'phi' operation ('temp') with incoming values : ('mapHLS<unsigned int, TMTT::arrayHLS<TMTT::StubHLS> >.size_') ('i', HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [147]  (0 ns)
+	'add' operation ('add_ln146', HLS_LR/.settings/LRutility.h:146->HLS_LR/.settings/LRHLS.cc:188) [152]  (1.32 ns)
+
+ <State 23>: 1.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('LRHLS_stubMap_data_43', HLS_LR/.settings/LRutility.h:146->HLS_LR/.settings/LRHLS.cc:188) [154]  (0 ns)
+	'load' operation ('_key', HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_stubMap_data_second_data_moduleHLS_layerId_s' [155]  (1.77 ns)
+
+ <State 24>: 1.77ns
+The critical path consists of the following:
+	'load' operation ('_key', HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_stubMap_data_second_data_moduleHLS_layerId_s' [155]  (1.77 ns)
+
+ <State 25>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [158]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:202->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [160]  (1.49 ns)
+
+ <State 26>: 2.17ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_layerPopulatio_27', HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_layerPopulation_data_first' [165]  (0.698 ns)
+	'icmp' operation ('icmp_ln203_3', HLS_LR/.settings/LRutility.h:203->HLS_LR/.settings/LRutility.h:228->HLS_LR/.settings/LRHLS.cc:188) [166]  (1.14 ns)
+	blocking operation 0.337 ns on control path)
+
+ <State 27>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [171]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:212->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [173]  (1.49 ns)
+
+ <State 28>: 2.17ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_layerPopulatio_30', HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_layerPopulation_data_first' [178]  (0.698 ns)
+	'icmp' operation ('icmp_ln213_3', HLS_LR/.settings/LRutility.h:213->HLS_LR/.settings/LRutility.h:230->HLS_LR/.settings/LRHLS.cc:188) [179]  (1.14 ns)
+	blocking operation 0.337 ns on control path)
+
+ <State 29>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_layerPopulatio_35', HLS_LR/.settings/LRHLS.cc:188) on array 'LRHLS_layerPopulation_data_second' [196]  (0.698 ns)
+	'icmp' operation ('icmp_ln188', HLS_LR/.settings/LRHLS.cc:188) [197]  (1.14 ns)
+	multiplexor before 'phi' operation ('temp_be', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) with incoming values : ('mapHLS<unsigned int, TMTT::arrayHLS<TMTT::StubHLS> >.size_') ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) [235]  (0.835 ns)
+
+ <State 30>: 1.77ns
+The critical path consists of the following:
+	'load' operation ('Residual.phi', HLS_LR/.settings/LRHLS.cc:190) on array 'LRHLS_residuals_data_second_data_phi' [204]  (1.77 ns)
+
+ <State 31>: 2.46ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_largestResid_1', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) on local variable 'Residual.phi' [202]  (0 ns)
+	'fadd' operation ('tmp_i1', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [207]  (2.46 ns)
+
+ <State 32>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 33>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 34>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 35>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 36>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 37>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 38>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 39>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 40>: 2.46ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i', HLS_LR/.settings/LRHLS.h:164->HLS_LR/.settings/LRHLS.cc:190) [206]  (2.46 ns)
+
+ <State 41>: 2.32ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_2', HLS_LR/.settings/LRHLS.cc:190) [221]  (2.32 ns)
+
+ <State 42>: 2.32ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_2', HLS_LR/.settings/LRHLS.cc:190) [221]  (2.32 ns)
+
+ <State 43>: 2.66ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_2', HLS_LR/.settings/LRHLS.cc:190) [221]  (2.32 ns)
+	'and' operation ('and_ln190_1', HLS_LR/.settings/LRHLS.cc:190) [222]  (0.337 ns)
+
+ <State 44>: 1.77ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_residuals_dat_13', HLS_LR/.settings/LRHLS.cc:191) on array 'LRHLS_residuals_data_second_data_layerId' [225]  (1.77 ns)
+
+ <State 45>: 2.61ns
+The critical path consists of the following:
+	'load' operation ('LRHLS_residuals_dat_13', HLS_LR/.settings/LRHLS.cc:191) on array 'LRHLS_residuals_data_second_data_layerId' [225]  (1.77 ns)
+	'store' operation ('store_ln191', HLS_LR/.settings/LRHLS.cc:191) of variable 'LRHLS_residuals_dat_13', HLS_LR/.settings/LRHLS.cc:191 on local variable 'LRHLS.largestResid_.layerId' [228]  (0.835 ns)
+
+ <State 46>: 0.835ns
+The critical path consists of the following:
+	'phi' operation ('temp_be', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) with incoming values : ('mapHLS<unsigned int, TMTT::arrayHLS<TMTT::StubHLS> >.size_') ('call_ret', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) [235]  (0 ns)
+	'store' operation ('store_ln234', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188) of variable 'temp_be', HLS_LR/.settings/LRutility.h:234->HLS_LR/.settings/LRHLS.cc:188 on local variable 'LRHLS.stubMap_.size_' [237]  (0.835 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

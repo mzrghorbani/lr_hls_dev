@@ -1,0 +1,414 @@
+
+
+================================================================
+== Vivado HLS Report for 'push_back'
+================================================================
+* Date:           Fri Jun 14 18:58:39 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     1.771|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    7|    7|    8|    8| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|     579|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |        -|      -|        -|       -|    -|
+|Memory               |        -|      -|        -|       -|    -|
+|Multiplexer          |        -|      -|        -|    2332|    -|
+|Register             |        -|      -|       72|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |        0|      0|       72|    2911|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     2160|   2760|   663360|  331680|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |        0|      0|    ~0   |   ~0   |  100|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     4320|   5520|  1326720|  663360|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        0|      0|    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |ap_return               |     +    |      0|  0|  39|          32|           1|
+    |or_ln196_15_fu_3848_p2  |    or    |      0|  0|  36|          36|           2|
+    |or_ln196_16_fu_3887_p2  |    or    |      0|  0|  36|          36|           2|
+    |or_ln196_17_fu_3926_p2  |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_18_fu_3965_p2  |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_19_fu_4004_p2  |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_20_fu_4043_p2  |    or    |      0|  0|  36|          36|           3|
+    |or_ln196_21_fu_4082_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_22_fu_4121_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_23_fu_4160_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_24_fu_4199_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_25_fu_4238_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_26_fu_4277_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_27_fu_4316_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_28_fu_4355_p2  |    or    |      0|  0|  36|          36|           4|
+    |or_ln196_fu_3808_p2     |    or    |      0|  0|  36|          36|           1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |Total                   |          |      0|  0| 579|         572|          50|
+    +------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                                        Name                                                       | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                                                                                          |  44|          9|    1|          9|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_address0                        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_address1                        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_address0                       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_address1                       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_address0                      |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_address1                      |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_address0      |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_address1      |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_address0        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_address1        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_address0       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_address1       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_address0     |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_address1     |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_address0       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_address1       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_address0   |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_address1   |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_address0        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_address1        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_address0        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_address1        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_address0        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_address1        |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_address0  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_address1  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_address0                                     |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_address1                                     |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_address0                                       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_address1                                       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_address0                |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_address1                |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_address0                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_address1                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_address0                 |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_address1                 |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_address0               |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_address1               |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_address0                 |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_address1                 |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_address0             |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_address1             |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_address0                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_address1                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_address0                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_address1                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_address0                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_address1                  |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_address0            |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_address1            |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_address0                                       |  44|          9|    9|         81|
+    |mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_address1                                       |  44|          9|    9|         81|
+    +-------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                                              |2332|        477|  469|       4221|
+    +-------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------+----+----+-----+-----------+
+    |            Name           | FF | LUT| Bits| Const Bits|
+    +---------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                  |   8|   0|    8|          0|
+    |mapHLS_size_read_reg_4399  |  32|   0|   32|          0|
+    |tmp_reg_4404               |  32|   0|   36|          4|
+    +---------------------------+----+----+-----+-----------+
+    |Total                      |  72|   0|   76|          4|
+    +---------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------------------------------+--------------+
+|                                                     RTL Ports                                                     | Dir | Bits|  Protocol  |                                               Source Object                                              |    C Type    |
++-------------------------------------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                                                             |  in |    1| ap_ctrl_hs |                                                 push_back                                                | return value |
+|ap_rst                                                                                                             |  in |    1| ap_ctrl_hs |                                                 push_back                                                | return value |
+|ap_start                                                                                                           |  in |    1| ap_ctrl_hs |                                                 push_back                                                | return value |
+|ap_done                                                                                                            | out |    1| ap_ctrl_hs |                                                 push_back                                                | return value |
+|ap_idle                                                                                                            | out |    1| ap_ctrl_hs |                                                 push_back                                                | return value |
+|ap_ready                                                                                                           | out |    1| ap_ctrl_hs |                                                 push_back                                                | return value |
+|ap_return                                                                                                          | out |   32| ap_ctrl_hs |                                                 push_back                                                | return value |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_size_read                                                           |  in |   32|   ap_none  |                         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_size_read                         |    scalar    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first_address0                                                 | out |    5|  ap_memory |                         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first                        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first_ce0                                                      | out |    1|  ap_memory |                         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first                        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first_we0                                                      | out |    1|  ap_memory |                         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first                        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first_d0                                                       | out |   32|  ap_memory |                         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_first                        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s_address0                                         | out |    5|  ap_memory |                     mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s                    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s_ce0                                              | out |    1|  ap_memory |                     mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s                    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s_we0                                              | out |    1|  ap_memory |                     mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s                    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s_d0                                               | out |   32|  ap_memory |                     mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_size_s                    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_address0             | out |    9|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_ce0                  | out |    1|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_we0                  | out |    1|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_d0                   | out |   32|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_address1             | out |    9|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_ce1                  | out |    1|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_we1                  | out |    1|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s_d1                   | out |   32|  ap_memory |       mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrNumIterations_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_address0                 | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_ce0                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_we0                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_d0                       | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_address1                 | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_ce1                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_we1                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s_d1                       | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayers_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_address0               | out |    9|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_ce0                    | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_we0                    | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_d0                     | out |   32|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_address1               | out |    9|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_ce1                    | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_we1                    | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s_d1                     | out |   32|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrMinLayersPS_s       |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_address0                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_ce0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_we0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_d0                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_address1                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_ce1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_we1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s_d1                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidPhi_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_address0                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_ce0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_we0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_d0                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_address1                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_ce1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_we1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s_d1                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZ2S_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_address0                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_ce0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_we0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_d0                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_address1                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_ce1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_we1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s_d1                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_lrResidZPS_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_address0                | out |    9|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_ce0                     | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_we0                     | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_d0                      | out |   32|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_address1                | out |    9|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_ce1                     | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_we1                     | out |    1|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s_d1                      | out |   32|  ap_memory |        mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofPhi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_address0                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_ce0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_we0                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_d0                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_address1                  | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_ce1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_we1                       | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s_d1                        | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_chosenRofZ_s         |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_address0                 | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_ce0                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_we0                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_d0                       | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_address1                 | out |    9|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_ce1                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_we1                      | out |    1|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s_d1                       | out |   32|  ap_memory |         mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_invPtToDphi_s        |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_address0            | out |    9|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_ce0                 | out |    1|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_we0                 | out |    1|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_d0                  | out |   32|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_address1            | out |    9|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_ce1                 | out |    1|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_we1                 | out |    1|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s_d1                  | out |   32|  ap_memory |      mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_settingsHLS_trackerNumLayers_s      |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_address0   | out |    9|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_ce0        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_we0        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_d0         | out |   32|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_address1   | out |    9|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_ce1        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_we1        | out |    1|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s_d1         | out |   32|  ap_memory |  mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrNumIterations_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_address0       | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_ce0            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_we0            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_d0             | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_address1       | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_ce1            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_we1            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s_d1             | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayers_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_address0     | out |    9|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_ce0          | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_we0          | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_d0           | out |   32|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_address1     | out |    9|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_ce1          | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_we1          | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s_d1           | out |   32|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrMinLayersPS_s  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_address0        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_ce0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_we0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_d0              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_address1        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_ce1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_we1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s_d1              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidPhi_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_address0        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_ce0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_we0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_d0              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_address1        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_ce1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_we1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s_d1              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZ2S_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_address0        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_ce0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_we0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_d0              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_address1        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_ce1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_we1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s_d1              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_lrResidZPS_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_address0      | out |    9|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_ce0           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_we0           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_d0            | out |   32|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_address1      | out |    9|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_ce1           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_we1           | out |    1|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s_d1            | out |   32|  ap_memory |   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofPhi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_address0        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_ce0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_we0             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_d0              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_address1        | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_ce1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_we1             | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s_d1              | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_chosenRofZ_s    |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_address0       | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_ce0            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_we0            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_d0             | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_address1       | out |    9|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_ce1            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_we1            | out |    1|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s_d1             | out |   32|  ap_memory |    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_invPtToDphi_s   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_address0  | out |    9|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_ce0       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_we0       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_d0        | out |   32|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_address1  | out |    9|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_ce1       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_we1       | out |    1|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s_d1        | out |   32|  ap_memory | mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_settingsHLS_trackerNumLayers_s |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_address0                        | out |    9|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_ce0                             | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_we0                             | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_d0                              | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_address1                        | out |    9|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_ce1                             | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_we1                             | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s_d1                              | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_barrel_s            |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_address0                      | out |    9|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_ce0                           | out |    1|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_we0                           | out |    1|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_d0                            | out |    1|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_address1                      | out |    9|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_ce1                           | out |    1|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_we1                           | out |    1|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s_d1                            | out |    1|  ap_memory |           mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_psModule_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_address0                       | out |    9|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_ce0                            | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_we0                            | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_d0                             | out |   32|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_address1                       | out |    9|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_ce1                            | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_we1                            | out |    1|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s_d1                             | out |   32|  ap_memory |            mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_moduleHLS_layerId_s           |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_address0                                       | out |    9|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_ce0                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_we0                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_d0                                             | out |   32|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_address1                                       | out |    9|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_ce1                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_we1                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s_d1                                             | out |   32|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_r_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_address0                                     | out |    9|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_ce0                                          | out |    1|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_we0                                          | out |    1|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_d0                                           | out |   32|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_address1                                     | out |    9|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_ce1                                          | out |    1|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_we1                                          | out |    1|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s_d1                                           | out |   32|  ap_memory |                   mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_phi_s                  |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_address0                                       | out |    9|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_ce0                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_we0                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_d0                                             | out |   32|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_address1                                       | out |    9|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_ce1                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_we1                                            | out |    1|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s_d1                                             | out |   32|  ap_memory |                    mapHLS_unsigned_int_TMTT_arrayHLS_TMTT_StubHLS_data_second_data_z_s                   |     array    |
+|value_first_read                                                                                                   |  in |   32|   ap_none  |                                             value_first_read                                             |    scalar    |
++-------------------------------------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------------------------------+--------------+
+

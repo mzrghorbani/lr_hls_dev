@@ -1,0 +1,203 @@
+
+
+================================================================
+== Vivado HLS Report for 'calcHelix'
+================================================================
+* Date:           Fri Jun 14 19:06:30 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     2.655|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1  |    ?|    ?|  37 ~ 41 |          -|          -|     ?|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|     290|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |        -|      7|      961|     694|    -|
+|Memory               |        -|      -|        -|       -|    -|
+|Multiplexer          |        -|      -|        -|     314|    -|
+|Register             |        -|      -|      426|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |        0|      7|     1387|    1298|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     2160|   2760|   663360|  331680|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |        0|   ~0  |    ~0   |   ~0   |  100|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     4320|   5520|  1326720|  663360|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        0|   ~0  |    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+    |                   Instance                   |                 Module                 | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+    |LR_top_fcmp_32ns_32ns_1_3_1_U1137             |LR_top_fcmp_32ns_32ns_1_3_1             |        0|      0|   66|   72|    0|
+    |LR_top_fmul_32ns_32ns_32_6_max_dsp_1_U1136    |LR_top_fmul_32ns_32ns_32_6_max_dsp_1    |        0|      3|  165|  146|    0|
+    |LR_top_fsub_32ns_32ns_32_10_full_dsp_1_U1134  |LR_top_fsub_32ns_32ns_32_10_full_dsp_1  |        0|      2|  365|  238|    0|
+    |LR_top_fsub_32ns_32ns_32_10_full_dsp_1_U1135  |LR_top_fsub_32ns_32ns_32_10_full_dsp_1  |        0|      2|  365|  238|    0|
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+    |Total                                         |                                        |        0|      7|  961|  694|    0|
+    +----------------------------------------------+----------------------------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |add_ln106_fu_182_p2    |     +    |      0|  0|  39|           1|          32|
+    |add_ln111_fu_214_p2    |     +    |      0|  0|  39|           1|          32|
+    |empty_20_fu_198_p2     |     +    |      0|  0|  17|          10|          10|
+    |and_ln32_fu_256_p2     |    and   |      0|  0|   2|           1|           1|
+    |and_ln40_fu_312_p2     |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln106_fu_177_p2   |   icmp   |      0|  0|  20|          32|          32|
+    |icmp_ln111_fu_209_p2   |   icmp   |      0|  0|  20|          32|          32|
+    |icmp_ln162_fu_188_p2   |   icmp   |      0|  0|  20|          32|           1|
+    |icmp_ln32_8_fu_244_p2  |   icmp   |      0|  0|  20|          23|           1|
+    |icmp_ln32_fu_238_p2    |   icmp   |      0|  0|  11|           8|           2|
+    |icmp_ln40_3_fu_302_p2  |   icmp   |      0|  0|  20|          23|           1|
+    |icmp_ln40_fu_296_p2    |   icmp   |      0|  0|  11|           8|           2|
+    |or_ln32_fu_250_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln40_fu_308_p2      |    or    |      0|  0|   2|           1|           1|
+    |select_ln32_fu_271_p3  |  select  |      0|  0|  32|           1|          32|
+    |xor_ln33_fu_261_p2     |    xor   |      0|  0|  33|          32|          33|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 290|         207|         214|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+-----+-----------+-----+-----------+
+    |          Name          | LUT | Input Size| Bits| Total Bits|
+    +------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm               |  197|         45|    1|         45|
+    |grp_fu_135_p0           |   15|          3|   32|         96|
+    |grp_fu_135_p1           |   15|          3|   32|         96|
+    |grp_fu_143_p1           |   15|          3|   32|         96|
+    |grp_fu_148_opcode       |   15|          3|    5|         15|
+    |grp_fu_148_p0           |   15|          3|   32|         96|
+    |grp_fu_148_p1           |   15|          3|   32|         96|
+    |guard_variable_for_f_o  |    9|          2|    1|          2|
+    |p_begin2_0_rec_reg_124  |    9|          2|   32|         64|
+    |p_begin_0_rec_reg_113   |    9|          2|   32|         64|
+    +------------------------+-----+-----------+-----+-----------+
+    |Total                   |  314|         69|  231|        670|
+    +------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------+----+----+-----+-----------+
+    |              Name              | FF | LUT| Bits| Const Bits|
+    +--------------------------------+----+----+-----+-----------+
+    |LRHLS_stubMap_data_57_reg_372   |  32|   0|   32|          0|
+    |LRHLS_stubMap_data_58_reg_381   |   9|   0|    9|          0|
+    |LRHLS_stubMap_data_59_reg_386   |   9|   0|    9|          0|
+    |LRHLS_stubMap_data_60_reg_399   |  32|   0|   32|          0|
+    |LRHLS_stubMap_data_61_reg_404   |  32|   0|   32|          0|
+    |add_ln106_reg_362               |  32|   0|   32|          0|
+    |add_ln111_reg_394               |  32|   0|   32|          0|
+    |and_ln40_reg_440                |   1|   0|    1|          0|
+    |ap_CS_fsm                       |  44|   0|   44|          0|
+    |guard_variable_for_f_3_reg_444  |   1|   0|    1|          0|
+    |icmp_ln162_reg_377              |   1|   0|    1|          0|
+    |icmp_ln40_3_reg_435             |   1|   0|    1|          0|
+    |icmp_ln40_reg_430               |   1|   0|    1|          0|
+    |p_begin2_0_rec_reg_124          |  32|   0|   32|          0|
+    |p_begin_0_rec_reg_113           |  32|   0|   32|          0|
+    |p_cast3_reg_354                 |   6|   0|   10|          4|
+    |reg_154                         |  32|   0|   32|          0|
+    |select_ln32_reg_424             |  32|   0|   32|          0|
+    |tmp_14_reg_414                  |  32|   0|   32|          0|
+    |tmp_19_reg_419                  |   1|   0|    1|          0|
+    |tmp_s_reg_409                   |  32|   0|   32|          0|
+    +--------------------------------+----+----+-----+-----------+
+    |Total                           | 426|   0|  430|          4|
+    +--------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------+-----+-----+------------+--------------------------------------+--------------+
+|                   RTL Ports                   | Dir | Bits|  Protocol  |             Source Object            |    C Type    |
++-----------------------------------------------+-----+-----+------------+--------------------------------------+--------------+
+|ap_clk                                         |  in |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_rst                                         |  in |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_start                                       |  in |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_done                                        | out |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_idle                                        | out |    1| ap_ctrl_hs |               calcHelix              | return value |
+|ap_ready                                       | out |    1| ap_ctrl_hs |               calcHelix              | return value |
+|LRHLS_settings_chosenRofPhi_read               |  in |   32|   ap_none  |   LRHLS_settings_chosenRofPhi_read   |    scalar    |
+|LRHLS_HTParameter_qOverPt_read                 |  in |   32|   ap_none  |    LRHLS_HTParameter_qOverPt_read    |    scalar    |
+|LRHLS_HTParameter_phiT_read                    |  in |   32|   ap_none  |      LRHLS_HTParameter_phiT_read     |    scalar    |
+|LRHLS_stubMap_size_read                        |  in |   32|   ap_none  |        LRHLS_stubMap_size_read       |    scalar    |
+|LRHLS_stubMap_data_second_size_s_address0      | out |    5|  ap_memory |   LRHLS_stubMap_data_second_size_s   |     array    |
+|LRHLS_stubMap_data_second_size_s_ce0           | out |    1|  ap_memory |   LRHLS_stubMap_data_second_size_s   |     array    |
+|LRHLS_stubMap_data_second_size_s_q0            |  in |   32|  ap_memory |   LRHLS_stubMap_data_second_size_s   |     array    |
+|LRHLS_stubMap_data_second_data_r_s_address0    | out |    9|  ap_memory |  LRHLS_stubMap_data_second_data_r_s  |     array    |
+|LRHLS_stubMap_data_second_data_r_s_ce0         | out |    1|  ap_memory |  LRHLS_stubMap_data_second_data_r_s  |     array    |
+|LRHLS_stubMap_data_second_data_r_s_q0          |  in |   32|  ap_memory |  LRHLS_stubMap_data_second_data_r_s  |     array    |
+|LRHLS_stubMap_data_second_data_phi_s_address0  | out |    9|  ap_memory | LRHLS_stubMap_data_second_data_phi_s |     array    |
+|LRHLS_stubMap_data_second_data_phi_s_ce0       | out |    1|  ap_memory | LRHLS_stubMap_data_second_data_phi_s |     array    |
+|LRHLS_stubMap_data_second_data_phi_s_q0        |  in |   32|  ap_memory | LRHLS_stubMap_data_second_data_phi_s |     array    |
+|guard_variable_for_f_i                         |  in |    1|   ap_ovld  |         guard_variable_for_f         |    pointer   |
+|guard_variable_for_f_o                         | out |    1|   ap_ovld  |         guard_variable_for_f         |    pointer   |
+|guard_variable_for_f_o_ap_vld                  | out |    1|   ap_ovld  |         guard_variable_for_f         |    pointer   |
+|n                                              | out |   32|   ap_vld   |                   n                  |    pointer   |
+|n_ap_vld                                       | out |    1|   ap_vld   |                   n                  |    pointer   |
++-----------------------------------------------+-----+-----+------------+--------------------------------------+--------------+
+

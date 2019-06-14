@@ -1,0 +1,11 @@
+   Build using "/home/eepgmmg1/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_LR_top.cpp
+   Compiling StubHLS.cc_pre.cc.tb.cc
+   Compiling DataHLS.cc_pre.cc.tb.cc
+   Compiling testbench.cc_pre.cc.tb.cc
+   Compiling ModuleHLS.cc_pre.cc.tb.cc
+   Compiling TrackHLS.cc_pre.cc.tb.cc
+   Compiling LRHLS.cc_pre.cc.tb.cc
+   Compiling LR_top.cc_pre.cc.tb.cc
+   Compiling SettingsHLS.cc_pre.cc.tb.cc
+   Generating cosim.tv.exe

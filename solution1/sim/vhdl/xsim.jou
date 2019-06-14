@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jun 14 19:26:48 2019
+# Process ID: 8782
+# Current directory: /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl
+# Command line: xsim -mode tcl -source {xsim.dir/LR_top/xsim_script.tcl}
+# Log file: /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl/xsim.log
+# Journal file: /home/eepgmmg1/workspace/vivado_projects/hls_projects/HLS_LR/solution1/sim/vhdl/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/LR_top/xsim_script.tcl
+source LR_top.tcl

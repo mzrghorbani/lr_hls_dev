@@ -1,0 +1,300 @@
+
+
+================================================================
+== Vivado HLS Report for 'shift_left'
+================================================================
+* Date:           Fri Jun 14 18:42:01 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        HLS_LR
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku115-flvd1517-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.12|     1.771|        0.39|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         5|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.83>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%idx_read_2 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %idx_read)" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 7 'read' 'idx_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_offset)" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 8 'read' 'arrayHLS_data_setti' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%arrayHLS_size_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %arrayHLS_TMTT_StubHLS_size_read)" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 9 'read' 'arrayHLS_size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%trunc_ln132 = trunc i32 %arrayHLS_data_setti to i6" [HLS_LR/.settings/LRutility.h:132]   --->   Operation 10 'trunc' 'trunc_ln132' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%zext_ln135_2_cast = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %trunc_ln132, i4 0)" [HLS_LR/.settings/LRutility.h:132]   --->   Operation 11 'bitconcatenate' 'zext_ln135_2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.83ns)   --->   "br label %1" [HLS_LR/.settings/LRutility.h:134]   --->   Operation 12 'br' <Predicate = true> <Delay = 0.83>
+
+State 2 <SV = 1> <Delay = 1.48>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i_0 = phi i32 [ %idx_read_2, %0 ], [ %i, %2 ]"   --->   Operation 13 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.14ns)   --->   "%icmp_ln134 = icmp ult i32 %i_0, %arrayHLS_size_read" [HLS_LR/.settings/LRutility.h:134]   --->   Operation 14 'icmp' 'icmp_ln134' <Predicate = true> <Delay = 1.14> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "br i1 %icmp_ln134, label %2, label %3" [HLS_LR/.settings/LRutility.h:134]   --->   Operation 15 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln135 = trunc i32 %i_0 to i10" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 16 'trunc' 'trunc_ln135' <Predicate = (icmp_ln134)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (1.48ns)   --->   "%i = add i32 1, %i_0" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 17 'add' 'i' <Predicate = (icmp_ln134)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%trunc_ln135_1 = trunc i32 %i to i10" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 18 'trunc' 'trunc_ln135_1' <Predicate = (icmp_ln134)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "ret void" [HLS_LR/.settings/LRutility.h:137]   --->   Operation 19 'ret' <Predicate = (!icmp_ln134)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.31>
+ST_3 : Operation 20 [1/1] (1.31ns)   --->   "%add_ln135 = add i10 %zext_ln135_2_cast, %trunc_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 20 'add' 'add_ln135' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 21 [1/1] (1.31ns)   --->   "%add_ln135_2 = add i10 %zext_ln135_2_cast, %trunc_ln135_1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 21 'add' 'add_ln135_2' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 1.77>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln135_2 = zext i10 %add_ln135_2 to i64" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 22 'zext' 'zext_ln135_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_40 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 23 'getelementptr' 'arrayHLS_data_setti_40' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_41 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 24 'getelementptr' 'arrayHLS_data_setti_41' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_42 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 25 'getelementptr' 'arrayHLS_data_setti_42' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_43 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 26 'getelementptr' 'arrayHLS_data_setti_43' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_44 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 27 'getelementptr' 'arrayHLS_data_setti_44' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_45 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 28 'getelementptr' 'arrayHLS_data_setti_45' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_46 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 29 'getelementptr' 'arrayHLS_data_setti_46' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_47 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 30 'getelementptr' 'arrayHLS_data_setti_47' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_48 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 31 'getelementptr' 'arrayHLS_data_setti_48' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_49 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 32 'getelementptr' 'arrayHLS_data_setti_49' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_51 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 33 'getelementptr' 'arrayHLS_data_modul_51' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_52 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 34 'getelementptr' 'arrayHLS_data_modul_52' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_53 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 35 'getelementptr' 'arrayHLS_data_modul_53' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_54 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 36 'getelementptr' 'arrayHLS_data_modul_54' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_55 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 37 'getelementptr' 'arrayHLS_data_modul_55' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_56 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 38 'getelementptr' 'arrayHLS_data_modul_56' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_57 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 39 'getelementptr' 'arrayHLS_data_modul_57' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_58 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 40 'getelementptr' 'arrayHLS_data_modul_58' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_59 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 41 'getelementptr' 'arrayHLS_data_modul_59' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_60 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 42 'getelementptr' 'arrayHLS_data_modul_60' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_61 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 43 'getelementptr' 'arrayHLS_data_modul_61' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_62 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 44 'getelementptr' 'arrayHLS_data_modul_62' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_63 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 45 'getelementptr' 'arrayHLS_data_modul_63' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%arrayHLS_data_r_ad_2 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_r_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 46 'getelementptr' 'arrayHLS_data_r_ad_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%arrayHLS_data_phi_3 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_phi_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 47 'getelementptr' 'arrayHLS_data_phi_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%arrayHLS_data_z_ad_2 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_z_s, i64 0, i64 %zext_ln135_2" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 48 'getelementptr' 'arrayHLS_data_z_ad_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_50 = load i32* %arrayHLS_data_setti_40, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 49 'load' 'arrayHLS_data_setti_50' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 50 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_51 = load i32* %arrayHLS_data_setti_41, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 50 'load' 'arrayHLS_data_setti_51' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 51 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_52 = load i32* %arrayHLS_data_setti_42, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 51 'load' 'arrayHLS_data_setti_52' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 52 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_53 = load float* %arrayHLS_data_setti_43, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 52 'load' 'arrayHLS_data_setti_53' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 53 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_54 = load float* %arrayHLS_data_setti_44, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 53 'load' 'arrayHLS_data_setti_54' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 54 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_55 = load float* %arrayHLS_data_setti_45, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 54 'load' 'arrayHLS_data_setti_55' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 55 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_56 = load float* %arrayHLS_data_setti_46, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 55 'load' 'arrayHLS_data_setti_56' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 56 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_57 = load float* %arrayHLS_data_setti_47, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 56 'load' 'arrayHLS_data_setti_57' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 57 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_58 = load float* %arrayHLS_data_setti_48, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 57 'load' 'arrayHLS_data_setti_58' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 58 [2/2] (1.77ns)   --->   "%arrayHLS_data_setti_59 = load i32* %arrayHLS_data_setti_49, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 58 'load' 'arrayHLS_data_setti_59' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 59 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_64 = load i32* %arrayHLS_data_modul_51, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 59 'load' 'arrayHLS_data_modul_64' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 60 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_65 = load i32* %arrayHLS_data_modul_52, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 60 'load' 'arrayHLS_data_modul_65' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 61 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_66 = load i32* %arrayHLS_data_modul_53, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 61 'load' 'arrayHLS_data_modul_66' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 62 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_67 = load float* %arrayHLS_data_modul_54, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 62 'load' 'arrayHLS_data_modul_67' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 63 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_68 = load float* %arrayHLS_data_modul_55, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 63 'load' 'arrayHLS_data_modul_68' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 64 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_69 = load float* %arrayHLS_data_modul_56, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 64 'load' 'arrayHLS_data_modul_69' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 65 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_70 = load float* %arrayHLS_data_modul_57, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 65 'load' 'arrayHLS_data_modul_70' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 66 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_71 = load float* %arrayHLS_data_modul_58, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 66 'load' 'arrayHLS_data_modul_71' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 67 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_72 = load float* %arrayHLS_data_modul_59, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 67 'load' 'arrayHLS_data_modul_72' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 68 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_73 = load i32* %arrayHLS_data_modul_60, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 68 'load' 'arrayHLS_data_modul_73' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 69 [2/2] (0.92ns)   --->   "%arrayHLS_data_modul_74 = load i1* %arrayHLS_data_modul_61, align 1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 69 'load' 'arrayHLS_data_modul_74' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 70 [2/2] (0.92ns)   --->   "%arrayHLS_data_modul_75 = load i1* %arrayHLS_data_modul_62, align 1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 70 'load' 'arrayHLS_data_modul_75' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 71 [2/2] (1.77ns)   --->   "%arrayHLS_data_modul_76 = load i32* %arrayHLS_data_modul_63, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 71 'load' 'arrayHLS_data_modul_76' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 72 [2/2] (1.77ns)   --->   "%arrayHLS_data_r_lo = load float* %arrayHLS_data_r_ad_2, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 72 'load' 'arrayHLS_data_r_lo' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 73 [2/2] (1.77ns)   --->   "%arrayHLS_data_phi_4 = load float* %arrayHLS_data_phi_3, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 73 'load' 'arrayHLS_data_phi_4' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_4 : Operation 74 [2/2] (1.77ns)   --->   "%arrayHLS_data_z_lo = load float* %arrayHLS_data_z_ad_2, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 74 'load' 'arrayHLS_data_z_lo' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+
+State 5 <SV = 4> <Delay = 1.77>
+ST_5 : Operation 75 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_50 = load i32* %arrayHLS_data_setti_40, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 75 'load' 'arrayHLS_data_setti_50' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 76 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_51 = load i32* %arrayHLS_data_setti_41, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 76 'load' 'arrayHLS_data_setti_51' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 77 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_52 = load i32* %arrayHLS_data_setti_42, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 77 'load' 'arrayHLS_data_setti_52' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 78 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_53 = load float* %arrayHLS_data_setti_43, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 78 'load' 'arrayHLS_data_setti_53' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 79 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_54 = load float* %arrayHLS_data_setti_44, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 79 'load' 'arrayHLS_data_setti_54' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 80 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_55 = load float* %arrayHLS_data_setti_45, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 80 'load' 'arrayHLS_data_setti_55' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 81 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_56 = load float* %arrayHLS_data_setti_46, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 81 'load' 'arrayHLS_data_setti_56' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 82 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_57 = load float* %arrayHLS_data_setti_47, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 82 'load' 'arrayHLS_data_setti_57' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 83 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_58 = load float* %arrayHLS_data_setti_48, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 83 'load' 'arrayHLS_data_setti_58' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 84 [1/2] (1.77ns)   --->   "%arrayHLS_data_setti_59 = load i32* %arrayHLS_data_setti_49, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 84 'load' 'arrayHLS_data_setti_59' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 85 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_64 = load i32* %arrayHLS_data_modul_51, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 85 'load' 'arrayHLS_data_modul_64' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 86 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_65 = load i32* %arrayHLS_data_modul_52, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 86 'load' 'arrayHLS_data_modul_65' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 87 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_66 = load i32* %arrayHLS_data_modul_53, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 87 'load' 'arrayHLS_data_modul_66' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 88 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_67 = load float* %arrayHLS_data_modul_54, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 88 'load' 'arrayHLS_data_modul_67' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 89 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_68 = load float* %arrayHLS_data_modul_55, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 89 'load' 'arrayHLS_data_modul_68' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 90 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_69 = load float* %arrayHLS_data_modul_56, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 90 'load' 'arrayHLS_data_modul_69' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 91 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_70 = load float* %arrayHLS_data_modul_57, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 91 'load' 'arrayHLS_data_modul_70' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 92 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_71 = load float* %arrayHLS_data_modul_58, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 92 'load' 'arrayHLS_data_modul_71' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 93 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_72 = load float* %arrayHLS_data_modul_59, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 93 'load' 'arrayHLS_data_modul_72' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 94 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_73 = load i32* %arrayHLS_data_modul_60, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 94 'load' 'arrayHLS_data_modul_73' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 95 [1/2] (0.92ns)   --->   "%arrayHLS_data_modul_74 = load i1* %arrayHLS_data_modul_61, align 1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 95 'load' 'arrayHLS_data_modul_74' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 96 [1/2] (0.92ns)   --->   "%arrayHLS_data_modul_75 = load i1* %arrayHLS_data_modul_62, align 1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 96 'load' 'arrayHLS_data_modul_75' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 97 [1/2] (1.77ns)   --->   "%arrayHLS_data_modul_76 = load i32* %arrayHLS_data_modul_63, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 97 'load' 'arrayHLS_data_modul_76' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 98 [1/2] (1.77ns)   --->   "%arrayHLS_data_r_lo = load float* %arrayHLS_data_r_ad_2, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 98 'load' 'arrayHLS_data_r_lo' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 99 [1/2] (1.77ns)   --->   "%arrayHLS_data_phi_4 = load float* %arrayHLS_data_phi_3, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 99 'load' 'arrayHLS_data_phi_4' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_5 : Operation 100 [1/2] (1.77ns)   --->   "%arrayHLS_data_z_lo = load float* %arrayHLS_data_z_ad_2, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 100 'load' 'arrayHLS_data_z_lo' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+
+State 6 <SV = 5> <Delay = 1.77>
+ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%zext_ln135 = zext i10 %add_ln135 to i64" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 101 'zext' 'zext_ln135' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 102 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_30 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 102 'getelementptr' 'arrayHLS_data_setti_30' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 103 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_31 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 103 'getelementptr' 'arrayHLS_data_setti_31' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_32 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 104 'getelementptr' 'arrayHLS_data_setti_32' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_33 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 105 'getelementptr' 'arrayHLS_data_setti_33' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_34 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 106 'getelementptr' 'arrayHLS_data_setti_34' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_35 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 107 'getelementptr' 'arrayHLS_data_setti_35' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 108 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_36 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 108 'getelementptr' 'arrayHLS_data_setti_36' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 109 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_37 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 109 'getelementptr' 'arrayHLS_data_setti_37' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 110 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_38 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 110 'getelementptr' 'arrayHLS_data_setti_38' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 111 [1/1] (0.00ns)   --->   "%arrayHLS_data_setti_39 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 111 'getelementptr' 'arrayHLS_data_setti_39' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 112 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrNumIterations_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 112 'getelementptr' 'arrayHLS_data_modul' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 113 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_39 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayers_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 113 'getelementptr' 'arrayHLS_data_modul_39' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 114 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_40 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrMinLayersPS_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 114 'getelementptr' 'arrayHLS_data_modul_40' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 115 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_41 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidPhi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 115 'getelementptr' 'arrayHLS_data_modul_41' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 116 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_42 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZ2S_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 116 'getelementptr' 'arrayHLS_data_modul_42' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 117 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_43 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_lrResidZPS_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 117 'getelementptr' 'arrayHLS_data_modul_43' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 118 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_44 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofPhi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 118 'getelementptr' 'arrayHLS_data_modul_44' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 119 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_45 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_chosenRofZ_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 119 'getelementptr' 'arrayHLS_data_modul_45' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 120 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_46 = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_invPtToDphi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 120 'getelementptr' 'arrayHLS_data_modul_46' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 121 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_47 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_settingsHLS_trackerNumLayers_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 121 'getelementptr' 'arrayHLS_data_modul_47' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 122 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_48 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_barrel_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 122 'getelementptr' 'arrayHLS_data_modul_48' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 123 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_49 = getelementptr [480 x i1]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_psModule_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 123 'getelementptr' 'arrayHLS_data_modul_49' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 124 [1/1] (0.00ns)   --->   "%arrayHLS_data_modul_50 = getelementptr [480 x i32]* %arrayHLS_TMTT_StubHLS_data_moduleHLS_layerId_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 124 'getelementptr' 'arrayHLS_data_modul_50' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 125 [1/1] (0.00ns)   --->   "%arrayHLS_data_r_ad = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_r_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 125 'getelementptr' 'arrayHLS_data_r_ad' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 126 [1/1] (0.00ns)   --->   "%arrayHLS_data_phi_s = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_phi_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 126 'getelementptr' 'arrayHLS_data_phi_s' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 127 [1/1] (0.00ns)   --->   "%arrayHLS_data_z_ad = getelementptr [480 x float]* %arrayHLS_TMTT_StubHLS_data_z_s, i64 0, i64 %zext_ln135" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 127 'getelementptr' 'arrayHLS_data_z_ad' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 128 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_setti_50, i32* %arrayHLS_data_setti_30, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 128 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 129 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_setti_51, i32* %arrayHLS_data_setti_31, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 129 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 130 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_setti_52, i32* %arrayHLS_data_setti_32, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 130 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 131 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_setti_53, float* %arrayHLS_data_setti_33, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 131 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 132 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_setti_54, float* %arrayHLS_data_setti_34, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 132 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 133 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_setti_55, float* %arrayHLS_data_setti_35, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 133 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 134 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_setti_56, float* %arrayHLS_data_setti_36, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 134 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 135 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_setti_57, float* %arrayHLS_data_setti_37, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 135 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 136 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_setti_58, float* %arrayHLS_data_setti_38, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 136 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 137 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_setti_59, i32* %arrayHLS_data_setti_39, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 137 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 138 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_modul_64, i32* %arrayHLS_data_modul, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 138 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 139 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_modul_65, i32* %arrayHLS_data_modul_39, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 139 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 140 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_modul_66, i32* %arrayHLS_data_modul_40, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 140 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 141 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_modul_67, float* %arrayHLS_data_modul_41, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 141 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 142 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_modul_68, float* %arrayHLS_data_modul_42, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 142 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 143 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_modul_69, float* %arrayHLS_data_modul_43, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 143 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 144 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_modul_70, float* %arrayHLS_data_modul_44, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 144 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 145 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_modul_71, float* %arrayHLS_data_modul_45, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 145 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 146 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_modul_72, float* %arrayHLS_data_modul_46, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 146 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 147 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_modul_73, i32* %arrayHLS_data_modul_47, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 147 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 148 [1/1] (0.92ns)   --->   "store i1 %arrayHLS_data_modul_74, i1* %arrayHLS_data_modul_48, align 1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 148 'store' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 149 [1/1] (0.92ns)   --->   "store i1 %arrayHLS_data_modul_75, i1* %arrayHLS_data_modul_49, align 1" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 149 'store' <Predicate = true> <Delay = 0.92> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 150 [1/1] (1.77ns)   --->   "store i32 %arrayHLS_data_modul_76, i32* %arrayHLS_data_modul_50, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 150 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 151 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_r_lo, float* %arrayHLS_data_r_ad, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 151 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 152 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_phi_4, float* %arrayHLS_data_phi_s, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 152 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 153 [1/1] (1.77ns)   --->   "store float %arrayHLS_data_z_lo, float* %arrayHLS_data_z_ad, align 4" [HLS_LR/.settings/LRutility.h:135]   --->   Operation 153 'store' <Predicate = true> <Delay = 1.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 480> <RAM>
+ST_6 : Operation 154 [1/1] (0.00ns)   --->   "br label %1" [HLS_LR/.settings/LRutility.h:134]   --->   Operation 154 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.12ns, clock uncertainty: 0.391ns.
+
+ <State 1>: 0.835ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('idx', HLS_LR/.settings/LRutility.h:135) ('i', HLS_LR/.settings/LRutility.h:135) [37]  (0.835 ns)
+
+ <State 2>: 1.49ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('idx', HLS_LR/.settings/LRutility.h:135) ('i', HLS_LR/.settings/LRutility.h:135) [37]  (0 ns)
+	'add' operation ('i', HLS_LR/.settings/LRutility.h:135) [70]  (1.49 ns)
+
+ <State 3>: 1.32ns
+The critical path consists of the following:
+	'add' operation ('add_ln135', HLS_LR/.settings/LRutility.h:135) [42]  (1.32 ns)
+
+ <State 4>: 1.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('arrayHLS_data_setti_40', HLS_LR/.settings/LRutility.h:135) [74]  (0 ns)
+	'load' operation ('arrayHLS_data_setti_50', HLS_LR/.settings/LRutility.h:135) on array 'arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s' [100]  (1.77 ns)
+
+ <State 5>: 1.77ns
+The critical path consists of the following:
+	'load' operation ('arrayHLS_data_setti_50', HLS_LR/.settings/LRutility.h:135) on array 'arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s' [100]  (1.77 ns)
+
+ <State 6>: 1.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('arrayHLS_data_setti_30', HLS_LR/.settings/LRutility.h:135) [44]  (0 ns)
+	'store' operation ('store_ln135', HLS_LR/.settings/LRutility.h:135) of variable 'arrayHLS_data_setti_50', HLS_LR/.settings/LRutility.h:135 on array 'arrayHLS_TMTT_StubHLS_data_settingsHLS_lrNumIterations_s' [101]  (1.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
